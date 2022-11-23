@@ -1,10 +1,8 @@
-package com.example.patient_app.Bluetooth
+package com.example.patient_app.bluetooth
 
-import android.Manifest
 import android.bluetooth.BluetoothGatt
 import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.BluetoothGattService
-import com.example.patient_app.Bluetooth.*
 import java.util.*
 import kotlin.collections.ArrayList
 

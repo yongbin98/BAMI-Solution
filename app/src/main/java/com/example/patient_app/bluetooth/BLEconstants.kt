@@ -1,4 +1,4 @@
-package com.example.patient_app.Bluetooth
+package com.example.patient_app.bluetooth
 
 import android.Manifest
 

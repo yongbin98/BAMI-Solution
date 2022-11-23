@@ -1,6 +1,5 @@
 package com.example.patient_app.SFTP
 
-import com.example.patient_app.SFTP.FileType
 import java.io.File
 import java.io.PrintWriter
 import java.text.SimpleDateFormat
@@ -11,7 +10,7 @@ class File(
 ) {
 
     companion object {
-        private const val FILE_PATH = "/data/data/com.example.hr_project/files"
+        private const val FILE_PATH = "/data/data/com.example.Patient_APP/files"
         var files = mutableListOf<File>()
     }
 
@@ -30,7 +29,7 @@ class File(
     fun getFileLength(): Long = file.length()
 
     fun write(data: String) {
-        printWriter.print(data)
+        printWriter.print(data) // TODO("buffer...?")
     }
 
     fun close() {
