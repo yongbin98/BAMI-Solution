@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+
+    <Button
+        android:id="@+id/btn_survey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+
+        android:background="@drawable/btn_survey"
+        android:fontFamily="@font/godo"
+        android:text="@string/btn_survey"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <ImageView
+        android:id="@+id/widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/widget"
+        app:layout_constraintBottom_toTopOf="@+id/btn_survey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="● 몇도"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/widget"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toTopOf="@+id/widget"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <TextView
+        android:id="@+id/local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableLeft="@drawable/location_icon"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="--시 --구 --동"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toBottomOf="@+id/weather" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="2022년 -월 -일"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/heart"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toBottomOf="@+id/local" />
+
+    <TextView
+        android:id="@+id/heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/heart_icon"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/widget"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toTopOf="@+id/widget"
+        app:layout_constraintVertical_bias="0.57" />
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="--"
+        android:textColor="@color/black"
+        android:textSize="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toTopOf="@+id/heart"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <TextView
+        android:id="@+id/bpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="bpm"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toBottomOf="@+id/rate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
