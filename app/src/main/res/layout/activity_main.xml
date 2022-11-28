@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/background">
+    android:background="@color/main_background">
 
 
     <Button
@@ -44,14 +44,15 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/godo"
         android:gravity="center"
-        android:text="● 몇도"
+        android:text="몇 도"
         android:textColor="@color/black"
-        android:textSize="50dp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/widget"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/widget"
         app:layout_constraintTop_toTopOf="@+id/widget"
         app:layout_constraintVertical_bias="0.129" />
+    <!--날씨 아이콘 추가예정-->
 
     <TextView
         android:id="@+id/local"
@@ -63,7 +64,7 @@
         android:gravity="center"
         android:text="--시 --구 --동"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/date"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/widget"
@@ -77,7 +78,7 @@
         android:gravity="center"
         android:text="2022년 -월 -일"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/heart"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/widget"
@@ -101,9 +102,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/godo"
         android:gravity="center"
-        android:text="--"
         android:textColor="@color/black"
-        android:textSize="80dp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/widget"
@@ -118,7 +118,7 @@
         android:gravity="center"
         android:text="bpm"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/widget"
