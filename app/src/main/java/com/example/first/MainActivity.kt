@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         //BPM
 
+        //btn_survey.setOnClickListener()
+
 
 
 

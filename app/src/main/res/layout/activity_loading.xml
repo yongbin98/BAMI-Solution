@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoadingActivity"
-    android:background="@color/main_background"
+    android:background="@drawable/loadingback_icon"
     >
 
 
@@ -24,34 +24,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/AIWM"
+        android:id="@+id/AI_WM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/potra"
         android:gravity="center"
-        android:text="AI-WM"
-        android:textSize="50sp"
+        android:text="@string/ai_wm"
         android:textColor="@color/black"
-        android:fontFamily="@font/godo"
+        android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/LAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/godo"
+        android:fontFamily="@font/potra"
         android:gravity="center"
-        android:text="LAB"
+        android:text="@string/lab"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

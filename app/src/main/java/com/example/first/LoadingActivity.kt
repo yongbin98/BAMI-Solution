@@ -20,7 +20,7 @@ class LoadingActivity : AppCompatActivity() {
         },DURATION)
 
         logo.animate().apply {
-        duration=1500
+        duration=1900
         rotationYBy(180f)
 
 
