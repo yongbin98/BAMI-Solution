@@ -7,7 +7,6 @@ import android.util.Log
 class BLEScanCallback(
     private val processor: (ScanResult) -> Unit
 ) : ScanCallback() {
-
     private val TAG = "ScanCallback"
 
     override fun onScanResult(callbackType: Int, result: ScanResult) {
