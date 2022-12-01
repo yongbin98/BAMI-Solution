@@ -62,7 +62,7 @@
         android:drawableLeft="@drawable/location_icon"
         android:fontFamily="@font/godo"
         android:gravity="center"
-        android:text="--시 --구 --동"
+        android:text="받아오기"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/date"

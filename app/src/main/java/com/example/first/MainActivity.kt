@@ -1,4 +1,5 @@
 package com.example.first
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,7 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         //BPM
 
-        //btn_survey.setOnClickListener()
+        btn_survey.setOnClickListener({
+            val intent = Intent(this, Survey_1Activity::class.java)
+            startActivity((intent))
+        })
 
 
 
