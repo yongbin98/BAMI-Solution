@@ -4,7 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.Patient_APP.R
+import com.example.patient_app.R
+import kotlinx.android.synthetic.main.activity_loading.*
 
 class LoadingActivity : AppCompatActivity() {
 
@@ -19,16 +20,10 @@ class LoadingActivity : AppCompatActivity() {
             finish()
         },DURATION)
 
-//        logo.animate().apply {
-//        duration=1900
-//        rotationYBy(180f)
-//
-//
-//
-//        }
-
-
-
+        logo.animate().apply {
+        duration=1900
+        rotationYBy(180f)
+        }
     }
 
     companion object{
