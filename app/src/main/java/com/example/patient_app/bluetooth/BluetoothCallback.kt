@@ -10,6 +10,7 @@ class BluetoothCallback(
     private val reader: (BluetoothGattCharacteristic) -> Unit
 ) : BluetoothGattCallback() {
     private val TAG = "BluetoothCallback"
+    var isConnectionUpdated : Boolean = false
 
     override fun onConnectionStateChange(gatt: BluetoothGatt, status: Int, newState: Int) {
         super.onConnectionStateChange(gatt, status, newState)
@@ -83,7 +84,7 @@ class BluetoothCallback(
         )
         descriptor.value = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
         Log.d(TAG, "${descriptor.value}")
-        gatt.writeDescriptor(descriptor)
+        isConnectionUpdated = gatt.writeDescriptor(descriptor)
     }
 
     override fun onCharacteristicChanged(
@@ -142,6 +143,7 @@ class BluetoothCallback(
         Log.d(TAG, "Closing Gatt connection")
 
         bleGatt?.let {
+            isConnectionUpdated = false
             bleGatt.disconnect()
             bleGatt.close()
         }

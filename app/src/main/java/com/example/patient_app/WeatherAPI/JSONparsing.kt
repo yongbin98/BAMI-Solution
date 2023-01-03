@@ -32,7 +32,7 @@ class JSONparsing(
                 jsonStringbuilder.append("강수형태 : ${jsonChildObj.getString("obsrValue")}\n")
             }
             if(jsonCategoryName == "T1H"){
-                jsonStringbuilder.append("기온 : ${jsonChildObj.getString("obsrValue")}\n")
+                jsonStringbuilder.append("${jsonChildObj.getString("obsrValue")}°\n")
             }
         }
 

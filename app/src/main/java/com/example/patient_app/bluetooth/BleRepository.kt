@@ -11,27 +11,27 @@ import android.bluetooth.le.ScanResult
 import android.bluetooth.le.ScanSettings
 import android.content.Context
 import android.util.Log
+import java.text.SimpleDateFormat
+import java.util.*
 
 @SuppressLint("MissingPermission")
 class BleRepository(
     activity: Activity,
-    private val deviceProcessor: (BluetoothDevice) -> Boolean
+    private val deviceProcessor: (ScanResult) -> Boolean
 ) {
 
     private val bleAdapter: BluetoothAdapter by lazy(LazyThreadSafetyMode.NONE) {
         val bleManager = activity.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
         bleManager.adapter
     }
-    private val scanResults = mutableSetOf<BluetoothDevice>()
+    companion object {
+        private val scanDevices = mutableSetOf<BluetoothDevice>()
+    }
     private val bleScanCallback: ScanCallback = BLEScanCallback(this::addScanResult)
     private val TAG = "bleRepository"
 
-    init {
-        activity.requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
-    }
-
-    fun connectBLE() {
-        scanResults.clear()
+    fun startScanBLE() {
+        scanDevices.clear()
 
         //ble adapter check request ble enable
         if (!bleAdapter.isEnabled) {
@@ -40,25 +40,25 @@ class BleRepository(
         }
 
         //check bluetooth name
-        val filters: MutableList<ScanFilter> = ArrayList()
-        Log.i(TAG,"scan device using MAC")
-        Log.i(TAG,"find MAC : $SERVICE_MAC_ADDRESS")
-        val scanFilter: ScanFilter = ScanFilter.Builder()
-//                .setServiceUuid(ParcelUuid(UUID.fromString(SERVICE_STRING))) // UUID로 검색
-//                .setDeviceName(editview.text.toString())
-            .setDeviceAddress(SERVICE_MAC_ADDRESS)
-            .build()
-        filters.add(scanFilter)
+//        val filters: MutableList<ScanFilter> = ArrayList()
+//        Log.i(TAG,"scan device using MAC")
+//        Log.i(TAG,"find MAC : $SERVICE_MAC_ADDRESS")
+//        val scanFilter: ScanFilter = ScanFilter.Builder()
+////                .setServiceUuid(ParcelUuid(UUID.fromString(SERVICE_STRING))) // UUID로 검색
+////                .setDeviceName(editview.text.toString())
+//            .setDeviceAddress(SERVICE_MAC_ADDRESS)
+//            .build()
+//        filters.add(scanFilter)
 
-        val settings = ScanSettings.Builder()
-            .setScanMode(ScanSettings.SCAN_MODE_LOW_POWER)
-            .build()
+//        val settings = ScanSettings.Builder()
+//            .setScanMode(ScanSettings.SCAN_MODE_LOW_POWER)
+//            .build()
 
-        bleAdapter.bluetoothLeScanner.startScan(filters, settings, bleScanCallback)
-//        bleAdapter?.bluetoothLeScanner?.startScan(BLEScanCallback) //filtering X
+//        bleAdapter.bluetoothLeScanner.startScan(filters, settings, bleScanCallback)
+        bleAdapter?.bluetoothLeScanner?.startScan(bleScanCallback) //filtering X
     }
 
-    private fun stopScan(){
+    fun stopScan(){
         bleAdapter.bluetoothLeScanner.stopScan(bleScanCallback)
         Log.d(TAG, "BLE Stop!")
     }
@@ -69,14 +69,14 @@ class BleRepository(
         // get scanned device MAC address
         val deviceAddress = device.address
 
+
         // 중복 체크
-        if (scanResults.contains(device))
+        if (scanDevices.contains(device) || device.name == null)
             return
 
-        scanResults.add(device)
-        Log.i(TAG, "add scanned device: $deviceAddress")
+        scanDevices.add(device)
 
-        if (deviceProcessor(device))
-            stopScan()
+        deviceProcessor(result)
     }
+
 }

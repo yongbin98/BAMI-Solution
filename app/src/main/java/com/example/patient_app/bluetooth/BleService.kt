@@ -2,34 +2,64 @@ package com.example.patient_app.bluetooth
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothGatt
 import android.bluetooth.BluetoothGattCharacteristic
+import android.bluetooth.le.ScanResult
+import android.os.Build
 import android.util.Log
 import com.example.patient_app.SFTP.File
 import com.example.patient_app.SFTP.FileType
+import kotlinx.coroutines.delay
 
 @SuppressLint("MissingPermission")
 object BleService {
     private val TAG = "BleService"
     private lateinit var bleGatt: BluetoothGatt
     private val files: MutableMap<Char, File> = mutableMapOf()
-
     private lateinit var bleRepository: BleRepository
+    private lateinit var bleCallback:BluetoothCallback
+    val scanResults = mutableSetOf<ScanResult>()
 
     val isConnected: Boolean
         get() = ::bleGatt.isInitialized
 
-    fun connect(activity: Activity) {
-        bleRepository = BleRepository(activity) { device ->
-            Log.i(TAG, "connected")
-            bleGatt = device.connectGatt(activity, true, BluetoothCallback(this::readFromBluetooth))
+    suspend fun isbleUpdated(){
+        while(!bleCallback.isConnectionUpdated) {
+            Log.d(TAG,"cnt wait...")
+            delay(1000)
+        }
+        delay(1000)
+    }
+
+    fun scanDevices(activity: Activity){
+        scanResults.clear()
+        bleRepository = BleRepository(activity){
+            scanResults.add(it)
+            Log.i(TAG,"${it.device.name}")
             true
         }
-        bleRepository.connectBLE()
+        bleRepository.startScanBLE()
+    }
+
+    fun connect(activity: Activity, device : BluetoothDevice) {
+        bleRepository.stopScan()
+        Log.i(TAG, "connected")
+        bleCallback = BluetoothCallback(this::readFromBluetooth)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            bleGatt = device.connectGatt(activity,false, bleCallback, BluetoothDevice.TRANSPORT_LE)
+        }
+        else{
+            bleGatt = device.connectGatt(activity,false, bleCallback)
+        }
+
     }
 
     fun disconnect() {
         Log.d(TAG, "Closing Gatt connection")
+
+        if(this::bleCallback.isInitialized)
+            bleCallback.isConnectionUpdated = false
 
         if (isConnected) {
             bleGatt.disconnect()

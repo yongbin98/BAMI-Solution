@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Patient_APP</string>
-    <string name="btn_survey">설문지 작성하기  ▶</string>
+    <string name="btn_bluetooth">블루투스 연결  ▶</string>
     <string name="ai_wm">AI-WM</string>
     <string name="lab">LAB</string>
     <string name="title_activity_survey1">Survey_1Activity</string>
+    <string name="title">Observation App</string>
+    <string name="menu_survey">설문지 작성</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"

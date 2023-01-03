@@ -68,10 +68,15 @@ class WeatherAPI (
     }
 
     private fun convertTime(){
-        if(base_time > 100)
-            base_time -= 100
-        else
-            base_time += 2300
+        if(base_time < 1000)
+            base_time += 1000
+
+        if((base_time%100)<40) {
+            if(base_time > 100)
+                base_time -= 100
+            else
+                base_time += 2300
+        }
     }
 
     data class LatXLngY(
