@@ -55,6 +55,9 @@ class MainActivity : AppCompatActivity(){
         deviceArray = deviceArray.distinct().toTypedArray()
         deviceAddress = deviceAddress.distinct().toTypedArray()
 
+
+
+
         val negativeButtonClick = {dialogInterface: DialogInterface, i:Int ->
             Toast.makeText(this, "취소", Toast.LENGTH_SHORT).show()
         }
@@ -72,26 +75,23 @@ class MainActivity : AppCompatActivity(){
         }
 
 
-        fun ShowList(Device:Array<String>, Address:Array<String>){
+        btn_bluetooth.setOnClickListener {
             val ListBuilder = AlertDialog.Builder(this)
                 .setTitle("기기목록")
                 .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
-                .setPositiveButton("",ReloadButtonClick)
-                .setItems(Device){dialog,which ->
+                .setPositiveButton("", ReloadButtonClick).setCancelable(false)
+                .setItems(deviceArray) { dialog, which ->
                     BleService.scanResults.forEach {
-                        if(it.device.address.contains(Address[which])) {
-                            Log.e(TAG,"돌아라")
+                        if (it.device.address.contains(deviceAddress[which])) {
                             BleService.connect(this@MainActivity, it.device)
                             myCoroutinescope.launch {
                                 BleService.isbleUpdated()
+                                Toast.makeText(this@MainActivity, "연결 완료", Toast.LENGTH_SHORT).show()
                             }
-                            Toast.makeText(this, "연결 완료",Toast.LENGTH_SHORT).show()
-
                         }
                     }
 
                 }.show()
-
         }
 
 
@@ -109,22 +109,6 @@ class MainActivity : AppCompatActivity(){
 //                }
 //                .show()
 //        }
-
-
-        btn_bluetooth.setOnClickListener({
-            val builder = AlertDialog.Builder(this)
-                .setMessage("연결하시겠습니까?")
-                .setPositiveButton("확인",DialogInterface.OnClickListener{dialog, id -> ShowList(deviceArray,deviceAddress)})
-                .setNegativeButton("취소",negativeButtonClick)
-                .show()
-        })
-
-
-
-
-
-
-
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)

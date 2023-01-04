@@ -3,8 +3,10 @@ package com.example.patient_app.WeatherAPI
 import android.app.Activity
 import android.location.Geocoder
 import android.util.Log
-import com.example.patient_app.bluetooth.BleService
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 object APIService {
@@ -30,17 +32,17 @@ object APIService {
                 true
             }
             weatherapi.convertGRIDDtoGPS()
-            weatherapi.setInit()
+
             myCoroutinescope.launch {
-                val job = myCoroutinescope.async {
-                    weatherapi.runAPI()
+                var taskTF : Boolean
+                do{
+                    weatherapi.setInit()
+                    taskTF = weatherapi.runAPI()
                     Log.i("API","Coroutinescope stopped")
-                }
-                job.await()
+                } while(taskTF)
             }
             true
         }
         gpst.getmylocation()
     }
-
 }

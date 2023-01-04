@@ -29,7 +29,7 @@ object BleService {
             Log.d(TAG,"cnt wait...")
             delay(1000)
         }
-        delay(1000)
+        delay(3000)
     }
 
     fun scanDevices(activity: Activity){

@@ -13,7 +13,7 @@ import java.util.*
 class WeatherAPI (
     private var loc_x: Double,
     private var loc_y: Double,
-    private var xml_string : (StringBuilder) -> Boolean
+    private var json_string : (StringBuilder) -> Boolean
 ){
     private val TAG = "Weather"
     private lateinit var convertedLoc : LatXLngY
@@ -25,10 +25,11 @@ class WeatherAPI (
         private const val pageNo: String = "1"
         private const val numOfRows: String = "10"
         private var dateFormat = SimpleDateFormat("yyyyMMdd_HHmm")
-        private var dateNow = dateFormat.format(Date(System.currentTimeMillis()))
+        private var dateRaw = Date(System.currentTimeMillis())
+        private var dateNow = dateFormat.format(dateRaw)
         private var base_date = dateNow.substring(0,dateNow.indexOf('_'))
-        private var base_time = dateNow.substring(dateNow.indexOf('_')+1).toInt()
-        private var urlInit = StringBuilder("$URL")
+        private var base_time = dateNow.substring(dateNow.indexOf('_')+1)
+        private var urlInit = StringBuilder()
     }
 
     fun convertGRIDDtoGPS(){
@@ -66,28 +67,22 @@ class WeatherAPI (
         convertedLoc = LatXLngY(loc_x, loc_y, Math.floor(ra * Math.sin(theta) + XO + 0.5).toUInt(), Math.floor(ro - ra * Math.cos(theta) + YO + 0.5).toUInt())
         Log.i(TAG,"convertGRIDDtoGPS called")
     }
-
-    private fun convertTime(){
-        if(base_time < 1000)
-            base_time += 1000
-
-        if((base_time%100)<40) {
-            if(base_time > 100)
-                base_time -= 100
-            else
-                base_time += 2300
-        }
-    }
-
     data class LatXLngY(
         var lat : Double,
         var lng : Double,
         var x : UInt,
         var y : UInt
     )
+    private fun convert1hourago(){
+        dateRaw = Date(dateRaw.time +(1000*60*60*-1))
+        dateNow = dateFormat.format(dateRaw)
+        base_date = dateNow.substring(0,dateNow.indexOf('_'))
+        base_time = dateNow.substring(dateNow.indexOf('_')+1)
+    }
 
     fun setInit() {
-        convertTime()
+        urlInit.clear()
+        urlInit = StringBuilder("$URL")
         urlInit.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=$serviceKey") /*Service Key*/
         urlInit.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("$numOfRows", "UTF-8")) /*한 페이지 결과 수*/
         urlInit.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("$pageNo", "UTF-8")) /*페이지번호*/
@@ -102,7 +97,8 @@ class WeatherAPI (
         Log.i(TAG, "SetInit : ${urlInit}")
     }
 
-    fun runAPI() {
+    fun runAPI() : Boolean{
+        var taskChecker : Boolean = true
         val url = URL(urlInit.toString())
         val conn: HttpURLConnection = url.openConnection() as HttpURLConnection
         conn.requestMethod = "GET"
@@ -125,11 +121,18 @@ class WeatherAPI (
         conn.disconnect()
         Log.i(TAG,sb.toString())
 //        xml_string(sb.toString())
-        val json_parser = JSONparsing(sb.toString()) { it ->
-            xml_string(it)
+        val json_parser = JSONparsing(sb.toString()) { data, tf ->
+            if(tf) {
+                json_string(data)
+                taskChecker = false
+            }
+            else {
+                convert1hourago()
+            }
             true
         }
         json_parser.readEntry()
+        return taskChecker
     }
 
 }

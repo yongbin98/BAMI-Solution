@@ -11,4 +11,5 @@
     <color name="btn_gra">#ADDBFF</color>
     <color name="main_background">#79EDEDED</color>
     <color name="loading_background">#E4F4FB</color>
+    <color name="단위">#807F7F</color>
 </resources>
