@@ -29,6 +29,10 @@
     <string name="table2">상태의 정도 또는 지속기간</string>
     <string name="table3">지난 1년간 치료 여부</string>
     <string name="회_주">회/주</string>
+    <string name="치료기간">치료 기간</string>
+    <string name="two">2년</string>
+    <string name="three">3년</string>
+    <string name="YMRS">YMRS 설문지</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"

@@ -43,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:gravity="left"
                 android:layout_marginTop="25dp">
 
                 <TextView
@@ -62,7 +63,7 @@
                     android:layout_marginStart="30dp">
 
                     <RadioButton
-                        android:id="@+id/gender_btn1"
+                        android:id="@+id/gender_male"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/godo"
@@ -70,7 +71,7 @@
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
-                        android:id="@+id/gender_btn2"
+                        android:id="@+id/gender_female"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginStart="20dp"
@@ -117,7 +118,7 @@
                     />
 
                 <EditText
-                    android:hint="예: 170.3"
+                    android:id="@+id/height"
                     android:layout_width="113dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -157,6 +158,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/weight"
                     android:layout_width="113dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -166,9 +168,7 @@
                     android:inputType="number"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,LabelFor"
-                    android:hint="예: 57.5"
-                    />
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,LabelFor" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -219,6 +219,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/alcohol_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -230,6 +231,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/alcohol_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -255,12 +257,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/alcohol_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -295,6 +297,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/alcohol_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -306,6 +309,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/alcohol_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -356,6 +360,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/smoking_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -367,6 +372,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/smoking_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -392,12 +398,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/smoking_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -432,17 +438,19 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:scaleX="0.7"
-                            android:scaleY="0.7"
+                            android:id="@+id/smoking_treat_yes"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/godo"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
                             android:text="@string/yes"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/smoking_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -493,6 +501,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/exercise_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -504,6 +513,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/exercise_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -529,12 +539,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/exercise_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -569,6 +579,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/exercise_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -580,6 +591,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/exercise_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -630,6 +642,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/depressed_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -641,6 +654,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/depressed_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -666,12 +680,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/depressed_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -706,6 +720,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/depressed_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -717,6 +732,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/depressed_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -767,6 +783,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/unrest_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -778,6 +795,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/unrest_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -803,12 +821,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/unrest_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -843,6 +861,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/unrest_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -854,6 +873,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/unrest_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -904,6 +924,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/hypertension_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -915,6 +936,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/hypertension_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -940,12 +962,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/hypertension_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -980,6 +1002,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/hypertension_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -991,6 +1014,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/hypertension_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1041,6 +1065,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/diabetes_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1052,6 +1077,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/diabetes_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1077,12 +1103,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/diabetes_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -1111,12 +1137,14 @@
                         android:textSize="17sp" />
 
                     <RadioGroup
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="-20dp"
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/diabetes_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1128,6 +1156,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/diabetes_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1179,6 +1208,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/mental_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1190,6 +1220,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/mental_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1215,12 +1246,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/mental_num"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="50dp"
                         android:digits="0123456789"
                         android:fontFamily="@font/godo"
                         android:gravity="center"
-                        android:hint="0"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -1255,6 +1286,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/mental_treat_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1266,6 +1298,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:id="@+id/mental_treat_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:layout_width="wrap_content"
@@ -1279,22 +1312,82 @@
                 </TableRow>
             </TableLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/치료기간"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp">
+
+                    <RadioButton
+                        android:id="@+id/two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/two"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/three"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginVertical="10dp"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:id="@+id/save_btn"
+                    android:text="저장"
+                    android:fontFamily="@font/godo"
+                    android:textSize="20sp"
+                    android:background="@color/main_background"
+                    />
+
+                <Button
+                    android:id="@+id/next_btn"
+                    android:layout_width="50sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/투명"
+                    android:drawableLeft="@drawable/arrow"
+                    android:gravity="center" />
 
 
-
-
-
-
-
+            </LinearLayout>
 
 
         </LinearLayout>
-
-
-
-
-
-
 
     </ScrollView>
 
