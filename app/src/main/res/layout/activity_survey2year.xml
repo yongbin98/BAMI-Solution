@@ -1,0 +1,2612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Survey_2yearActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/widget">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:text="@string/YMRS"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/black"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="1. 지난 한주동안의 기분 상태"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 미래에 대해\n    낙관적이었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_gravity="right"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_1_yes"
+                            android:layout_gravity="right"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_1_no"
+                            android:layout_gravity="right"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 특별히 자신감이\n    넘쳤습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 기분이 좋거나 약간 들뜬 것처럼\n    느낀 적이 있었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 평소에는 우습지 않던 일로\n    웃었던 적이 있었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="5) 다른 사람들은 우습지 않다고\n    생각하는 일에 대해 웃거나\n    농담을 하였습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_5_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS1_5_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="2. 지난 한주동안의 에너지 수준"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 특별히 에너지가 넘친다고\n    느낀 적이 있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 신체적으로 안절부절\n    못했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 평소보다 더 활동적이었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 평소보다 일을 더 많이\n    했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS2_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="3. 지난 한주동안의 성적 관심 정도"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 평소보다 성적 관심이\n    많았습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS3_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS3_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 평소와는 다른 성적 행동을\n    하였습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS3_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS3_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 평소보다 성적인 이야기나\n    농담을 더 많이 하였습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS3_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS3_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="4. 지난 한주동안의 수면 상태"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 잠을 몇시간 잡니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:id="@+id/YMRS4_1_num"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="50dp"
+                        android:digits="0123456789"
+                        android:fontFamily="@font/godo"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,LabelFor" />
+
+                    <TextView
+                        android:layout_marginStart="-50dp"
+                        android:fontFamily="@font/godo"
+                        android:gravity="bottom"
+                        android:text="시간"
+                        android:textColor="@color/단위"
+                        android:textSize="15sp"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 평소보다 덜 자고 싶었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS4_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS4_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="5. 지난 한주동안의 자극과민성 상태"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 일어난 일이나 사람들이\n    당신을 대하는 태도 때문에\n    화가 났습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 이런 일 때문에 평소보다\n    더 괴로웠습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 종종 과민했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 화난 것을 외부로\n    표현하였습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS5_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:text="6. 지난 한주동안의 말의 속도와 양 변화"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 평소보다 말이 더 많았습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 누군가 말할 틈도 주지\n    않는다고 지적했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 한 번 말을 시작하면\n    멈추기 어려웠습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 말을 너무 빨리 해서\n    사람들이 이해하지 못 한\n    적이 있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS6_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="7. 지난 한주동안의 사고 변화"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 평소보다 아이디어가 더\n    많거나 기발한 생각이\n    떠오르곤 했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 지난 한주동안 유달리\n    생각이 예리하거나\n    명쾌하였습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 종종 산만해졌습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 머리가 매우 빨리 돌아가는\n    것 같았습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="5) 때로 생각이 너무 많아서\n    무엇을 말하고 있는지\n    흐름을 놓친 적이 있었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_5_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_5_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="6) 세부적인데 치우쳐서\n    헤메지는 않았습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_6_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS7_6_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="8. 지난 한주동안의 새로운 경험"
+                android:fontFamily="@font/godo"
+                android:textColor="@color/black"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 새로운 계획을 세우거나\n    시작했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 특별한 일을 해냈습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 평소보다 더 유능했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 평소보다 사물을 더 깊이\n    이해할 수 있었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="5) 어떤 종교적인 통찰력을\n    얻었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_5_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_5_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="6) 세부적인데 치우쳐서\n    헤메지는 않았습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_6_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_6_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="7) 주변에서 일어난 일에서\n    특별한 의미를 발견했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_7_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_7_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="8) 다른 사람들이 놓친 것을\n    알아차리거나, 남들이 당신에\n    대해 말하거나 심지어 당신을\n    해치려 한다고 느꼈습니까? "
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_8_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_8_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="9) 다른 사람들이 이해하지\n    못하는 생각을 했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_9_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_9_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="10) 다른 사람들이 보거나 듣지\n     못하는 것을 보거나\n     들었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_10_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS8_10_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:text="9. 지난 한주동안의 공격적인 행동 변화"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 다른 사람들에게\n    협조적이었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 언성을 높이거나\n    요구가 많거나 혹은\n    빈정거린 적이 있었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 다른 사람들과 맞부딪힌\n    적이 있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 고함을 지르거나 물건을\n    던지거나 위협을 하는\n    것과 같은 일을 하거나\n    파괴적인 일을 하고 있다고\n    느낀 적이 있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS9_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:text="10. 지난 한주동안의 용모 변화"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1) 용모와 옷차림새를\n    단정히 했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_1_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_1_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2) 남이 보기에 지나치게\n    옷을 차려 입었거나 제대로\n    갖춰 입지 못했던 적이\n    있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3) 지난 한주동안 평소와는\n    다른 색깔의 옷을\n    선택하였습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4) 평소보다 보석장식이나 화장을\n    더 많이 했습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="5) 차림새에 전혀 신경을 쓰지\n    않았던 적이 있었습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_5_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/YMRS10_5_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:fontFamily="@font/godo"
+                    android:layout_marginTop="15dp"
+                    android:gravity="left"
+                    android:text="11. 지난 한주를 돌이켜볼 때\n     자신에게 이례적인 행동이라고\n     기억될 만한 일을 했습니까?"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/YMRS11_yes"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/yes"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/YMRS11_no"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/no"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RadioGroup>
+            </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/two_YMRS_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="15dp"
+                android:text="저장"
+                android:textSize="17dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:layout_gravity="right"/>
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
