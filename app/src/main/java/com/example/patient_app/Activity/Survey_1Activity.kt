@@ -249,19 +249,19 @@ class Survey_1Activity : AppCompatActivity() {
 
         })
 
-        next_btn.setOnClickListener({
-            if (two.isChecked){
-                val intent1 = Intent(this, Survey_2yearActivity::class.java)
-                startActivity((intent1))
-            }
-            else if (three.isChecked){
-                val intent2 = Intent(this, Survey_3yearActivity::class.java)
-                startActivity((intent2))
-            }
-            else{
-                Toast.makeText(this, "치료 기간을 선택해주세요.", Toast.LENGTH_SHORT).show()
-            }
-        })
+//        next_btn.setOnClickListener({
+//            if (two.isChecked){
+//                val intent1 = Intent(this, Survey_2yearActivity::class.java)
+//                startActivity((intent1))
+//            }
+//            else if (three.isChecked){
+//                val intent2 = Intent(this, Survey_3yearActivity::class.java)
+//                startActivity((intent2))
+//            }
+//            else{
+//                Toast.makeText(this, "치료 기간을 선택해주세요.", Toast.LENGTH_SHORT).show()
+//            }
+//        })
 
 
 

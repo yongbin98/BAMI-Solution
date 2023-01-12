@@ -3,37 +3,33 @@ package com.example.patient_app.Activity
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.location.Address
-import android.net.wifi.ScanResult
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.DrawableRes
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.patient_app.R
 import com.example.patient_app.WeatherAPI.APIService
 import com.example.patient_app.bluetooth.BleService
 import com.example.patient_app.bluetooth.PERMISSIONS
 import com.example.patient_app.bluetooth.REQUEST_ALL_PERMISSION
+import com.example.patient_app.samsungHealth.HealthService
 import com.google.android.material.snackbar.Snackbar
+import com.samsung.android.sdk.healthdata.HealthConstants.StepCount
+import com.samsung.android.sdk.healthdata.HealthDataStore
+import com.samsung.android.sdk.healthdata.HealthPermissionManager
+import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionKey
+import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionType
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
-import java.text.MessageFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 @SuppressLint("MissingPermission")
 class MainActivity : AppCompatActivity(){
     private val TAG = "Main"
     private val myCoroutinescope = CoroutineScope(Dispatchers.Main)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,14 +40,14 @@ class MainActivity : AppCompatActivity(){
         var deviceArray : Array<String> = emptyArray()
         var deviceAddress : Array<String> = emptyArray()
 
-        BleService.scanDevices(this@MainActivity)
-        BleService.scanResults.forEachIndexed{index, ScanResult ->
-            if (index ==0){
-                deviceArray=deviceArray.plus(ScanResult.device.name)
-                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-            else {deviceArray = deviceArray.plus(ScanResult.device.name)
-                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-        }
+//        BleService.scanDevices(this@MainActivity)
+//        BleService.scanResults.forEachIndexed{index, ScanResult ->
+//            if (index ==0){
+//                deviceArray=deviceArray.plus(ScanResult.device.name)
+//                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+//            else {deviceArray = deviceArray.plus(ScanResult.device.name)
+//                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+//        }
         deviceArray = deviceArray.distinct().toTypedArray()
         deviceAddress = deviceAddress.distinct().toTypedArray()
 
@@ -75,23 +71,35 @@ class MainActivity : AppCompatActivity(){
         }
 
 
-        btn_bluetooth.setOnClickListener {
-            val ListBuilder = AlertDialog.Builder(this)
-                .setTitle("기기목록")
-                .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
-                .setPositiveButton("", ReloadButtonClick).setCancelable(false)
-                .setItems(deviceArray) { dialog, which ->
-                    BleService.scanResults.forEach {
-                        if (it.device.address.contains(deviceAddress[which])) {
-                            BleService.connect(this@MainActivity, it.device)
-                            myCoroutinescope.launch {
-                                BleService.isbleUpdated()
-                                Toast.makeText(this@MainActivity, "연결 완료", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }
+//        btn_bluetooth.setOnClickListener {
+//            val ListBuilder = AlertDialog.Builder(this)
+//                .setTitle("기기목록")
+//                .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
+//                .setPositiveButton("", ReloadButtonClick).setCancelable(false)
+//                .setItems(deviceArray) { dialog, which ->
+//                    BleService.scanResults.forEach {
+//                        if (it.device.address.contains(deviceAddress[which])) {
+//                            BleService.connect(this@MainActivity, it.device)
+//                            myCoroutinescope.launch {
+//                                BleService.isbleUpdated()
+//                                Toast.makeText(this@MainActivity, "연결 완료", Toast.LENGTH_SHORT).show()
+//                            }
+//                        }
+//                    }
+//                }.show()
+//        }
 
-                }.show()
+
+
+        btn_SamsungHealth.setOnClickListener {
+            myCoroutinescope.launch {
+                HealthService.connect(this@MainActivity){
+                    Log.i(TAG,"Get Permission!!")
+                    true
+                }
+                Log.i(TAG,"START")
+                HealthService.start(this@MainActivity)
+            }
         }
 
 

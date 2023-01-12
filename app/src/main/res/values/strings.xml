@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Patient_APP</string>
-    <string name="btn_bluetooth">블루투스 연결  ▶</string>
+    <string name="btn_samsungHealth">Connect to Samsung Health</string>
     <string name="ai_wm">AI-WM</string>
     <string name="lab">LAB</string>
     <string name="title_activity_survey1">Survey_1Activity</string>
@@ -33,6 +33,7 @@
     <string name="two">2년</string>
     <string name="three">3년</string>
     <string name="YMRS">YMRS 설문지</string>
+    <string name="SH_info">"Bami Mental Health App works with Samsung Health. Your heart rate information is synced to Samsung Health."</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
