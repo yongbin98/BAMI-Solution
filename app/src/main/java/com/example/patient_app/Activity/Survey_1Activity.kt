@@ -15,16 +15,16 @@ class Survey_1Activity : AppCompatActivity() {
 
         save_btn.setOnClickListener({
 
-            val day: Int = birth.dayOfMonth
-            val month: Int = birth.month
-            val year: Int = birth.year
-            val gender: String
+            var day: Int = birth.dayOfMonth
+            var month: Int = birth.month
+            var year: Int = birth.year
+            var gender: String
 
             if (gender_male.isChecked){
-                gender = "male"
+                var gender = "남"
             }
             else if(gender_female.isChecked){
-                gender = "female"
+                var gender = "여"
             }
             else{
                 Toast.makeText(this, "성별을 선택하세요.", Toast.LENGTH_SHORT).show()
@@ -41,10 +41,10 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (alcohol_no.isChecked){
-                val alcohol = "음주 안함"
+                var alcohol = "X"
             }
             else if(alcohol_yes.isChecked){
-                val alcohol = "음주 중"
+                var alcohol = "O"
             }
             else{
                 Toast.makeText(this, "음주 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -56,10 +56,10 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (alcohol_treat_no.isChecked){
-                val alcohol_treat = "음주 치료 하지 않음"
+                var alcohol_treat = "X"
             }
             else if(alcohol_treat_yes.isChecked){
-                val alcohol = "음주 치료 함"
+                var alcohol = "O"
             }
             else{
                 Toast.makeText(this, "음주 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -67,10 +67,10 @@ class Survey_1Activity : AppCompatActivity() {
 
 
             if (smoking_no.isChecked){
-                val smoking = "흡연 안함"
+                var smoking = "X"
             }
             else if(smoking_yes.isChecked){
-                val smoking = "흡연 중"
+                var smoking = "O"
             }
             else{
                 Toast.makeText(this, "흡연 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -82,10 +82,11 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (smoking_treat_no.isChecked){
-                val smoking_treat = "흡연 치료 하지 않음"
+                var smoking_treat = "X"
             }
             else if(smoking_treat_yes.isChecked){
-                val smoking_treat = "흡연 치료 함"
+                var
+                        smoking_treat = "O"
             }
             else{
                 Toast.makeText(this, "흡연 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -93,10 +94,10 @@ class Survey_1Activity : AppCompatActivity() {
 
 
             if (exercise_no.isChecked){
-                val smoking = "운동 안함"
+                var smoking = "X"
             }
             else if(exercise_yes.isChecked){
-                val smoking = "운동 중"
+                var smoking = "O"
             }
             else{
                 Toast.makeText(this, "운동 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -108,20 +109,20 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (exercise_treat_no.isChecked){
-                val exercise_treat = "운동 치료 하지 않음"
+                var exercise_treat = "X"
             }
             else if(exercise_treat_yes.isChecked){
-                val exercise_treat = "운동 치료 함"
+                var exercise_treat = "O"
             }
             else{
                 Toast.makeText(this, "운동 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }
 
             if (depressed_no.isChecked){
-                val depressed = "우울 안함"
+                var depressed = "X"
             }
             else if(exercise_yes.isChecked){
-                val depressed = "우울함"
+                var depressed = "O"
             }
             else{
                 Toast.makeText(this, "우울 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -133,10 +134,10 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (depressed_treat_no.isChecked){
-                val depressed_treat = "우울 치료 하지 않음"
+                var depressed_treat = "X"
             }
             else if(depressed_treat_yes.isChecked){
-                val depressed_treat = "우울 치료 함"
+                var depressed_treat = "O"
             }
             else{
                 Toast.makeText(this, "우울 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -144,10 +145,10 @@ class Survey_1Activity : AppCompatActivity() {
 
 
             if (unrest_no.isChecked){
-                val depressed = "불안 안함"
+                var depressed = "X"
             }
             else if(unrest_yes.isChecked){
-                val depressed = "불안함"
+                var depressed = "O"
             }
             else{
                 Toast.makeText(this, "불안 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -159,20 +160,20 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (unrest_treat_no.isChecked){
-                val unrest_treat = "불안 치료 하지 않음"
+                var unrest_treat = "X"
             }
             else if(unrest_treat_yes.isChecked){
-                val unrest_treat = "불안 치료 함"
+                var unrest_treat = "O"
             }
             else{
                 Toast.makeText(this, "불안 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }
 
             if (hypertension_no.isChecked){
-                val depressed = "고혈압 없음"
+                var depressed = "X"
             }
             else if(hypertension_yes.isChecked){
-                val depressed = "고혈압 있음"
+                var depressed = "O"
             }
             else{
                 Toast.makeText(this, "고혈압 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -184,10 +185,10 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (hypertension_treat_no.isChecked){
-                val hypertension_treat = "고혈압 치료 하지 않음"
+                var hypertension_treat = "X"
             }
             else if(hypertension_treat_yes.isChecked){
-                val unrest_treat = "고혈압 치료 함"
+                var unrest_treat = "O"
             }
             else{
                 Toast.makeText(this, "고혈압 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -195,10 +196,10 @@ class Survey_1Activity : AppCompatActivity() {
 
 
             if (diabetes_no.isChecked){
-                val diabetes = "당뇨 없음"
+                var diabetes = "X"
             }
             else if(diabetes_yes.isChecked){
-                val diabetes = "당뇨 있음"
+                var diabetes = "O"
             }
             else{
                 Toast.makeText(this, "당뇨 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -210,10 +211,10 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (diabetes_treat_no.isChecked){
-                val diabetes_treat = "당뇨 치료 하지 않음"
+                var diabetes_treat = "X"
             }
             else if(diabetes_treat_yes.isChecked){
-                val diabetes_treat = "당뇨 치료 함"
+                var diabetes_treat = "O"
             }
             else{
                 Toast.makeText(this, "당뇨 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -221,10 +222,10 @@ class Survey_1Activity : AppCompatActivity() {
 
 
             if (mental_no.isChecked){
-                val mental = "정신질환 없음"
+                var mental = "X"
             }
             else if(mental_yes.isChecked){
-                val mental = "정신질환 있음"
+                var mental = "O"
             }
             else{
                 Toast.makeText(this, "정신질환 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -236,10 +237,10 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (mental_treat_no.isChecked){
-                val mental_treat = "정신질환 치료 하지 않음"
+                var mental_treat = "X"
             }
             else if(mental_treat_yes.isChecked){
-                val mental_treat = "정신질환 치료 함"
+                var mental_treat = "O"
             }
             else{
                 Toast.makeText(this, "정신질환 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
@@ -251,11 +252,11 @@ class Survey_1Activity : AppCompatActivity() {
 
         next_btn.setOnClickListener({
             if (two.isChecked){
-                val intent1 = Intent(this, Survey_2yearActivity::class.java)
+                var intent1 = Intent(this, Survey_2yearActivity::class.java)
                 startActivity((intent1))
             }
             else if (three.isChecked){
-                val intent2 = Intent(this, Survey_3yearActivity::class.java)
+                var intent2 = Intent(this, Survey_3yearActivity::class.java)
                 startActivity((intent2))
             }
             else{

@@ -3,6 +3,7 @@ package com.example.patient_app.Activity
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import android.location.Address
 import android.net.wifi.ScanResult
@@ -41,74 +42,98 @@ class MainActivity : AppCompatActivity(){
 
         requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
 
-        var deviceArray : Array<String> = emptyArray()
-        var deviceAddress : Array<String> = emptyArray()
-
-        BleService.scanDevices(this@MainActivity)
-        BleService.scanResults.forEachIndexed{index, ScanResult ->
-            if (index ==0){
-                deviceArray=deviceArray.plus(ScanResult.device.name)
-                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-            else {deviceArray = deviceArray.plus(ScanResult.device.name)
-                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-        }
-        deviceArray = deviceArray.distinct().toTypedArray()
-        deviceAddress = deviceAddress.distinct().toTypedArray()
-
-
-
-
-        val negativeButtonClick = {dialogInterface: DialogInterface, i:Int ->
-            Toast.makeText(this, "취소", Toast.LENGTH_SHORT).show()
-        }
-
-        val ReloadButtonClick = {dialogInterface: DialogInterface, i :Int ->
-            BleService.scanResults.forEachIndexed{index, ScanResult ->
-                if (index ==0){
-                    deviceArray=deviceArray.plus(ScanResult.device.name)
-                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-                else {deviceArray = deviceArray.plus(ScanResult.device.name)
-                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-            }
-            deviceArray = deviceArray.distinct().toTypedArray()
-            deviceAddress = deviceAddress.distinct().toTypedArray()
-        }
-
-
-        btn_bluetooth.setOnClickListener {
-            val ListBuilder = AlertDialog.Builder(this)
-                .setTitle("기기목록")
-                .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
-                .setPositiveButton("", ReloadButtonClick).setCancelable(false)
-                .setItems(deviceArray) { dialog, which ->
-                    BleService.scanResults.forEach {
-                        if (it.device.address.contains(deviceAddress[which])) {
-                            BleService.connect(this@MainActivity, it.device)
-                            myCoroutinescope.launch {
-                                BleService.isbleUpdated()
-                                Toast.makeText(this@MainActivity, "연결 완료", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }
-
-                }.show()
-        }
-
-
-//        fun ShowList(Device:Array<String>, Address:Array<String>): Unit{
-//            val ListBuilder = AlertDialog.Builder(this)
-//                .setTitle("기기 목록")
-//                .setItems(Device){dialog,which->
-//                    Toast.makeText(this, "${Device[which]} 연결", Toast.LENGTH_SHORT).show()
-//                    BleService.scanResults.forEach {
-////                        if(it.device.address.contains(
-////                                //TODO("주소")
-////                        ))
-////                            BleService.connect(this@MainActivity,it.device)
-//                    }
-//                }
-//                .show()
+//        var deviceArray : Array<String> = emptyArray()
+//        var deviceAddress : Array<String> = emptyArray()
+//
+//        BleService.scanDevices(this@MainActivity)
+//        BleService.scanResults.forEachIndexed{index, ScanResult ->
+//            if (index ==0){
+//                deviceArray=deviceArray.plus(ScanResult.device.name)
+//                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+//            else {deviceArray = deviceArray.plus(ScanResult.device.name)
+//                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
 //        }
+//        deviceArray = deviceArray.distinct().toTypedArray()
+//        deviceAddress = deviceAddress.distinct().toTypedArray()
+//
+//
+//
+//
+//        val negativeButtonClick = {dialogInterface: DialogInterface, i:Int ->
+//            Toast.makeText(this, "취소", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        val ReloadButtonClick = {dialogInterface: DialogInterface, i :Int ->
+//            BleService.scanResults.forEachIndexed{index, ScanResult ->
+//                if (index ==0){
+//                    deviceArray=deviceArray.plus(ScanResult.device.name)
+//                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+//                else {deviceArray = deviceArray.plus(ScanResult.device.name)
+//                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+//            }
+//            deviceArray = deviceArray.distinct().toTypedArray()
+//            deviceAddress = deviceAddress.distinct().toTypedArray()
+//        }
+//
+//
+//        btn_SamsungHealth.setOnClickListener {
+//            val ListBuilder = AlertDialog.Builder(this)
+//                .setTitle("기기목록")
+//                .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
+//                .setPositiveButton("", ReloadButtonClick).setCancelable(false)
+//                .setItems(deviceArray) { dialog, which ->
+//                    BleService.scanResults.forEach {
+//                        if (it.device.address.contains(deviceAddress[which])) {
+//                            BleService.connect(this@MainActivity, it.device)
+//                            myCoroutinescope.launch {
+//                                BleService.isbleUpdated()
+//                                Toast.makeText(this@MainActivity, "연결 완료", Toast.LENGTH_SHORT).show()
+//                            }
+//                        }
+//                    }
+//
+//                }.show()
+//        }
+
+        val packageName : String = "com.sec.android.app.shealth"
+
+        fun isAppInstalled(packageName: String, packageManager: PackageManager) : Boolean{
+            return try{
+                packageManager.getPackageInfo(packageName,0)
+                true
+            }catch (ex: PackageManager.NameNotFoundException){
+                false
+            }
+        }
+
+        val packageManager: PackageManager = packageManager
+
+        btn_SamsungHealth.setOnClickListener{
+            if(isAppInstalled(packageName,packageManager)){
+                val InstallBuilder = AlertDialog.Builder(this)
+                    .setTitle(R.string.btn_samsungHealth)
+                    .setIcon(R.drawable.samsunghealth_icon)
+                    .setMessage(R.string.SH_info)
+                    .setPositiveButton(R.string.btn_samsungHealth, DialogInterface.OnClickListener{dialog, which ->
+                        Toast.makeText(application,"연결",Toast.LENGTH_SHORT).show()
+
+                    }).show()
+
+            }
+            else{
+                val Builder = AlertDialog.Builder(this)
+                    .setTitle(R.string.btn_samsungHealth)
+                    .setIcon(R.drawable.samsunghealth_icon)
+                    .setMessage(R.string.SH_info)
+                    .setPositiveButton("Install Samsung Health", DialogInterface.OnClickListener{dialog, which ->
+                        Toast.makeText(application,"설치",Toast.LENGTH_SHORT).show()
+                    }).show()
+            }
+                }
+
+
+
+
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
