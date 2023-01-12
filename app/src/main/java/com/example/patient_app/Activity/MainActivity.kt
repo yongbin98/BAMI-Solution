@@ -3,38 +3,33 @@ package com.example.patient_app.Activity
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.drawable.Drawable
-import android.location.Address
-import android.net.wifi.ScanResult
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.DrawableRes
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.patient_app.R
 import com.example.patient_app.WeatherAPI.APIService
 import com.example.patient_app.bluetooth.BleService
 import com.example.patient_app.bluetooth.PERMISSIONS
 import com.example.patient_app.bluetooth.REQUEST_ALL_PERMISSION
+import com.example.patient_app.samsungHealth.HealthService
 import com.google.android.material.snackbar.Snackbar
+import com.samsung.android.sdk.healthdata.HealthConstants.StepCount
+import com.samsung.android.sdk.healthdata.HealthDataStore
+import com.samsung.android.sdk.healthdata.HealthPermissionManager
+import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionKey
+import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionType
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
-import java.text.MessageFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 @SuppressLint("MissingPermission")
 class MainActivity : AppCompatActivity(){
     private val TAG = "Main"
     private val myCoroutinescope = CoroutineScope(Dispatchers.Main)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +37,9 @@ class MainActivity : AppCompatActivity(){
 
         requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
 
-//        var deviceArray : Array<String> = emptyArray()
-//        var deviceAddress : Array<String> = emptyArray()
-//
+        var deviceArray : Array<String> = emptyArray()
+        var deviceAddress : Array<String> = emptyArray()
+
 //        BleService.scanDevices(this@MainActivity)
 //        BleService.scanResults.forEachIndexed{index, ScanResult ->
 //            if (index ==0){
@@ -53,30 +48,30 @@ class MainActivity : AppCompatActivity(){
 //            else {deviceArray = deviceArray.plus(ScanResult.device.name)
 //                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
 //        }
-//        deviceArray = deviceArray.distinct().toTypedArray()
-//        deviceAddress = deviceAddress.distinct().toTypedArray()
-//
-//
-//
-//
-//        val negativeButtonClick = {dialogInterface: DialogInterface, i:Int ->
-//            Toast.makeText(this, "취소", Toast.LENGTH_SHORT).show()
-//        }
-//
-//        val ReloadButtonClick = {dialogInterface: DialogInterface, i :Int ->
-//            BleService.scanResults.forEachIndexed{index, ScanResult ->
-//                if (index ==0){
-//                    deviceArray=deviceArray.plus(ScanResult.device.name)
-//                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-//                else {deviceArray = deviceArray.plus(ScanResult.device.name)
-//                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-//            }
-//            deviceArray = deviceArray.distinct().toTypedArray()
-//            deviceAddress = deviceAddress.distinct().toTypedArray()
-//        }
-//
-//
-//        btn_SamsungHealth.setOnClickListener {
+        deviceArray = deviceArray.distinct().toTypedArray()
+        deviceAddress = deviceAddress.distinct().toTypedArray()
+
+
+
+
+        val negativeButtonClick = {dialogInterface: DialogInterface, i:Int ->
+            Toast.makeText(this, "취소", Toast.LENGTH_SHORT).show()
+        }
+
+        val ReloadButtonClick = {dialogInterface: DialogInterface, i :Int ->
+            BleService.scanResults.forEachIndexed{index, ScanResult ->
+                if (index ==0){
+                    deviceArray=deviceArray.plus(ScanResult.device.name)
+                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+                else {deviceArray = deviceArray.plus(ScanResult.device.name)
+                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
+            }
+            deviceArray = deviceArray.distinct().toTypedArray()
+            deviceAddress = deviceAddress.distinct().toTypedArray()
+        }
+
+
+//        btn_bluetooth.setOnClickListener {
 //            val ListBuilder = AlertDialog.Builder(this)
 //                .setTitle("기기목록")
 //                .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
@@ -91,49 +86,37 @@ class MainActivity : AppCompatActivity(){
 //                            }
 //                        }
 //                    }
-//
 //                }.show()
 //        }
 
-        val packageName : String = "com.sec.android.app.shealth"
 
-        fun isAppInstalled(packageName: String, packageManager: PackageManager) : Boolean{
-            return try{
-                packageManager.getPackageInfo(packageName,0)
-                true
-            }catch (ex: PackageManager.NameNotFoundException){
-                false
+
+        btn_SamsungHealth.setOnClickListener {
+            myCoroutinescope.launch {
+                HealthService.connect(this@MainActivity){
+                    Log.i(TAG,"Get Permission!!")
+                    true
+                }
+                Log.i(TAG,"START")
+                HealthService.start(this@MainActivity)
             }
         }
 
-        val packageManager: PackageManager = packageManager
 
-        btn_SamsungHealth.setOnClickListener{
-            if(isAppInstalled(packageName,packageManager)){
-                val InstallBuilder = AlertDialog.Builder(this)
-                    .setTitle(R.string.btn_samsungHealth)
-                    .setIcon(R.drawable.samsunghealth_icon)
-                    .setMessage(R.string.SH_info)
-                    .setPositiveButton(R.string.btn_samsungHealth, DialogInterface.OnClickListener{dialog, which ->
-                        Toast.makeText(application,"연결",Toast.LENGTH_SHORT).show()
-
-                    }).show()
-
-            }
-            else{
-                val Builder = AlertDialog.Builder(this)
-                    .setTitle(R.string.btn_samsungHealth)
-                    .setIcon(R.drawable.samsunghealth_icon)
-                    .setMessage(R.string.SH_info)
-                    .setPositiveButton("Install Samsung Health", DialogInterface.OnClickListener{dialog, which ->
-                        Toast.makeText(application,"설치",Toast.LENGTH_SHORT).show()
-                    }).show()
-            }
-                }
-
-
-
-
+//        fun ShowList(Device:Array<String>, Address:Array<String>): Unit{
+//            val ListBuilder = AlertDialog.Builder(this)
+//                .setTitle("기기 목록")
+//                .setItems(Device){dialog,which->
+//                    Toast.makeText(this, "${Device[which]} 연결", Toast.LENGTH_SHORT).show()
+//                    BleService.scanResults.forEach {
+////                        if(it.device.address.contains(
+////                                //TODO("주소")
+////                        ))
+////                            BleService.connect(this@MainActivity,it.device)
+//                    }
+//                }
+//                .show()
+//        }
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)

@@ -3,13 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.patient_app">
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission
-        android:name="android.permission.BLUETOOTH_SCAN"
-        android:usesPermissionFlags="neverForLocation" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -17,6 +10,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="com.samsung.android.health.permission.READ_EXERCISE" />
+    <uses-permission android:name="com.samsung.android.health.permission.READ_HEALTH" />
+    <uses-permission android:name="com.samsung.android.health.permission.READ_HEALTH_DATA" />
+    <uses-permission android:name="com.samsung.android.health.permission.READ_HR" />
+    <uses-permission android:name="com.samsung.android.health.permission.READ_STEP_COUNT" />
 
     <queries>
         <package android:name="com.sec.android.app.shealth" />
@@ -34,31 +32,35 @@
         android:theme="@style/Theme.Patient_APP.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".PermissionActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activity.Survey_2yearActivity"
-            android:exported="false"
-            android:label="Survey_2yearActivity"
-            android:theme="@style/Theme.Patient_APP.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activity.Survey_3yearActivity"
-            android:exported="false"
-            android:label="Survey_3yearActivity"
-            android:theme="@style/Theme.Patient_APP.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <meta-data
+            android:name="com.samsung.android.health.permission.read"
+            android:value="com.samsung.health.step_count"/>
+
+<!--        <meta-data-->
+<!--            android:name="com.samsung.android.health.permission.read"-->
+<!--            android:value="com.samsung.health.heartbeat"/>-->
+
+<!--        <activity-->
+<!--            android:name=".Activity.Survey_2yearActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="Survey_2yearActivity"-->
+<!--            android:theme="@style/Theme.Patient_APP.NoActionBar">-->
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+<!--        </activity>-->
+
+<!--        <activity-->
+<!--            android:name=".Activity.Survey_3yearActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="Survey_3yearActivity"-->
+<!--            android:theme="@style/Theme.Patient_APP.NoActionBar">-->
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+<!--        </activity>-->
+
+
         <activity
             android:name=".Activity.Survey_1Activity"
             android:exported="false"

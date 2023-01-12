@@ -2587,25 +2587,7 @@
                 android:fontFamily="@font/godo"
                 android:layout_gravity="right"/>
 
-
-
-
-
-
-
-
-
-
-
         </LinearLayout>
-
-
-
-
-
-
-
-
 
     </ScrollView>
 
