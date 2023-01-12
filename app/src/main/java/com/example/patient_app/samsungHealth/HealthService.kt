@@ -1,7 +1,6 @@
 package com.example.patient_app.samsungHealth
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -10,12 +9,7 @@ import com.samsung.android.sdk.healthdata.HealthConstants
 import com.samsung.android.sdk.healthdata.HealthDataStore
 import com.samsung.android.sdk.healthdata.HealthDataStore.ConnectionListener
 import com.samsung.android.sdk.healthdata.HealthPermissionManager
-import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionKey
-import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionType
-import kotlinx.coroutines.Delay
-import kotlinx.coroutines.delay
 import java.lang.Boolean
-import kotlin.Exception
 import kotlin.Int
 
 object HealthService {
@@ -86,7 +80,7 @@ object HealthService {
     }
 
     private val mHeartRateObserver = object : HeartRate.HeartRateObserver{
-        override fun onChanged(count: Unit) {
+        override fun onChanged(count: Float) {
             Log.i(TAG,"Heartrate : $count")
         }
     }

@@ -4,12 +4,11 @@ import android.annotation.SuppressLint
 import android.database.Cursor
 import android.os.Handler
 import android.util.Log
-import com.samsung.android.sdk.healthdata.HealthConstants
-import com.samsung.android.sdk.healthdata.HealthDataObserver
-import com.samsung.android.sdk.healthdata.HealthDataResolver
+import com.samsung.android.sdk.healthdata.*
 import com.samsung.android.sdk.healthdata.HealthDataResolver.ReadRequest
-import com.samsung.android.sdk.healthdata.HealthDataStore
+import com.samsung.android.sdk.healthdata.HealthDataResolver.ReadResult
 import com.samsung.android.sdk.healthdata.HealthResultHolder.ResultListener
+import java.util.*
 
 
 class HeartRate {
@@ -58,36 +57,28 @@ class HeartRate {
 
     private fun readHeartRateData() {
         val resolver = HealthDataResolver(mStore, null)
+
         val request = ReadRequest.Builder()
             .setDataType(HealthConstants.HeartRate.HEALTH_DATA_TYPE)
             .setProperties(arrayOf(HealthConstants.HeartRate.HEART_RATE))
             .build()
         try {
-            mHeartRateObserver!!.onChanged(resolver.read(request).setResultListener(mHeartRateResultListener))
+            resolver.read(request)
+                .setResultListener{ readResult : ReadResult ->
+                    readResult.use { result ->
+                        val iterator: Iterator<HealthData> = result.iterator()
+                        if (iterator.hasNext()) {
+                            mHeartRateObserver!!.onChanged(iterator.next().getFloat(HealthConstants.HeartRate.HEART_RATE))
+                        }
+                    }
+                }
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
 
-    @SuppressLint("Range")
-    private val mHeartRateResultListener =
-        ResultListener<HealthDataResolver.ReadResult> { result ->
-            try {
-                val c: Cursor? = result.resultCursor
-                if (c != null) {
-                    while (c.moveToNext()) {
-                        val heartRate: Int =
-                            c.getInt(c.getColumnIndex(HealthConstants.HeartRate.HEART_RATE))
-                        // Display the heart rate on the phone
-                        // ...
-                    }
-                }
-            } finally {
-                result.close()
-            }
-        }
 
     interface HeartRateObserver {
-        fun onChanged(count: Unit)
+        fun onChanged(count: Float)
     }
 }

@@ -123,15 +123,10 @@ class MainActivity : AppCompatActivity(){
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.menu)
 
-
-
-
         val utilDate = Date()
         val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
         date.text = formatType.format(utilDate)
-
         var cutLocation : String
-
 
         val sunImg = getDrawable(R.drawable.sun_icon)
         val rainyImg = getDrawable(R.drawable.rainy_icon)
@@ -140,9 +135,6 @@ class MainActivity : AppCompatActivity(){
         val cloudyImg = getDrawable(R.drawable.cloudy_icon)
         val lessrainsnowImg = getDrawable(R.drawable.lessrainsnow_icon)
         val snowstormImg = getDrawable(R.drawable.snowstorm_icon)
-
-
-
 
         APIService.connect(this){
             myCoroutinescope.launch {

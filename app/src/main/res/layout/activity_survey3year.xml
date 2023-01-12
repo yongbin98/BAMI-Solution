@@ -10,14 +10,566 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginVertical="20dp"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/widget">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3년"
-            android:textSize="30sp"/>
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:text="MARS 설문지"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/black"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="15dp"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="20dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="1. 약 먹는 것을 깜빡 잊은 적이\n    있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_gravity="right"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS1_yes"
+                            android:layout_gravity="right"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS1_no"
+                            android:layout_gravity="right"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
+                    >
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="2. 약 먹기가 귀찮은 적이\n    있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS2_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS2_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
+                    >
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="3. 몸이 많이 좋아진 것 같아서\n    약을 끊은 적이 있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS3_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS3_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
+                    >
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="4. 약을 먹으면 몸이 더 \n    나빠지는 것 같아서\n    약을 끊은 적이 있습니까?"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS4_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS4_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="5. 나는 아플 때만 약을 먹는다."
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS5_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS5_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="6. 나의 몸과 마음이 약으로\n    조절되는 것은 자연스럽지\n    못하다."
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS6_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS6_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="7. 나는 약을 먹으면 생각이\n    더 명료해진다."
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS7_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS7_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="8. 나는 약을 계속 먹으면\n    상태가 나빠지지 않을 것이다."
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS8_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS8_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="9. 나는 약을 먹으면 넋이 나가\n    멍해지는 것 같은 이상한\n    느낌이 든다."
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS9_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS9_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp">
+
+                    <TextView
+                        android:fontFamily="@font/godo"
+                        android:gravity="left"
+                        android:text="10. 나는 약을 먹으면 더\n    피곤하고 쳐진다."
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/MARS10_yes"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/yes"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/MARS10_no"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/godo"
+                            android:text="@string/no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginVertical="10dp"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:id="@+id/three_MARS_save_btn"
+                    android:text="저장"
+                    android:fontFamily="@font/godo"
+                    android:textSize="20sp"
+                    android:background="@color/main_background"
+                    />
+
+                <TextView
+                    android:id="@+id/MARS_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:text="총점  ______   "
+                    android:textSize="20sp"
+                    android:fontFamily="@font/godo"
+                    android:textColor="@color/단위"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
 
