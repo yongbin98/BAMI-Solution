@@ -26,23 +26,74 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/bami_icon"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/bami_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Patient_APP.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".PermissionActivity"
+            android:name=".Activity.insomnia_2yearActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.Survey_2yearActivity"
+            android:name=".Activity.GAD7_2yearActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.PHQ9_2and3yearActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Hamilton_3yearActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Thankyou"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.VAS_2and3yearActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Stress_2and3yearActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Whoqol_3yearActivity"
+            android:exported="false"
+            android:label="Whoqol_3yearActivity"
+            android:theme="@style/Theme.Patient_APP.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.YMRS_2yearActivity"
             android:exported="false"
             android:label="Survey_2yearActivity"
             android:theme="@style/Theme.Patient_APP.NoActionBar">
@@ -51,7 +102,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.Survey_3yearActivity"
+            android:name=".Activity.MARS_3yearActivity"
             android:exported="false"
             android:label="Survey_3yearActivity"
             android:theme="@style/Theme.Patient_APP.NoActionBar">

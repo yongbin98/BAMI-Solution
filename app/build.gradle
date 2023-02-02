@@ -12,6 +12,7 @@ android {
 
 
     defaultConfig {
+        applicationId "com.example.patient_app.Activity"
         applicationId "com.example.patient_app"
         minSdk 23
         targetSdk 33

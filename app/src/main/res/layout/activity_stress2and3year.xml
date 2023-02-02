@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Stress_2and3yearActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/widget"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="@string/Stress"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/black"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1. 문제들이 풀리지 않고\n계속 쌓이는 느낌이다."
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/godo"
+        android:textSize="20sp"
+
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/stress1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="30dp"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/One" />
+
+        <RadioButton
+            android:id="@+id/stress1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Two" />
+
+        <RadioButton
+            android:id="@+id/stress1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:textColor="@color/black"
+            android:theme="@style/Three" />
+
+        <RadioButton
+            android:id="@+id/stress1_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Four" />
+
+        <RadioButton
+            android:id="@+id/stress1_5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/Five" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godo"
+            android:text="전혀 그렇지 않다."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline21"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godo"
+            android:text="아주 그렇다."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="@+id/guideline21"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="2. 다른 사람으로부터 비난을 받거나\n심판을 받는다고 느껴진다."
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/godo"
+        android:textSize="20sp"
+
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/stress2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="30dp"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/One" />
+
+        <RadioButton
+            android:id="@+id/stress_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Two" />
+
+        <RadioButton
+            android:id="@+id/stress_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:textColor="@color/black"
+            android:theme="@style/Three" />
+
+        <RadioButton
+            android:id="@+id/stress_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Four" />
+
+        <RadioButton
+            android:id="@+id/stress_5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/Five" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godo"
+            android:text="전혀 그렇지 않다."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline22"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godo"
+            android:text="아주 그렇다."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="@+id/guideline22"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="3. 정신적으로 지친다."
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/godo"
+        android:textSize="19sp"
+
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/stress3_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="30dp"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/One" />
+
+        <RadioButton
+            android:id="@+id/stress3_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Two" />
+
+        <RadioButton
+            android:id="@+id/stress3_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:textColor="@color/black"
+            android:theme="@style/Three" />
+
+        <RadioButton
+            android:id="@+id/stress3_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Four" />
+
+        <RadioButton
+            android:id="@+id/stress3_5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/Five" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godo"
+            android:text="전혀 그렇지 않다."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline23"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godo"
+            android:text="아주 그렇다."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="@+id/guideline23"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="4. 긴장을 풀기 어렵다."
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/godo"
+        android:textSize="19sp"
+
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/stress4_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="30dp"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/One" />
+
+        <RadioButton
+            android:id="@+id/stress4_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Two" />
+
+        <RadioButton
+            android:id="@+id/stress4_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:textColor="@color/black"
+            android:theme="@style/Three" />
+
+        <RadioButton
+            android:id="@+id/stress4_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:textColor="@color/black"
+            android:theme="@style/Four" />
+
+        <RadioButton
+            android:id="@+id/stress4_5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textColor="@color/black"
+            android:theme="@style/Five" />
+        </RadioGroup>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="전혀 그렇지 않다."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline24"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="아주 그렇다."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.90"
+                app:layout_constraintStart_toStartOf="@+id/guideline24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="5. 화가 난다."
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/stress5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/stress5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/stress5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/stress5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/stress5_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline20"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline20"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="6. 의욕이 떨어진다."
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/stress6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/stress6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/stress6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/stress6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/stress6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline25"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline25"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="7. 신경이 날카로워졌다."
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/stress7_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/stress7_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/stress7_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/stress7_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/stress7_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline26"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline26"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="8. 무언가를 부수고 싶다."
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/stress8_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/stress8_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/stress8_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/stress8_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/stress8_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline27"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline27"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="9. 아무런 생각을 하고 싶지 않다."
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/stress9_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/stress9_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/stress9_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/stress9_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/stress9_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline28"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline28"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginVertical="10dp"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:id="@+id/stressSave_btn"
+                    android:text="저장"
+                    android:fontFamily="@font/godo"
+                    android:textSize="20sp"
+                    android:background="@color/main_background"
+                    />
+
+                <Button
+                    android:id="@+id/stressNext_btn"
+                    android:layout_width="50sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/투명"
+                    android:drawableLeft="@drawable/arrow"
+                    android:gravity="center" />
+
+
+            </LinearLayout>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

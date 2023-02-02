@@ -34,6 +34,13 @@
     <string name="three">3년</string>
     <string name="YMRS">YMRS 설문지</string>
     <string name="SH_info">"Bami Mental Health App works with Samsung Health. Your heart rate information is synced to Samsung Health."</string>
+    <string name="WHOQOL">WHOQOL-BRDF</string>
+    <string name="Stress">Stress Question</string>
+    <string name="VAS">VAS 5단계</string>
+    <string name="Hamilton">Hamilton Rating</string>
+    <string name="PHQ">PHQ-9</string>
+    <string name="GAD">GAD-7</string>
+    <string name="insomnia">Insomnia</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"

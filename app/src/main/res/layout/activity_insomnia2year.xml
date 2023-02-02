@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.insomnia_2yearActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/widget"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:text="@string/insomnia"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/black"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. 최근 2주동안에 당신의 불면증의\n심한 정도를 아래에 표시하십시오."
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="1) 초조하거나 불안하거나\n조마조마하게 느낀다."
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia1_1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_1_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_1_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_1_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="전혀 없음."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingStart="50dp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline22"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 심함."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="50sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline22"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="2) 잠을 유지하기 어려움 (자주 깸)"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia1_2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_2_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_2_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="전혀 없음."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingStart="50dp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline21"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 심함."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="50sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline21"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="3) 새벽에 너무 일찍 잠에서 깸"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia1_3_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_3_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_3_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_3_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia1_3_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="전혀 없음."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingStart="50dp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline23"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 심함."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="50sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline23"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. 당신의 현재 수면 패턴에\n얼마나 만족하십니까?"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia2_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia2_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 만족함."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingStart="40dp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline24"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 불만족."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. 불면증으로 인한 삶의 손상 정도가\n다른 사람들에게 어떻게 보인다고\n생각합니까?"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia3_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia3_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia3_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia3_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia3_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:text="전혀 현저하지 않음."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline25"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 많이 현저함."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline25"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. 현재 불면증에 관하여\n얼마나 걱정하고 있습니까?"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia4_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia4_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia4_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia4_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia4_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:text="전혀 걱정하지 않음."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline26"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 많이 걱정함."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline26"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. 당신의 수면 문제가 일상생활에\n(예: 낮동안 피곤함, 업무 또는\n일상적 가사능력, 집중력, 기억력,\n기분 등)을 어느정도 방해한다고\n생각합니까?"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/insomnia5_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:paddingVertical="30dp"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/One" />
+
+            <RadioButton
+                android:id="@+id/insomnia5_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Two" />
+
+            <RadioButton
+                android:id="@+id/insomnia5_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:textColor="@color/black"
+                android:theme="@style/Three" />
+
+            <RadioButton
+                android:id="@+id/insomnia5_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColor="@color/black"
+                android:theme="@style/Four" />
+
+            <RadioButton
+                android:id="@+id/insomnia5_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:textColor="@color/black"
+                android:theme="@style/Five" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:text="전혀 방해되지 않음."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline27"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/godo"
+                android:text="매우 많이 방해됨."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:paddingEnd="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline27"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginVertical="10dp"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:id="@+id/insomniaSave_btn"
+                android:text="저장"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+                android:background="@color/main_background"
+                />
+
+            <Button
+                android:id="@+id/insomniaNext_btn"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginStart="15dp"
+                android:background="@color/투명"
+                android:drawableLeft="@drawable/arrow"
+                android:gravity="center" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

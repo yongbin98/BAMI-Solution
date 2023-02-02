@@ -1,17 +1,27 @@
 package com.example.patient_app.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.DatePicker
 import android.widget.RadioButton
 import android.widget.Toast
 import com.example.patient_app.R
-import kotlinx.android.synthetic.main.activity_survey2year.*
+import kotlinx.android.synthetic.main.activity_ymrs2year.*
 
-class Survey_2yearActivity : AppCompatActivity() {
+class YMRS_2yearActivity : AppCompatActivity() {
+    private var toast: Toast? = null
+    private fun makeToast(message: String){
+        try{
+            toast?.cancel()
+            toast = Toast.makeText(this,message,Toast.LENGTH_SHORT)
+            toast?.show()
+        }catch (e: java.lang.Exception){
+            e.printStackTrace()
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_survey2year)
+        setContentView(R.layout.activity_ymrs2year)
 
 
         two_YMRS_save.setOnClickListener({
@@ -23,13 +33,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS1_i = "O"
+                    YMRSanswer.YMRS1[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS1_i ="1"
+                    YMRSanswer.YMRS1[i-1] ="X"
                 }
                 else{
-                    Toast.makeText(this, "1-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("1-$i 항목에 응답해 주세요.")
                 }
         }
 
@@ -40,13 +50,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS2_i = "O"
+                    YMRSanswer.YMRS2[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS2_i ="1"
+                    YMRSanswer.YMRS2[i-1] ="X"
                 }
                 else{
-                    Toast.makeText(this, "2-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("2-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -57,31 +67,31 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS3_i = "O"
+                    YMRSanswer.YMRS3[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS3_i ="1"
+                    YMRSanswer.YMRS3[i-1] ="1"
                 }
                 else{
-                    Toast.makeText(this, "3-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("3-$i 항목에 응답해 주세요.")
                 }
             }
 
-            var YMRS4_1_num = YMRS4_1_num.text.toString()
-            if (YMRS4_1_num.length == 0){
-                Toast.makeText(this, "4-1 항목에 응답해 주세요", Toast.LENGTH_SHORT).show()
+            YMRSanswer.YMRS4[0] = YMRS4_1_num.text.toString()
+            if (YMRSanswer.YMRS4[0].length == 0){
+                makeToast("4-1 항목에 응답해 주세요")
             }
 
 
 
             if (YMRS4_2_yes.isChecked){
-                var YMRS4_2 = "O"
+                YMRSanswer.YMRS4[1] = "O"
             }
             else if (YMRS4_2_no.isChecked){
-                var YMRS4_2 = "X"
+                YMRSanswer.YMRS4[1] = "X"
             }
             else {
-                Toast.makeText(this, "4-2 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("4-2 항목에 응답해 주세요.")
             }
 
             for (i in 1..4) {
@@ -91,13 +101,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS5_i = "O"
+                    YMRSanswer.YMRS5[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS5_i ="1"
+                    YMRSanswer.YMRS5[i-1] ="X."
                 }
                 else{
-                    Toast.makeText(this, "5-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("5-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -108,13 +118,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS6_i = "O"
+                    YMRSanswer.YMRS6[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS6_i ="1"
+                    YMRSanswer.YMRS6[i-1] ="1"
                 }
                 else{
-                    Toast.makeText(this, "6-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("6-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -125,13 +135,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS7_i = "O"
+                    YMRSanswer.YMRS7[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS7_i ="1"
+                    YMRSanswer.YMRS7[i-1] ="X."
                 }
                 else{
-                    Toast.makeText(this, "7-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("7-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -143,13 +153,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS8_i = "O"
+                    YMRSanswer.YMRS8[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS8_i ="1"
+                    YMRSanswer.YMRS8[i-1] ="X."
                 }
                 else{
-                    Toast.makeText(this, "8-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("8-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -163,13 +173,13 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS9_i = "O"
+                    YMRSanswer.YMRS9[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS9_i ="1"
+                    YMRSanswer.YMRS9[i-1] ="X."
                 }
                 else{
-                    Toast.makeText(this, "9-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("9-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -181,29 +191,41 @@ class Survey_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    var YMRS10_i = "O"
+                    YMRSanswer.YMRS10[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    var YMRS10_i ="1"
+                    YMRSanswer.YMRS10[i-1] ="X."
                 }
                 else{
-                    Toast.makeText(this, "10-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("10-$i 항목에 응답해 주세요.")
                 }
             }
 
 
             if (YMRS11_yes.isChecked){
-                var YMRS11 = "O"
+                YMRSanswer.YMRS11 = "O"
             }
             else if (YMRS11_no.isChecked){
-                var YMRS11 = "X"
+                YMRSanswer.YMRS11 = "X"
             }
             else {
-                Toast.makeText(this, "11번 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("11번 항목에 응답해 주세요.")
             }
 
             Toast.makeText(this,"저장되었습니다.", Toast.LENGTH_SHORT).show()
         })
 
+        two_YMRS_Next_btn.setOnClickListener({
+            var intent1 = Intent(this, PHQ9_2and3yearActivity::class.java)
+            startActivity((intent1))
+        })
+
+    }
+
+
+
+    override fun onStop() {
+        super.onStop()
+        toast?.cancel()
     }
 }

@@ -1,0 +1,3048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Whoqol_3yearActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/widget"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:text="@string/WHOQOL"
+                android:fontFamily="@font/godo"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/black"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1. 당신은 당신의 삶의 질을 어떻게\n평가하겠습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/Hamilton1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ1_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ1_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2. 당신은 당신의 건강상태에 대해\n얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ2_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ2_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="3. 당신은 (신체적)통증으로 인해\n당신이 해야 할 일들을\n어느 정도 방해를 받는다고 느낍니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ3_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ3_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="4. 당신은 일상생활을 잘 하기 위해\n얼마나 치료가 필요합니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ4_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ4_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ4_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ4_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="5. 당신은 인생을 얼마나 즐기십니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ5_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="6. 당신은 당신의 삶이 어느 정도 \n의미있다고 느낍니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="7. 당신은 얼마나 잘 정신을 집중할 수 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ7_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ7_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ7_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ7_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ7_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline11"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="8. 당신은 일상생활에서 얼마나\n안전하다고 느낍니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ8_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ8_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ8_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ8_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ8_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline12"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="9. 당신은 얼마나 건강에 좋은 주거환경에\n살고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ9_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ9_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ9_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ9_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ9_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline13"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="10. 당신은 일상생활을 위한 에너지를\n충분히 가지고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ10_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ10_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ10_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ10_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ10_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="11. 당신의 신체적 외모에 만족합니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ11_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ11_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ11_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ11_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ11_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline15"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="12. 당신은 당신의 필요를 만족시킬 수 있는\n충분한 돈을 가지고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ12_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ12_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline16"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="13. 당신은 매일매일의 삶에서 당신이\n필요로하는 정보를 얼마나 쉽게\n구할 수 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="19sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ13_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ13_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline17"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline17"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="14. 당신은 레저(여가)활동을 위한\n기회를 어느 정도 가지고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline18"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline18"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="15. 당신은 얼마나 잘 돌아다닐 수 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ15_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ15_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ15_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline19"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline19"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="16. 당신은 당신의 수면(잘 자는 것)에\n대해 얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ16_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ16_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ16_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ16_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ16_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline20"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline20"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="17. 당신은 일상생활의 활동을 수행하는\n당신의 능력에 대해 얼마나\n만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ17_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ17_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ17_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ17_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ17_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline21"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline21"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="18. 당신은 당신의 일할 수 있는 능력에\n대해 얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ18_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ18_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ18_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ18_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ18_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline22"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline22"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="19. 당신은 당신 스스로에게 얼마나\n만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ19_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ19_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ19_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ19_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ19_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline23"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline23"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="20. 당신은 당신의 개인적 대인관계에 대해\n얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ20_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ20_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ20_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ20_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ20_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline24"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="21. 당신은 당신의 성생활에 대해\n얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ21_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ21_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ21_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ21_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ21_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline25"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline25"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="22. 당신은 당신의 친구로부터 받고있는\n도움에 대해 얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ22_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ22_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ22_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ22_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ22_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline26"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline26"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="23. 당신은 당신이 살고있는 장소의\n상태에 대해 얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ23_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ23_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ23_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ23_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ23_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline27"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline27"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="24. 당신은 의료서비스를 쉽게 받을 수\n있다는 점에 얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ24_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ24_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ24_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ24_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ24_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline28"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline28"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="25. 당신은 당신이 사용하는 교통수단에\n대해 얼마나 만족하고 있습니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ25_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ25_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ25_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ25_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ25_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline29"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline29"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="26. 당신은 침울한 기분, 절망, 불안,\n우울감과 같은 부정적인 감정을\n얼마나 자주 느낍니까?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/godo"
+                android:textSize="20sp"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/WHOQ26_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:paddingVertical="30dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/One" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ26_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Two" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ26_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:textColor="@color/black"
+                    android:theme="@style/Three" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ26_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:textColor="@color/black"
+                    android:theme="@style/Four" />
+
+                <RadioButton
+                    android:id="@+id/WHOQ26_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    android:textColor="@color/black"
+                    android:theme="@style/Five" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="전혀 그렇지 않다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline30"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/godo"
+                    android:text="아주 그렇다."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.90"
+                    app:layout_constraintStart_toStartOf="@+id/guideline30"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginVertical="10dp"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:id="@+id/whoqolSave_btn"
+                    android:text="저장"
+                    android:fontFamily="@font/godo"
+                    android:textSize="20sp"
+                    android:background="@color/main_background"
+                    />
+
+                <Button
+                    android:id="@+id/whoqolNext_btn"
+                    android:layout_width="50sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/투명"
+                    android:drawableLeft="@drawable/arrow"
+                    android:gravity="center" />
+
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

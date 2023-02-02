@@ -19,6 +19,31 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="One">
+        <item name="colorAccent">@color/one</item>
+        <item name="colorControlNormal">@color/circle</item>
+    </style>
+
+    <style name="Two">
+        <item name="colorAccent">@color/two</item>
+        <item name="colorControlNormal">@color/circle</item>
+    </style>
+
+    <style name="Three">
+        <item name="colorAccent">@color/three</item>
+        <item name="colorControlNormal">@color/circle</item>
+    </style>
+
+    <style name="Four">
+        <item name="colorAccent">@color/four</item>
+        <item name="colorControlNormal">@color/circle</item>
+    </style>
+
+    <style name="Five">
+        <item name="colorAccent">@color/five</item>
+        <item name="colorControlNormal">@color/circle</item>
+    </style>
+
     <style name="Theme.First.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.First.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Survey_2yearActivity">
+    tools:context=".Activity.YMRS_2yearActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -2575,6 +2575,14 @@
             </TableRow>
             </TableLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginVertical="10dp"
+            >
+
             <Button
                 android:id="@+id/two_YMRS_save"
                 android:layout_width="wrap_content"
@@ -2586,7 +2594,16 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/godo"
                 android:layout_gravity="right"/>
-
+            <Button
+                android:id="@+id/two_YMRS_Next_btn"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginStart="15dp"
+                android:background="@color/투명"
+                android:drawableLeft="@drawable/arrow"
+                android:gravity="center" />
+        </LinearLayout>
 
 
 

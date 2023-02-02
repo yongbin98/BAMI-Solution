@@ -3,273 +3,280 @@ package com.example.patient_app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.DatePicker
 import android.widget.Toast
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_survey1.*
 
 class Survey_1Activity : AppCompatActivity() {
+    private var toast: Toast? = null
+    private fun makeToast(message: String){
+        try{
+            toast?.cancel()
+            toast = Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT)
+            toast?.show()
+        }catch (e: java.lang.Exception){
+            e.printStackTrace()
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_survey1)
 
         save_btn.setOnClickListener({
 
-            var day: Int = birth.dayOfMonth
-            var month: Int = birth.month
-            var year: Int = birth.year
-            var gender: String
+            BasicInfo.day =birth.dayOfMonth
+            BasicInfo.month = birth.month
+            BasicInfo.year = birth.year
 
             if (gender_male.isChecked){
-                var gender = "남"
+                BasicInfo.gender = "남"
             }
             else if(gender_female.isChecked){
-                var gender = "여"
+                BasicInfo.gender = "여"
             }
             else{
-                Toast.makeText(this, "성별을 선택하세요.", Toast.LENGTH_SHORT).show()
+                makeToast("성별을 선택하세요.")
             }
 
-            var height = height.text.toString()
-            if (height.length == 0){
-                Toast.makeText(this, "키를 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.height = height.text.toString()
+            if (BasicInfo.height.length == 0){
+                makeToast("키를 입력하세요.")
             }
 
-            var weight = weight.text.toString()
-            if (weight.length == 0){
-                Toast.makeText(this, "몸무게를 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.weight = weight.text.toString()
+            if (BasicInfo.weight.length == 0){
+                makeToast("몸무게를 입력하세요.")
             }
 
             if (alcohol_no.isChecked){
-                var alcohol = "X"
+                BasicInfo.alcohol = "X"
             }
             else if(alcohol_yes.isChecked){
-                var alcohol = "O"
+                BasicInfo.alcohol = "O"
             }
             else{
-                Toast.makeText(this, "음주 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("음주 상태를 선택해주세요.")
             }
 
-            var alcohol_num = alcohol_num.text.toString()
-            if (alcohol_num.length == 0){
-                Toast.makeText(this, "음주 횟수를 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.alcohol_num = alcohol_num.text.toString()
+            if (BasicInfo.alcohol_num.length == 0){
+                makeToast("음주 횟수를 입력하세요.")
             }
 
             if (alcohol_treat_no.isChecked){
-                var alcohol_treat = "X"
+                BasicInfo.alcohol_treat = "X"
             }
             else if(alcohol_treat_yes.isChecked){
-                var alcohol = "O"
+                BasicInfo.alcohol_treat = "O"
             }
             else{
-                Toast.makeText(this, "음주 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("음주 치료 여부를 선택해주세요.")
             }
 
 
             if (smoking_no.isChecked){
-                var smoking = "X"
+                BasicInfo.smoking = "X"
             }
             else if(smoking_yes.isChecked){
-                var smoking = "O"
+                BasicInfo.smoking = "O"
             }
             else{
-                Toast.makeText(this, "흡연 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("흡연 상태를 선택해주세요.")
             }
 
-            var smoking_num = smoking_num.text.toString()
-            if (smoking_num.length == 0){
-                Toast.makeText(this, "흡연 횟수를 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.smoking_num = smoking_num.text.toString()
+            if (BasicInfo.smoking_num.length == 0){
+                makeToast("흡연 횟수를 입력하세요.")
             }
 
             if (smoking_treat_no.isChecked){
-                var smoking_treat = "X"
+                BasicInfo.smoking_treat = "X"
             }
             else if(smoking_treat_yes.isChecked){
-                var
-                        smoking_treat = "O"
+                BasicInfo.smoking_treat = "O"
             }
             else{
-                Toast.makeText(this, "흡연 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("흡연 치료 여부를 선택해주세요.")
             }
 
 
             if (exercise_no.isChecked){
-                var smoking = "X"
+                BasicInfo.smoking = "X"
             }
             else if(exercise_yes.isChecked){
-                var smoking = "O"
+                BasicInfo.smoking = "O"
             }
             else{
-                Toast.makeText(this, "운동 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("운동 상태를 선택해주세요.")
             }
 
-            var exercise_num = exercise_num.text.toString()
-            if (exercise_num.length == 0){
-                Toast.makeText(this, "운동 횟수를 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.exercise_num = exercise_num.text.toString()
+            if (BasicInfo.exercise_num.length == 0){
+                makeToast("운동 횟수를 입력하세요.")
             }
 
             if (exercise_treat_no.isChecked){
-                var exercise_treat = "X"
+                BasicInfo.exercise_treat = "X"
             }
             else if(exercise_treat_yes.isChecked){
-                var exercise_treat = "O"
+                BasicInfo.exercise_treat = "O"
             }
             else{
-                Toast.makeText(this, "운동 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("운동 치료 여부를 선택해주세요.")
             }
 
             if (depressed_no.isChecked){
-                var depressed = "X"
+                BasicInfo.depressed = "X"
             }
             else if(exercise_yes.isChecked){
-                var depressed = "O"
+                BasicInfo.depressed = "O"
             }
             else{
-                Toast.makeText(this, "우울 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("우울 상태를 선택해주세요.")
             }
 
-            var depressed_num = depressed_num.text.toString()
-            if (depressed_num.length == 0){
-                Toast.makeText(this, "우울 지속 기간을 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.depressed_num = depressed_num.text.toString()
+            if (BasicInfo.depressed_num.length == 0){
+                makeToast("우울 지속 기간을 입력하세요.")
             }
 
             if (depressed_treat_no.isChecked){
-                var depressed_treat = "X"
+                BasicInfo.depressed_treat = "X"
             }
             else if(depressed_treat_yes.isChecked){
-                var depressed_treat = "O"
+                BasicInfo.depressed_treat = "O"
             }
             else{
-                Toast.makeText(this, "우울 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("우울 치료 여부를 선택해주세요.")
             }
 
 
             if (unrest_no.isChecked){
-                var depressed = "X"
+                BasicInfo.unrest = "X"
             }
             else if(unrest_yes.isChecked){
-                var depressed = "O"
+                BasicInfo.unrest = "O"
             }
             else{
-                Toast.makeText(this, "불안 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("불안 상태를 선택해주세요.")
             }
 
-            var unrest_num = unrest_num.text.toString()
-            if (unrest_num.length == 0){
-                Toast.makeText(this, "불안 지속 기간을 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.unrest_num = unrest_num.text.toString()
+            if (BasicInfo.unrest_num.length == 0){
+                makeToast("불안 지속 기간을 입력하세요.")
             }
 
             if (unrest_treat_no.isChecked){
-                var unrest_treat = "X"
+                BasicInfo.unrest_treat = "X"
             }
             else if(unrest_treat_yes.isChecked){
-                var unrest_treat = "O"
+                BasicInfo.unrest_treat = "O"
             }
             else{
-                Toast.makeText(this, "불안 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("불안 치료 여부를 선택해주세요.")
             }
 
             if (hypertension_no.isChecked){
-                var depressed = "X"
+                BasicInfo.hypertension = "X"
             }
             else if(hypertension_yes.isChecked){
-                var depressed = "O"
+                BasicInfo.hypertension = "O"
             }
             else{
-                Toast.makeText(this, "고혈압 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("고혈압 상태를 선택해주세요.")
             }
 
-            var hypertension_num = hypertension_num.text.toString()
-            if (hypertension_num.length == 0){
-                Toast.makeText(this, "고혈압 지속 기간을 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.hypertension_num = hypertension_num.text.toString()
+            if (BasicInfo.hypertension_num.length == 0){
+                makeToast("고혈압 지속 기간을 입력하세요.")
             }
 
             if (hypertension_treat_no.isChecked){
-                var hypertension_treat = "X"
+                BasicInfo.hypertension_treat = "X"
             }
             else if(hypertension_treat_yes.isChecked){
-                var unrest_treat = "O"
+                BasicInfo.hypertension_treat = "O"
             }
             else{
-                Toast.makeText(this, "고혈압 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("고혈압 치료 여부를 선택해주세요.")
             }
 
 
             if (diabetes_no.isChecked){
-                var diabetes = "X"
+                BasicInfo.diabetes = "X"
             }
             else if(diabetes_yes.isChecked){
-                var diabetes = "O"
+                BasicInfo.diabetes = "O"
             }
             else{
-                Toast.makeText(this, "당뇨 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("당뇨 상태를 선택해주세요.")
             }
 
-            var diabetes_num = diabetes_num.text.toString()
-            if (diabetes_num.length == 0){
-                Toast.makeText(this, "당뇨 지속 기간을 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.diabetes_num = diabetes_num.text.toString()
+            if (BasicInfo.diabetes_num.length == 0){
+                makeToast("당뇨 지속 기간을 입력하세요.")
             }
 
             if (diabetes_treat_no.isChecked){
-                var diabetes_treat = "X"
+                BasicInfo.diabetes_treat = "X"
             }
             else if(diabetes_treat_yes.isChecked){
-                var diabetes_treat = "O"
+                BasicInfo.diabetes_treat = "O"
             }
             else{
-                Toast.makeText(this, "당뇨 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("당뇨 치료 여부를 선택해주세요.")
             }
 
 
             if (mental_no.isChecked){
-                var mental = "X"
+                BasicInfo.mental = "X"
             }
             else if(mental_yes.isChecked){
-                var mental = "O"
+                BasicInfo.mental = "O"
             }
             else{
-                Toast.makeText(this, "정신질환 상태를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("정신질환 상태를 선택해주세요.")
             }
 
-            var mental_num = mental_num.text.toString()
-            if (mental_num.length == 0){
-                Toast.makeText(this, "정신질환 지속 기간을 입력하세요.", Toast.LENGTH_SHORT).show()
+            BasicInfo.mental_num = mental_num.text.toString()
+            if (BasicInfo.mental_num.length == 0){
+                makeToast("정신질환 지속 기간을 입력하세요.")
             }
 
             if (mental_treat_no.isChecked){
-                var mental_treat = "X"
+                BasicInfo.mental_treat = "X"
             }
             else if(mental_treat_yes.isChecked){
-                var mental_treat = "O"
+                BasicInfo.mental_treat = "O"
             }
             else{
-                Toast.makeText(this, "정신질환 치료 여부를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("정신질환 치료 여부를 선택해주세요.")
             }
 
-            Toast.makeText(this, "저장완료", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"저장완료",Toast.LENGTH_SHORT).show()
 
         })
 
         next_btn.setOnClickListener({
             if (two.isChecked){
-                var intent1 = Intent(this, Survey_2yearActivity::class.java)
+                var intent1 = Intent(this, YMRS_2yearActivity::class.java)
                 startActivity((intent1))
             }
             else if (three.isChecked){
-                var intent2 = Intent(this, Survey_3yearActivity::class.java)
+                var intent2 = Intent(this, Whoqol_3yearActivity::class.java)
                 startActivity((intent2))
             }
             else{
-                Toast.makeText(this, "치료 기간을 선택해주세요.", Toast.LENGTH_SHORT).show()
+                makeToast("치료 기간을 선택해주세요.")
             }
         })
 
-
-
         }
 
-
-
-
-
+    override fun onStop() {
+        super.onStop()
+        toast?.cancel()
+    }
     }

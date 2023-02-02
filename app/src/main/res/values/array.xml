@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="PHQ">
+        <item>▼ 선택</item>
+        <item>거의 매일</item>
+        <item>7일 이상</item>
+        <item>2,3일 이상</item>
+        <item>없음</item>
+    </string-array>
+
+    <string-array name="GAD">
+        <item>▼ 선택</item>
+        <item>전혀 방해 받지 않았다.</item>
+        <item>며칠 동안 방해 받았다.</item>
+        <item>7일 이상 방해 받았다.</item>
+        <item>거의 매일 방해 받았다.</item>
+    </string-array>
+</resources>

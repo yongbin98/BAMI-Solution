@@ -2,16 +2,26 @@ package com.example.patient_app.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.DatePicker
 import android.widget.RadioButton
 import android.widget.Toast
 import com.example.patient_app.R
-import kotlinx.android.synthetic.main.activity_survey3year.*
+import kotlinx.android.synthetic.main.activity_mars3year.*
+import kotlinx.android.synthetic.main.activity_mars3year.*
 
-class Survey_3yearActivity : AppCompatActivity() {
+class MARS_3yearActivity : AppCompatActivity() {
+    private var toast: Toast? = null
+    private fun makeToast(message: String){
+        try{
+            toast?.cancel()
+            toast = Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT)
+            toast?.show()
+        }catch (e: java.lang.Exception){
+            e.printStackTrace()
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_survey3year)
+        setContentView(R.layout.activity_mars3year)
 
         val Nolist = mutableListOf(1,2,3,4,5,6,9,10)
         val Yeslist = mutableListOf(7,8)
@@ -31,7 +41,7 @@ class Survey_3yearActivity : AppCompatActivity() {
                     MARSscore++
                 }
                 else{
-                    Toast.makeText(this, "1-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("1-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -48,7 +58,7 @@ class Survey_3yearActivity : AppCompatActivity() {
                     MARSscore=MARSscore
                 }
                 else{
-                    Toast.makeText(this, "1-$i 항목에 응답해 주세요.", Toast.LENGTH_SHORT).show()
+                    makeToast("1-$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -59,26 +69,10 @@ class Survey_3yearActivity : AppCompatActivity() {
 
 
         })
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    override fun onStop() {
+        super.onStop()
+        toast?.cancel()
     }
 }
