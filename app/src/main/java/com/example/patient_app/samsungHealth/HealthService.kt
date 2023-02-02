@@ -82,6 +82,8 @@ object HealthService {
     private val mHeartRateObserver = object : HeartRate.HeartRateObserver{
         override fun onChanged(count: Float) {
             Log.i(TAG,"Heartrate : $count")
+
+
         }
     }
 }
