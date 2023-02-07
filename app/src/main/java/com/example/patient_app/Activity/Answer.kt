@@ -57,17 +57,17 @@ class BasicInfo {
 
 class YMRSanswer{
     companion object{
-        var YMRS1 = arrayOf("X","X","X","X","X")
-        var YMRS2 = arrayOf("X","X","X","X")
-        var YMRS3 = arrayOf("X","X","X")
-        var YMRS4 = arrayOf("","X")
-        var YMRS5 = arrayOf("X","X","X","X")
-        var YMRS6 = arrayOf("X","X","X","X")
-        var YMRS7 = arrayOf("X","X","X","X","X","X")
-        var YMRS8 = arrayOf("X","X","X","X","X","X","X","X","X","X")
-        var YMRS9 = arrayOf("X","X","X","X")
-        var YMRS10 = arrayOf("X","X","X","X","X")
-        var YMRS11 = "X"
+        var YMRS1 = arrayOf("","","","","")
+        var YMRS2 = arrayOf("","","","")
+        var YMRS3 = arrayOf("","","")
+        var YMRS4 = arrayOf("","")
+        var YMRS5 = arrayOf("","","","")
+        var YMRS6 = arrayOf("","","","")
+        var YMRS7 = arrayOf("","","","","","")
+        var YMRS8 = arrayOf("","","","","","","","","","")
+        var YMRS9 = arrayOf("","","","")
+        var YMRS10 = arrayOf("","","","","")
+        var YMRS11 = ""
     }
 }
 
@@ -99,15 +99,20 @@ class GADanswer{
 
 class Insomnia{
     companion object{
-        var insomnia1_1 = 1
-        var insomnia1_2 = 1
-        var insomnia1_3 = 1
-        var insomnia2 = 1
-        var insomnia3 = 1
-        var insomnia4 = 1
-        var insomnia5 = 1
+        var insomnia1 = arrayOf("","","")
+        var insomnia2345 = arrayOf("","","","")
     }
+}
 
+class Stress{
+    companion object{
+        var stress = arrayOf("","","","","","","","","")
+    }
+}
 
+class VAS{
+    companion object{
+        var vas = arrayOf("","","","","")
+    }
 }
 

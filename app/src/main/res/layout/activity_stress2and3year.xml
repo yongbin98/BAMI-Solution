@@ -184,7 +184,7 @@
             android:theme="@style/One" />
 
         <RadioButton
-            android:id="@+id/stress_2"
+            android:id="@+id/stress2_2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
@@ -194,7 +194,7 @@
             android:theme="@style/Two" />
 
         <RadioButton
-            android:id="@+id/stress_3"
+            android:id="@+id/stress2_3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
@@ -204,7 +204,7 @@
             android:theme="@style/Three" />
 
         <RadioButton
-            android:id="@+id/stress_4"
+            android:id="@+id/stress2_4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="30dp"
@@ -214,7 +214,7 @@
             android:theme="@style/Four" />
 
         <RadioButton
-            android:id="@+id/stress_5"
+            android:id="@+id/stress2_5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:scaleX="3"

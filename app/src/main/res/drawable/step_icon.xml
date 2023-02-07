@@ -2,9 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@drawable/location"
-        android:width="35dp"
-        android:height="35dp"
-        />
+        android:drawable="@drawable/step"
+        android:width="50dp"
+        android:height="40dp"/>
 
 </layer-list>

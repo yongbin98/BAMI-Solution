@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Patient_APP"
 include ':app'
-include ':patient_app_watch'

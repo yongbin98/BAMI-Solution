@@ -1357,7 +1357,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:text="*모든 설문에서 "
+                android:text="*모든 설문에서 반드시 저장을 해주세요."
+                android:fontFamily="@font/godo"
+                android:textColor="@color/circle"
+                android:layout_marginStart="15dp"
 
                 />
 

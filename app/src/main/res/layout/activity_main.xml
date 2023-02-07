@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.602" />
+        app:layout_constraintVertical_bias="0.508" />
 
     <TextView
         android:id="@+id/weather"
@@ -50,7 +50,7 @@
         android:text="기온"
         android:textColor="@color/black"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/heart"
+        app:layout_constraintBottom_toTopOf="@+id/heart_icon"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/widget"
         app:layout_constraintTop_toTopOf="@+id/widget"
@@ -60,17 +60,19 @@
         android:id="@+id/local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:drawableLeft="@drawable/location_icon"
+        android:drawableTint="@color/gray"
         android:fontFamily="@font/godo"
         android:gravity="center"
         android:text="주소"
-        android:textColor="@color/black"
+        android:textColor="@color/gray"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintBottom_toBottomOf="@+id/widget"
         app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/widget"
-        app:layout_constraintTop_toBottomOf="@+id/weather" />
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/date"
@@ -81,22 +83,37 @@
         android:text="----년 -월 -일"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/heart"
+        app:layout_constraintBottom_toBottomOf="@+id/widget"
         app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/widget"
-        app:layout_constraintTop_toBottomOf="@+id/local" />
+        app:layout_constraintTop_toTopOf="@+id/widget"
+        app:layout_constraintVertical_bias="0.28" />
 
     <TextView
-        android:id="@+id/heart"
+        android:id="@+id/step_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/step_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/widget"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="@+id/widget"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <TextView
+        android:id="@+id/heart_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/heart_icon"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/widget"
-        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/widget"
         app:layout_constraintTop_toTopOf="@+id/widget"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.51" />
 
     <TextView
         android:id="@+id/rate"
@@ -104,13 +121,29 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/godo"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="@+id/widget"
+        android:text="-"
+        android:textColor="@color/blue"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toTopOf="@+id/bpm"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/widget"
-        app:layout_constraintTop_toTopOf="@+id/heart"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintTop_toBottomOf="@+id/heart_icon"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+    <TextView
+        android:id="@+id/step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@color/blue"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toTopOf="@+id/steps"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/step_icon" />
 
     <TextView
         android:id="@+id/bpm"
@@ -119,13 +152,29 @@
         android:fontFamily="@font/godo"
         android:gravity="center"
         android:text="bpm"
-        android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textColor="@color/단위"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toBottomOf="@+id/heart_icon"
+        app:layout_constraintVertical_bias="0.678" />
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="steps"
+        android:textColor="@color/단위"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/widget"
-        app:layout_constraintStart_toStartOf="@+id/widget"
-        app:layout_constraintTop_toBottomOf="@+id/rate"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/step_icon"
+        app:layout_constraintVertical_bias="0.698" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -162,6 +211,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
