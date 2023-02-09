@@ -1,5 +1,6 @@
 package com.example.patient_app.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -36,12 +37,14 @@ class MARS_3yearActivity : AppCompatActivity() {
 
                 if (radioButtonYes.isChecked){
                     MARSscore=MARSscore
+                    Mars.Mars[i-1] = "0점"
                 }
                 else if (radioButtonNo.isChecked){
                     MARSscore++
+                    Mars.Mars[i-1] = "1점"
                 }
                 else{
-                    makeToast("1-$i 항목에 응답해 주세요.")
+                    makeToast("$i 항목에 응답해 주세요.")
                 }
             }
 
@@ -53,23 +56,32 @@ class MARS_3yearActivity : AppCompatActivity() {
 
                 if (radioButtonYes.isChecked){
                     MARSscore++
+                    Mars.Mars[i-1] = "1점"
                 }
                 else if (radioButtonNo.isChecked){
                     MARSscore=MARSscore
+                    Mars.Mars[i-1] = "0점"
                 }
                 else{
-                    makeToast("1-$i 항목에 응답해 주세요.")
+                    makeToast("$i 항목에 응답해 주세요.")
                 }
             }
 
-            MARS_score.text = "총점  $MARSscore   "
+            Toast.makeText(this,"저장 완료",Toast.LENGTH_SHORT).show()
+
+            Mars.Score = "$MARSscore 점"
+        })
 
 
-
-
-
+        marsNext_btn.setOnClickListener({
+            var intent1 = Intent(this, Hamilton_3yearActivity::class.java)
+            startActivity((intent1))
         })
     }
+
+
+
+
 
     override fun onStop() {
         super.onStop()

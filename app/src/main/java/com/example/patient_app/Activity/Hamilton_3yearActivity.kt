@@ -31,7 +31,7 @@ class Hamilton_3yearActivity : AppCompatActivity() {
 
         hamiltonSave_btn.setOnClickListener({
 
-            for (i in 1..26) {
+            for (i in 1..21) {
                 val one = resources.getIdentifier("Hamilton$i"+"_1","id", packageName)
                 val two = resources.getIdentifier("Hamilton$i"+"_2","id", packageName)
                 val three = resources.getIdentifier("Hamilton$i"+"_3","id", packageName)
@@ -46,18 +46,23 @@ class Hamilton_3yearActivity : AppCompatActivity() {
 
                 if (radioButtonOne.isChecked){
                     hamilton_score1++
+                    Hamilton.hamilton[i-1] = "1"
                 }
                 else if (radioButtonTwo.isChecked){
                     hamilton_score2 = hamilton_score2+2
+                    Hamilton.hamilton[i-1] = "2"
                 }
                 else if (radioButtonThree.isChecked){
                     hamilton_score3 = hamilton_score3+3
+                    Hamilton.hamilton[i-1] = "3"
                 }
                 else if (radioButtonFour.isChecked){
                     hamilton_score4 = hamilton_score4+4
+                    Hamilton.hamilton[i-1] = "4"
                 }
                 else if (radioButtonFive.isChecked){
                     hamilton_score5 = hamilton_score5+5
+                    Hamilton.hamilton[i-1] = "5"
                 }
                 else{
                     makeToast("$i 번에 응답해 주세요.")
@@ -70,10 +75,10 @@ class Hamilton_3yearActivity : AppCompatActivity() {
 
         })
 
-//        hamiltonNext_btn.setOnClickListener({
-//            var intent1 = Intent(this, MARS_3yearActivity::class.java)
-//            startActivity((intent1))
-//        })
+        hamiltonNext_btn.setOnClickListener({
+            var intent1 = Intent(this, SSI_3yearActivity::class.java)
+            startActivity((intent1))
+        })
 
 
 

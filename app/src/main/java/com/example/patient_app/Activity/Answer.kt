@@ -116,3 +116,56 @@ class VAS{
     }
 }
 
+class WHOQ{
+    companion object{
+        var WHOQ = arrayOf("","","","","","","","","","","","","","","","","","","","","","","","","","")
+    }
+}
+
+class Mars{
+    companion object{
+        var Mars = arrayOf("","","","","","","","","","",)
+        var Score = ""
+    }
+}
+
+class Hamilton{
+    companion object{
+        var hamilton = arrayOf("","","","","","","","","","","","","","","","","","","","","")
+    }
+}
+
+class SSIanswer{
+    companion object{
+        var SSI1_ans = 0
+        var SSI2_ans = 0
+        var SSI3_ans = 0
+        var SSI4_ans = 0
+        var SSI5_ans = 0
+        var SSI6_ans = 0
+        var SSI7_ans = 0
+        var SSI8_ans = 0
+        var SSI9_ans = 0
+        var SSI10_ans = 0
+        var SSI11_ans = 0
+        var SSI12_ans = 0
+        var SSI13_ans = 0
+        var SSI14_ans = 0
+        var SSI15_ans = 0
+        var SSI16_ans = 0
+        var SSI17_ans = 0
+        var SSI18_ans = 0
+        var SSI19_ans = 0
+    }
+}
+
+
+class MainActivity_HR{
+    companion object{
+        var HR = ""
+        var Steps = ""
+    }
+
+
+}
+

@@ -22,11 +22,7 @@ class Whoqol_3yearActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_whoqol3year)
 
-        var score1=0
-        var score2=0
-        var score3=0
-        var score4=0
-        var score5=0
+
 
         whoqolSave_btn.setOnClickListener({
 
@@ -44,19 +40,19 @@ class Whoqol_3yearActivity : AppCompatActivity() {
                 val radioButtonFive = findViewById<RadioButton>(five)
 
                 if (radioButtonOne.isChecked){
-                    score1++
+                    WHOQ.WHOQ[i-1] = "1"
                 }
                 else if (radioButtonTwo.isChecked){
-                    score2 = score2+2
+                    WHOQ.WHOQ[i-1] = "2"
                 }
                 else if (radioButtonThree.isChecked){
-                    score3 = score3+3
+                    WHOQ.WHOQ[i-1] = "3"
                 }
                 else if (radioButtonFour.isChecked){
-                    score4 = score4+4
+                    WHOQ.WHOQ[i-1] = "4"
                 }
                 else if (radioButtonFive.isChecked){
-                    score5 = score5+5
+                    WHOQ.WHOQ[i-1] = "5"
                 }
                 else{
                     makeToast("$i 번에 응답해 주세요.")

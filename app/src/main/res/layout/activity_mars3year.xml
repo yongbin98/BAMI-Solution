@@ -554,17 +554,15 @@
                     android:background="@color/main_background"
                     />
 
-                <TextView
-                    android:id="@+id/MARS_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <Button
+                    android:id="@+id/marsNext_btn"
+                    android:layout_width="50sp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:gravity="center"
-                    android:text="총점  ______   "
-                    android:textSize="20sp"
-                    android:fontFamily="@font/godo"
-                    android:textColor="@color/단위"
-                    />
+                    android:layout_marginStart="15dp"
+                    android:background="@color/투명"
+                    android:drawableLeft="@drawable/arrow"
+                    android:gravity="center" />
 
 
             </LinearLayout>

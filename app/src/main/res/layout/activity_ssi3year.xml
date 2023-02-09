@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SSI_3yearActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/widget"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:text="@string/SSI"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/black"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="1. 살고 싶은 소망은?"
+        android:gravity="left"
+        android:layout_gravity="center"
+        android:fontFamily="@font/godo"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="2. 죽고 싶은 소망은?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="3. 살고 싶은 이유 / 죽고 싶은 이유는?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="4. 실제로 자살 시도를 하려는\n    욕구가 있는가?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="5. 별로 적극적이지 않고\n    수동적인 자살 욕구가 생길 때는?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="6. 자살하고 싶은 생각이나 소망이\n    얼마나 오랫동안 지속되는가?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="7. 얼마나 자주 자살하고 싶은 생각이 드나?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="8. 자살 생각이나 소망에 대한\n    당신의 태도는?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="9. 자살하고 싶은 충동을 통제할 수 있는가?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="10. 실제로 자살 시도를 하는 것에 대한\n     방해물이 있다면? (예: 가족, 종교,\n     다시 살 수 없다는 생각 등)"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="11. 자살에 대해 깊게 생각 해 본 이유는?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="12. 자살에 대해 깊게 생각 했을 때\n     구체적인 방법까지 계획했는가?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="13. 자살 방법을 깊게 생각했다면\n     그것이 얼마나 현실적으로 실현\n     가능하며, 또한 시도할 기회가 있다고\n     생각하나?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="14. 실제로 자살을 할 수 있는 능력이\n     있다고 생각하나?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="15. 정말로 자살 시도를 할 것이라고\n     확신하나?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="16. 자살에 대한 생각을 실행하기 위해\n     실제로 준비한 것이 있나?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="17. 자살하려는 글(유서)을 쓴 적이 있는가?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="18. 죽음을 예상하고 마지막으로\n     한 일은?(예: 보험, 유언 등)"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="19. 자살에 대한 생각을 다른 사람들에게\n     이야기한 적이 있습니까,\n     혹은 속이거나 숨겼습니까?"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/godo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:layout_marginStart="40dp"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:background="@drawable/spinner_custom"
+            android:id="@+id/SSI19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginVertical="10dp"
+            >
+
+            <Button
+                android:id="@+id/SSINext_btn"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginStart="15dp"
+                android:background="@color/투명"
+                android:drawableLeft="@drawable/arrow"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

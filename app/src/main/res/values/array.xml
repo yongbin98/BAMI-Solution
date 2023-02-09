@@ -15,4 +15,149 @@
         <item>7일 이상 방해 받았다.</item>
         <item>거의 매일 방해 받았다.</item>
     </string-array>
+
+    <string-array name="SSI1">
+        <item>▼ 선택</item>
+        <item>보통 혹은 많이 있다.</item>
+        <item>약간 있다.</item>
+        <item>전혀 없다.</item>
+    </string-array>
+
+    <string-array name="SSI2">
+        <item>▼ 선택</item>
+        <item>전혀 없다.</item>
+        <item>약간 있다.</item>
+        <item>보통 혹은 많이 있다.</item>
+    </string-array>
+
+    <string-array name="SSI3">
+        <item>▼ 선택</item>
+        <item>사는 것이 죽는 것보다 낫기 때문에</item>
+        <item>사는 것이나 죽는 것이나 마찬가지다.</item>
+        <item>죽는 것이 사는 것보다 낫기 때문에</item>
+    </string-array>
+
+    <string-array name="SSI4">
+        <item>▼ 선택</item>
+        <item>전혀 없다.</item>
+        <item>약간 있다.</item>
+        <item>보통 혹은 많이 있다.</item>
+    </string-array>
+
+    <string-array name="SSI5">
+        <item>▼ 선택</item>
+        <item>생명을 건지기 위해 필요한 조치를 미리 할 것이다.</item>
+        <item>삶과 죽음을 운명에 맡기겠다.</item>
+        <item>살기 위한 노력을 하지 않겠다.</item>
+    </string-array>
+
+    <string-array name="SSI6">
+        <item>▼ 선택</item>
+        <item>잠깐 그런 생각이 들다가 곧 사라진다.</item>
+        <item>한동안 그런 생각이 계속된다.</item>
+        <item>계속, 거의 항상 그런 생각이 지속된다.</item>
+    </string-array>
+
+    <string-array name="SSI7">
+        <item>▼ 선택</item>
+        <item>거의 그런 생각이 들지 않는다.</item>
+        <item>가끔 그런 생각이 든다.</item>
+        <item>그런 생각이 계속 지속된다.</item>
+    </string-array>
+
+    <string-array name="SSI8">
+        <item>▼ 선택</item>
+        <item>자살 생각이나 소망에 대한 당신의 태도는?</item>
+        <item>양가적이나 크게 개의치 않는다.</item>
+        <item>그런 생각을 받아들인다.</item>
+    </string-array>
+
+    <string-array name="SSI9">
+        <item>▼ 선택</item>
+        <item>충분히 통제할 수 있다.</item>
+        <item>통제할 수 있을지 확신 할 수 없다.</item>
+        <item>전혀 통제할 수 없을 것 같다.</item>
+    </string-array>
+
+    <string-array name="SSI10">
+        <item>▼ 선택</item>
+        <item>방해물 때문에 자살 시도를 하지 않을 것이다.</item>
+        <item>방해물 때문에 조금은 마음이 쓰인다.</item>
+        <item>방해물에 개의치 않는다.</item>
+    </string-array>
+
+    <string-array name="SSI11">
+        <item>▼ 선택</item>
+        <item>자살에 대해 생각해 본 적이 없다.</item>
+        <item>주변 사람들을 조종하기 위해서: 관심을 끌거나 보복하기 위해서</item>
+        <item>주변 사람들의 관심을 끌고 보복하거나, 현실 도피의 방법으로</item>
+        <item>현실 도피적인 문제해결 방법으로</item>
+    </string-array>
+
+    <string-array name="SSI12">
+        <item>▼ 선택</item>
+        <item>자살에 대해 생각해 본 적이 없다.</item>
+        <item>자살 생각을 했으나 구체적인 방법까지는 생각하지 않았다.</item>
+        <item>구체적인 방법을 자세하고 치밀하게 생각해 놓았다.</item>
+    </string-array>
+
+    <string-array name="SSI13">
+        <item>▼ 선택</item>
+        <item>방법도 현실적으로 실현 가능하지 않고, 기회도 없을 것이다.</item>
+        <item>방법이 시간과 노력이 필요하며, 기회가 쉽게 오지 않을 것이다.</item>
+        <item>생각한 방법이 현실적으로 실현 가능하며, 기회도 있을 것이다.</item>
+        <item>앞으로 기회나 방법이 생길 것 같다.</item>
+    </string-array>
+
+    <string-array name="SSI14">
+        <item>▼ 선택</item>
+        <item>용기가 없고 너무 약하고 두렵고 능력이 없어서 자살할 수 없다.</item>
+        <item>자살할 용기와 능력이 있는 지 확신할 수 없다.</item>
+        <item>자살 할 용기와 자신이 있다.</item>
+    </string-array>
+
+    <string-array name="SSI15">
+        <item>▼ 선택</item>
+        <item>전혀 그렇지 않다.</item>
+        <item>잘 모르겠다.</item>
+        <item>그렇다.</item>
+    </string-array>
+
+    <string-array name="SSI16">
+        <item>▼ 선택</item>
+        <item>없다.</item>
+        <item>부분적으로 했다.(예: 약을 사 모으기 시작함.)</item>
+        <item>완전하게 준비했다.(예: 약을 사 모았다.)</item>
+    </string-array>
+
+    <string-array name="SSI17">
+        <item>▼ 선택</item>
+        <item>없다.</item>
+        <item>쓰기 시작했으나 다 쓰지 못했다: 단지 쓰려고 생각했다.</item>
+        <item>다 써 놓았다.</item>
+    </string-array>
+
+    <string-array name="SSI18">
+        <item>▼ 선택</item>
+        <item>없다.</item>
+        <item>생각만 해 보았거나, 약간의 정리를 했다.</item>
+        <item>확실한 계획을 세웠거나 다 정리를 해 놓았다.</item>
+    </string-array>
+
+    <string-array name="SSI19">
+        <item>▼ 선택</item>
+        <item>자살에 대해 생각해 본 적이 없다.</item>
+        <item>다른 사람에게 터놓고 이야기하였다.</item>
+        <item>드러내는 것을 주저하다가 숨겼다.</item>
+        <item>그런 생각을 속이고, 숨겼다.</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
 </resources>

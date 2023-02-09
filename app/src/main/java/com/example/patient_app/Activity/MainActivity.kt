@@ -36,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (MainActivity_HR.HR != "")
+            rate.text = MainActivity_HR.HR
+
+        if (MainActivity_HR.Steps != "")
+            step.text = MainActivity_HR.Steps
+
         requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
 
 //        var deviceArray : Array<String> = emptyArray()
@@ -103,6 +109,8 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "HR : $HR , Stepcount : $StepCheck")
                 rate.text = HR.toInt().toString()
                 step.text = StepCheck.toString()
+                MainActivity_HR.HR = HR.toInt().toString()
+                MainActivity_HR.Steps = StepCheck.toInt().toString()
             }
 
 //        fun ShowList(Device:Array<String>, Address:Array<String>): Unit{

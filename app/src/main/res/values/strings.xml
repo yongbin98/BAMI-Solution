@@ -41,6 +41,7 @@
     <string name="PHQ">PHQ-9</string>
     <string name="GAD">GAD-7</string>
     <string name="insomnia">Insomnia</string>
+    <string name="SSI">SSI</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
