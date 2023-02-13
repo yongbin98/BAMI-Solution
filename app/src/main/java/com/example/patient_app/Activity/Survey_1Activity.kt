@@ -31,6 +31,7 @@ class Survey_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_survey1)
 
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
+        birth.updateDate(1990,1,1)
 
         val editor = sharedPreferences.edit()
 
@@ -82,7 +83,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.alcohol_num = alcohol_num.text.toString()
-            if (BasicInfo.alcohol_num.length == 0){
+            if (BasicInfo.alcohol_num.length == 0 && alcohol_yes.isChecked){
                 makeToast("음주 횟수를 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -114,7 +115,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.smoking_num = smoking_num.text.toString()
-            if (BasicInfo.smoking_num.length == 0){
+            if (BasicInfo.smoking_num.length == 0 && smoking_yes.isChecked){
                 makeToast("흡연 횟수를 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -134,10 +135,10 @@ class Survey_1Activity : AppCompatActivity() {
 
 
             if (exercise_no.isChecked){
-                BasicInfo.smoking = "X"
+                BasicInfo.exercise = "X"
             }
             else if(exercise_yes.isChecked){
-                BasicInfo.smoking = "O"
+                BasicInfo.exercise = "O"
             }
             else{
                 makeToast("운동 상태를 선택해주세요.")
@@ -146,7 +147,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.exercise_num = exercise_num.text.toString()
-            if (BasicInfo.exercise_num.length == 0){
+            if (BasicInfo.exercise_num.length == 0 && exercise_yes.isChecked){
                 makeToast("운동 횟수를 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -167,7 +168,7 @@ class Survey_1Activity : AppCompatActivity() {
             if (depressed_no.isChecked){
                 BasicInfo.depressed = "X"
             }
-            else if(exercise_yes.isChecked){
+            else if(depressed_yes.isChecked){
                 BasicInfo.depressed = "O"
             }
             else{
@@ -177,7 +178,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.depressed_num = depressed_num.text.toString()
-            if (BasicInfo.depressed_num.length == 0){
+            if (BasicInfo.depressed_num.length == 0 && depressed_yes.isChecked){
                 makeToast("우울 지속 기간을 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -209,7 +210,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.unrest_num = unrest_num.text.toString()
-            if (BasicInfo.unrest_num.length == 0){
+            if (BasicInfo.unrest_num.length == 0 && unrest_yes.isChecked){
                 makeToast("불안 지속 기간을 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -240,7 +241,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.hypertension_num = hypertension_num.text.toString()
-            if (BasicInfo.hypertension_num.length == 0){
+            if (BasicInfo.hypertension_num.length == 0 && hypertension_yes.isChecked){
                 makeToast("고혈압 지속 기간을 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -272,7 +273,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.diabetes_num = diabetes_num.text.toString()
-            if (BasicInfo.diabetes_num.length == 0){
+            if (BasicInfo.diabetes_num.length == 0 && diabetes_yes.isChecked){
                 makeToast("당뇨 지속 기간을 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()
@@ -304,7 +305,7 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             BasicInfo.mental_num = mental_num.text.toString()
-            if (BasicInfo.mental_num.length == 0){
+            if (BasicInfo.mental_num.length == 0 && mental_yes.isChecked){
                 makeToast("정신질환 지속 기간을 입력하세요.")
                 editor.putBoolean("isToastShown",true)
                 editor.apply()

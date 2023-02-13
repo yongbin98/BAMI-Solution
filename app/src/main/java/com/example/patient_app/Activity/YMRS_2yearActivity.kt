@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioButton
 import android.widget.Toast
 import com.example.patient_app.R
@@ -82,7 +83,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 val radioButtonNo = findViewById<RadioButton>(No)
 
                 if (radioButtonYes.isChecked){
-                    YMRSanswer.YMRS3[i-1] = "O"
+                    YMRSanswer.YMRS3[i-1] = "0"
                 }
                 else if (radioButtonNo.isChecked){
                     YMRSanswer.YMRS3[i-1] ="1"
@@ -125,7 +126,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
                     YMRSanswer.YMRS5[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    YMRSanswer.YMRS5[i-1] ="X."
+                    YMRSanswer.YMRS5[i-1] ="X"
                 }
                 else{
                     makeToast("5-$i 항목에 응답해 주세요.")
@@ -163,7 +164,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
                     YMRSanswer.YMRS7[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    YMRSanswer.YMRS7[i-1] ="X."
+                    YMRSanswer.YMRS7[i-1] ="X"
                 }
                 else{
                     makeToast("7-$i 항목에 응답해 주세요.")
@@ -183,7 +184,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
                     YMRSanswer.YMRS8[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    YMRSanswer.YMRS8[i-1] ="X."
+                    YMRSanswer.YMRS8[i-1] ="X"
                 }
                 else{
                     makeToast("8-$i 항목에 응답해 주세요.")
@@ -205,7 +206,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
                     YMRSanswer.YMRS9[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    YMRSanswer.YMRS9[i-1] ="X."
+                    YMRSanswer.YMRS9[i-1] ="X"
                 }
                 else{
                     makeToast("9-$i 항목에 응답해 주세요.")
@@ -225,7 +226,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
                     YMRSanswer.YMRS10[i-1] = "O"
                 }
                 else if (radioButtonNo.isChecked){
-                    YMRSanswer.YMRS10[i-1] ="X."
+                    YMRSanswer.YMRS10[i-1] ="X"
                 }
                 else{
                     makeToast("10-$i 항목에 응답해 주세요.")

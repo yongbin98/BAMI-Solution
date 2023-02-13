@@ -38,60 +38,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //취소 눌러서 뒤로 가도 삼성헬스 정보 남아있게
-
-//        var deviceArray : Array<String> = emptyArray()
-//        var deviceAddress : Array<String> = emptyArray()
-//
-////        BleService.scanDevices(this@MainActivity)
-////        BleService.scanResults.forEachIndexed{index, ScanResult ->
-////            if (index ==0){
-////                deviceArray=deviceArray.plus(ScanResult.device.name)
-////                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-////            else {deviceArray = deviceArray.plus(ScanResult.device.name)
-////                deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-////        }
-//        deviceArray = deviceArray.distinct().toTypedArray()
-//        deviceAddress = deviceAddress.distinct().toTypedArray()
-//
-//
-//
-//
-//        val negativeButtonClick = {dialogInterface: DialogInterface, i:Int ->
-//            Toast.makeText(this, "취소", Toast.LENGTH_SHORT).show()
-//        }
-//
-//        val ReloadButtonClick = {dialogInterface: DialogInterface, i :Int ->
-//            BleService.scanResults.forEachIndexed{index, ScanResult ->
-//                if (index ==0){
-//                    deviceArray=deviceArray.plus(ScanResult.device.name)
-//                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-//                else {deviceArray = deviceArray.plus(ScanResult.device.name)
-//                    deviceAddress=deviceAddress.plus(ScanResult.device.address)}
-//            }
-//            deviceArray = deviceArray.distinct().toTypedArray()
-//            deviceAddress = deviceAddress.distinct().toTypedArray()
-//        }
-
-
-//        btn_bluetooth.setOnClickListener {
-//            val ListBuilder = AlertDialog.Builder(this)
-//                .setTitle("기기목록")
-//                .setPositiveButtonIcon(getDrawable(R.drawable.reload_icon))
-//                .setPositiveButton("", ReloadButtonClick).setCancelable(false)
-//                .setItems(deviceArray) { dialog, which ->
-//                    BleService.scanResults.forEach {
-//                        if (it.device.address.contains(deviceAddress[which])) {
-//                            BleService.connect(this@MainActivity, it.device)
-//                            myCoroutinescope.launch {
-//                                BleService.isbleUpdated()
-//                                Toast.makeText(this@MainActivity, "연결 완료", Toast.LENGTH_SHORT).show()
-//                            }
-//                        }
-//                    }
-//                }.show()
-//        }
+        val utilDate = Date()
+        val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
+        date.text = formatType.format(utilDate)
+        var cutLocation: String
 
         btn_SamsungHealth.setOnClickListener {
             myCoroutinescope.launch {
@@ -103,13 +53,18 @@ class MainActivity : AppCompatActivity() {
                 HealthService.start(this@MainActivity)
                 val (HR, StepCheck) = HealthService.getHealthData()
                 Log.i(TAG, "HR : $HR , Stepcount : $StepCheck")
-                rate.text = HR.toInt().toString()
-                step.text = StepCheck.toString()
-                MainActivity_HR.HR = HR.toInt().toString()
-                MainActivity_HR.Steps = StepCheck.toInt().toString()
-                btn_SamsungHealth.visibility = Button.GONE
-                reload_btn.visibility = Button.VISIBLE
-
+                APIService.connect(this@MainActivity) {
+                    myCoroutinescope.launch {
+                        weatherScreen(it)
+                        rate.text = HR.toInt().toString()
+                        step.text = StepCheck.toString()
+                        MainActivity_HR.HR = HR.toInt().toString()
+                        MainActivity_HR.Steps = StepCheck.toInt().toString()
+                        btn_SamsungHealth.visibility = Button.GONE
+                        reload_btn.visibility = Button.VISIBLE
+                    }
+                    true
+                }
             }
 
             btn_Survey.setOnClickListener {
@@ -119,35 +74,21 @@ class MainActivity : AppCompatActivity() {
 
             reload_btn.setOnClickListener {
                 myCoroutinescope.launch {
-                    HealthService.connect(this@MainActivity) {
-                        Log.i(TAG, "Get Permission!!")
-                        true
-                    }
-                    Log.i(TAG, "START")
-                    HealthService.start(this@MainActivity)
+                    HealthService.updateHealthData(false)
                     val (HR, StepCheck) = HealthService.getHealthData()
                     Log.i(TAG, "HR : $HR , Stepcount : $StepCheck")
-                    rate.text = HR.toInt().toString()
-                    step.text = StepCheck.toString()
-                    MainActivity_HR.HR = HR.toInt().toString()
-                    MainActivity_HR.Steps = StepCheck.toInt().toString()
+                    APIService.connect(this@MainActivity) {
+                        myCoroutinescope.launch {
+                            weatherScreen(it)
+                            rate.text = HR.toInt().toString()
+                            step.text = StepCheck.toString()
+                            MainActivity_HR.HR = HR.toInt().toString()
+                            MainActivity_HR.Steps = StepCheck.toInt().toString()
+                        }
+                        true
+                    }
                 }
             }
-
-//        fun ShowList(Device:Array<String>, Address:Array<String>): Unit{
-//            val ListBuilder = AlertDialog.Builder(this)
-//                .setTitle("기기 목록")
-//                .setItems(Device){dialog,which->
-//                    Toast.makeText(this, "${Device[which]} 연결", Toast.LENGTH_SHORT).show()
-//                    BleService.scanResults.forEach {
-////                        if(it.device.address.contains(
-////                                //TODO("주소")
-////                        ))
-////                            BleService.connect(this@MainActivity,it.device)
-//                    }
-//                }
-//                .show()
-//        }
         }
 
 
@@ -156,109 +97,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.menu)
-
-        val utilDate = Date()
-        val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
-        date.text = formatType.format(utilDate)
-        var cutLocation: String
-
-        val sunImg = getDrawable(R.drawable.sun_icon)
-        val rainyImg = getDrawable(R.drawable.rainy_icon)
-        val rainsnowImg = getDrawable(R.drawable.rainsnow_icon)
-        val snowImg = getDrawable(R.drawable.snow_icon)
-        val cloudyImg = getDrawable(R.drawable.cloudy_icon)
-        val lessrainsnowImg = getDrawable(R.drawable.lessrainsnow_icon)
-        val snowstormImg = getDrawable(R.drawable.snowstorm_icon)
-
-        APIService.connect(this) {
-            myCoroutinescope.launch {
-                it.split('\n').let {
-                    it.forEachIndexed { index, text ->
-                        if (index == 0) {
-                            if (text.substring(7) == "0")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    sunImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "1")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    rainyImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "2")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    rainsnowImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "3")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    snowImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "4")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    rainyImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "5")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    cloudyImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "6")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    lessrainsnowImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                            else if (text.substring(7) == "7")
-                                weather.setCompoundDrawablesWithIntrinsicBounds(
-                                    snowstormImg,
-                                    null,
-                                    null,
-                                    null
-                                )
-                        }
-                        if (index == 1)
-                            weather.text = " " + text
-                        if (index == 2)
-                            local.text = text.substring(4)
-                        Log.i(TAG, "$text")
-                    }
-                }
-            }
-            true
-        }
-
-
-        // weather.text = callWeather
-
-        //local.text =
-
-
-//        btn1.setOnClickListener {
-//            Log.i(TAG, "btn1 On clicked")
-//        }
-//
-//        btn2.setOnClickListener {
-//            Log.i(TAG, "btn2 On clicked")
-//
-//        }
-
-
 
         if (MainActivity_HR.HR != "") {
             rate.text = MainActivity_HR.HR
@@ -302,6 +140,92 @@ class MainActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun weatherScreen(it : StringBuilder){
+        it.split('\n').let {
+            it.forEachIndexed { index, text ->
+                if (index == 0) {
+                    if (text.substring(7) == "0") {
+                        val sunImg = getDrawable(R.drawable.sun_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            sunImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "1") {
+                        val rainyImg = getDrawable(R.drawable.rainy_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            rainyImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "2") {
+                        val rainsnowImg = getDrawable(R.drawable.rainsnow_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            rainsnowImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "3") {
+                        val snowImg = getDrawable(R.drawable.snow_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            snowImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "4") {
+                        val rainyImg = getDrawable(R.drawable.rainy_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            rainyImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "5") {
+                        val cloudyImg = getDrawable(R.drawable.cloudy_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            cloudyImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "6") {
+                        val lessrainsnowImg = getDrawable(R.drawable.lessrainsnow_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            lessrainsnowImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                    else if (text.substring(7) == "7") {
+                        val snowstormImg = getDrawable(R.drawable.snowstorm_icon)
+                        weather.setCompoundDrawablesWithIntrinsicBounds(
+                            snowstormImg,
+                            null,
+                            null,
+                            null
+                        )
+                    }
+                }
+                if (index == 1)
+                    weather.text = " " + text
+                if (index == 2)
+                    local.text = text.substring(4)
+                Log.i(TAG, "$text")
+            }
+        }
     }
 }
 

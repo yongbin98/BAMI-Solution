@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Patient_APP</string>
+    <string name="app_name">BAMI Solution</string>
     <string name="btn_samsungHealth">Connect to Samsung Health</string>
     <string name="ai_wm">AI-WM</string>
     <string name="lab">LAB</string>

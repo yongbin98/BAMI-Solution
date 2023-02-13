@@ -108,7 +108,6 @@ object HealthService {
             var zip = HealthDataUtil.getStructuredDataList(count, HeartLiveData::class.java)
             var tmpiter = zip.iterator()
             var dateFormat = SimpleDateFormat("HH:mm:ss")
-            file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
             Log.i(TAG, "HR ByteArray Called")
 
             while(tmpiter.hasNext()){
@@ -139,28 +138,17 @@ object HealthService {
         var end_time = 0L
     }
 
-//    class StepLiveData {
-//        var count : Int = 0
-//        var calorie = 0F
-//        var distance = 0F
-//        var speed = 0F
-//        var start_time = 0L
-//        var end_time = 0L
-//    }
-
-    fun saveHealthData() {
+    fun updateHealthData(isSaved : Boolean){
         mHeartRateObserver.isChanged = false
         mStepCountObserver.isChanged = false
-        mReportHR.readHeartRateData(true)
-        mReportStep.readTodayStepCount(true)
+        mReportHR.readHeartRateData(isSaved)
+        mReportStep.readTodayStepCount(isSaved)
     }
 
     suspend fun getHealthData() : Pair<Float, Int>{
         while(!(mHeartRateObserver.isChanged && mStepCountObserver.isChanged))
             delay(1000)
 
-        mHeartRateObserver.isChanged = false
-        mStepCountObserver.isChanged = false
         return Pair(mHeartRateObserver.heartRate, mStepCountObserver.stepcount)
     }
 }

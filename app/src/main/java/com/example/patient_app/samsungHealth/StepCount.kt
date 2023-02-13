@@ -40,7 +40,7 @@ class StepCount {
             HealthConstants.StepCount.HEALTH_DATA_TYPE,
             mHealthDataObserver
         )
-        readTodayStepCount(true)
+        readTodayStepCount(false)
     }
 
     fun stop() {
@@ -54,7 +54,7 @@ class StepCount {
         lateinit var request : AggregateRequest
         if(isSaved){
             val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault()) + TimeUnit.DAYS.toMillis(1)
-            val startTime = endTime - TimeUnit.DAYS.toMillis(1)
+            val startTime = endTime - TimeUnit.DAYS.toMillis(2)
 
             request = AggregateRequest.Builder()
                 .setDataType(HealthConstants.StepCount.HEALTH_DATA_TYPE)

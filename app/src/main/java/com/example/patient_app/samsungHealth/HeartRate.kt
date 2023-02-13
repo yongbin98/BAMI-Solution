@@ -43,7 +43,7 @@ class HeartRate {
             HealthConstants.HeartRate.HEALTH_DATA_TYPE,
             mHealthDataObserver
         )
-        readHeartRateData(true)
+        readHeartRateData(false)
     }
 
     fun stop() {
@@ -56,7 +56,7 @@ class HeartRate {
 
         if(isSaved){
             val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault()) + TimeUnit.DAYS.toMillis(1)
-            val startTime = endTime - TimeUnit.DAYS.toMillis(1)
+            val startTime = endTime - TimeUnit.DAYS.toMillis(2)
 
             request = ReadRequest.Builder()
                 .setDataType(HealthConstants.HeartRate.HEALTH_DATA_TYPE)
@@ -87,6 +87,7 @@ class HeartRate {
                     readResult.use { result ->
                         val iterator: Iterator<HealthData> = result.iterator()
                         var file = File(FileType.startCharOf('H'))
+                        file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
                         while(isSaved) {
                             if (iterator.hasNext()) {
                                 val tmpIterator = iterator.next()
