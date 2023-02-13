@@ -10,7 +10,7 @@ class File(
 ) {
 
     companion object {
-        private const val FILE_PATH = "/data/data/com.example.Patient_APP/files"
+        private const val FILE_PATH = "/data/data/com.example.patient_app/files"
         var files = mutableListOf<File>()
     }
 

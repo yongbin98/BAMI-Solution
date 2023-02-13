@@ -4,13 +4,15 @@ import android.app.Activity
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import com.example.patient_app.bluetooth.BleService
+import com.example.patient_app.SFTP.File
+import com.example.patient_app.SFTP.FileType
 import com.samsung.android.sdk.healthdata.*
 import com.samsung.android.sdk.healthdata.HealthDataStore.ConnectionListener
 import kotlinx.coroutines.Delay
 import kotlinx.coroutines.delay
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 import kotlin.ByteArray
 import kotlin.Float
 import kotlin.Int
@@ -85,6 +87,16 @@ object HealthService {
         override fun onChanged(count: Int) {
             Log.i(TAG,"Step : $count")
             stepcount = count
+            Log.i(TAG, "Step Int Called")
+            isChanged = true
+        }
+
+        override fun onChanged(count: StringBuilder) {
+            var file = File(FileType.startCharOf('C'))
+            file.write("start_time(1min),step,kilocalories,distance(m),avg_speed(m/s)\n")
+            Log.i(TAG, "Step ByteArray Called")
+            file.write(count.toString())
+            file.close()
             isChanged = true
         }
     }
@@ -92,22 +104,34 @@ object HealthService {
     private val mHeartRateObserver = object : HeartRate.HeartRateObserver{
         var heartRate : Float = 0f
         var isChanged : Boolean = false
-        override fun onChanged(count: ByteArray){
-            var zip = getLiveData(count)
+        override fun onChanged(count: ByteArray, file : File){
+            var zip = HealthDataUtil.getStructuredDataList(count, HeartLiveData::class.java)
             var tmpiter = zip.iterator()
-            var i = 0
             var dateFormat = SimpleDateFormat("HH:mm:ss")
+            file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
+            Log.i(TAG, "HR ByteArray Called")
 
             while(tmpiter.hasNext()){
                 var tmpNext = tmpiter.next()
-                i++
+                file.write(tmpNext.heart_rate.toInt().toString()+',')
+                file.write(tmpNext.heart_rate_min.toInt().toString()+',')
+                file.write(tmpNext.heart_rate_max.toInt().toString()+',')
+                file.write(dateFormat.format(tmpNext.start_time).toString()+',')
+                file.write(dateFormat.format(tmpNext.end_time).toString()+"\n")
+                Log.i(TAG,"${dateFormat.format(tmpNext.start_time).toString()}!!")
             }
             isChanged = true
-            heartRate = zip.last().heart_rate
+
+        }
+
+        override fun onChanged(count: Float) {
+            Log.i(TAG, "HR Float Called")
+            heartRate = count
+            isChanged = true
         }
     }
 
-    class LiveData {
+    class HeartLiveData {
         var heart_rate = 0F
         var heart_rate_min = 0F
         var heart_rate_max = 0F
@@ -115,24 +139,28 @@ object HealthService {
         var end_time = 0L
     }
 
-    fun getLiveData(zip: ByteArray?): List<LiveData> {
-        // decompress ZIP
-        return HealthDataUtil.getStructuredDataList(
-            zip,
-            LiveData::class.java
-        )
-    }
+//    class StepLiveData {
+//        var count : Int = 0
+//        var calorie = 0F
+//        var distance = 0F
+//        var speed = 0F
+//        var start_time = 0L
+//        var end_time = 0L
+//    }
 
-    fun UpdateHealthData(){
-        mReportStep.read()
-        mReportHR.read()
+    fun saveHealthData() {
+        mHeartRateObserver.isChanged = false
+        mStepCountObserver.isChanged = false
+        mReportHR.readHeartRateData(true)
+        mReportStep.readTodayStepCount(true)
     }
 
     suspend fun getHealthData() : Pair<Float, Int>{
         while(!(mHeartRateObserver.isChanged && mStepCountObserver.isChanged))
             delay(1000)
 
+        mHeartRateObserver.isChanged = false
+        mStepCountObserver.isChanged = false
         return Pair(mHeartRateObserver.heartRate, mStepCountObserver.stepcount)
-
     }
 }

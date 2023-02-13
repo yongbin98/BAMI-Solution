@@ -15,11 +15,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.isInvisible
 import com.example.patient_app.R
 import com.example.patient_app.WeatherAPI.APIService
-import com.example.patient_app.bluetooth.BleService
-import com.example.patient_app.bluetooth.PERMISSIONS
-import com.example.patient_app.bluetooth.REQUEST_ALL_PERMISSION
 import com.example.patient_app.samsungHealth.HealthService
 import com.example.patient_app.samsungHealth.HeartRate
+import com.example.patient_app.samsungHealth.PERMISSIONS
+import com.example.patient_app.samsungHealth.REQUEST_ALL_PERMISSION
 import com.google.android.material.snackbar.Snackbar
 import com.samsung.android.sdk.healthdata.HealthConstants.StepCount
 import com.samsung.android.sdk.healthdata.HealthDataStore

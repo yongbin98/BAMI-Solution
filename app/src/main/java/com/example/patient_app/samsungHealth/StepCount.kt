@@ -27,7 +27,7 @@ class StepCount {
             // Update the step count when a change event is received
             override fun onChange(dataTypeName: String) {
                 Log.d(TAG, "Observer receives a step data changed event")
-                readTodayStepCount()
+                readTodayStepCount(false)
             }
         }
     }
@@ -40,11 +40,7 @@ class StepCount {
             HealthConstants.StepCount.HEALTH_DATA_TYPE,
             mHealthDataObserver
         )
-        readTodayStepCount()
-    }
-
-    fun read(){
-        readTodayStepCount()
+        readTodayStepCount(true)
     }
 
     fun stop() {
@@ -53,28 +49,70 @@ class StepCount {
     }
 
     // Read the today's step count on demand
-    private fun readTodayStepCount() {
+    fun readTodayStepCount(isSaved : Boolean) {
         // Set time range from start time of today to the current time
-        val startTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault())
-        val endTime = startTime + TimeUnit.DAYS.toMillis(1)
+        lateinit var request : AggregateRequest
+        if(isSaved){
+            val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault()) + TimeUnit.DAYS.toMillis(1)
+            val startTime = endTime - TimeUnit.DAYS.toMillis(1)
 
-        val request = AggregateRequest.Builder()
-            .setDataType(HealthConstants.StepCount.HEALTH_DATA_TYPE)
-            .addFunction(AggregateFunction.SUM, HealthConstants.StepCount.COUNT, "total_step")
-            .setLocalTimeRange(
-                HealthConstants.StepCount.START_TIME,
-                HealthConstants.StepCount.TIME_OFFSET,
-                startTime,
-                endTime
-            )
-            .build()
+            request = AggregateRequest.Builder()
+                .setDataType(HealthConstants.StepCount.HEALTH_DATA_TYPE)
+                .setTimeGroup(AggregateRequest.TimeGroupUnit.MINUTELY,1,HealthConstants.BloodGlucose.START_TIME,HealthConstants.StepCount.TIME_OFFSET,"time")
+                .addFunction(AggregateFunction.SUM, HealthConstants.StepCount.COUNT, "total_step")
+                .addFunction(AggregateFunction.SUM, HealthConstants.StepCount.CALORIE, "total_calorie")
+                .addFunction(AggregateFunction.SUM, HealthConstants.StepCount.DISTANCE, "total_distance")
+                .addFunction(AggregateFunction.AVG, HealthConstants.StepCount.SPEED, "total_speed")
+                .setLocalTimeRange(
+                    HealthConstants.StepCount.START_TIME,
+                    HealthConstants.StepCount.TIME_OFFSET,
+                    startTime,
+                    endTime
+                )
+                .build()
+        }
+        else{
+            val startTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault())
+            val endTime = startTime + TimeUnit.DAYS.toMillis(1)
+
+            request = AggregateRequest.Builder()
+                .setDataType(HealthConstants.StepCount.HEALTH_DATA_TYPE)
+                .addFunction(AggregateFunction.SUM, HealthConstants.StepCount.COUNT, "total_step")
+                .setLocalTimeRange(
+                    HealthConstants.StepCount.START_TIME,
+                    HealthConstants.StepCount.TIME_OFFSET,
+                    startTime,
+                    endTime
+                )
+                .build()
+        }
+
         try {
             mHealthDataResolver!!.aggregate(request)
                 .setResultListener { aggregateResult: AggregateResult ->
                     aggregateResult.use { result ->
                         val iterator: Iterator<HealthData> = result.iterator()
+                        var arrayStep = StringBuilder()
                         if (iterator.hasNext()) {
-                            mStepCountObserver!!.onChanged(iterator.next().getInt("total_step"))
+                            while(isSaved){
+                                if(iterator.hasNext()) {
+                                    val tmpIterator = iterator.next()
+                                    if (tmpIterator.getString("total_step") != null) {
+                                        arrayStep.append(tmpIterator.getString("time").replace(' ','_') + ',' +
+                                                tmpIterator.getString("total_step") + ',' +
+                                                tmpIterator.getString("total_calorie") + ',' +
+                                                tmpIterator.getString("total_distance") + ',' +
+                                                tmpIterator.getString("total_speed") + '\n')
+                                    }
+                                }
+                                else {
+                                    mStepCountObserver!!.onChanged(arrayStep)
+                                    break
+                                }
+                            }
+
+                            if(!isSaved)
+                                mStepCountObserver!!.onChanged(iterator.next().getInt("total_step"))
                         }
                     }
                 }
@@ -90,7 +128,6 @@ class StepCount {
         val month = cal[Calendar.MONTH]
         val date = cal[Calendar.DATE]
         val hourofday = cal[Calendar.HOUR_OF_DAY]
-        val minute = cal[Calendar.MINUTE]
         cal.timeZone = TimeZone.getTimeZone("UTC")
         cal[Calendar.YEAR] = year
         cal[Calendar.MONTH] = month
@@ -104,5 +141,6 @@ class StepCount {
 
     interface StepCountObserver {
         fun onChanged(count: Int)
+        fun onChanged(count: StringBuilder)
     }
 }

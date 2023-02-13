@@ -3,6 +3,8 @@ package com.example.patient_app.samsungHealth
 import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.LiveData
+import com.example.patient_app.SFTP.File
+import com.example.patient_app.SFTP.FileType
 import com.google.gson.Gson
 import com.samsung.android.sdk.healthdata.*
 import com.samsung.android.sdk.healthdata.HealthDataResolver.ReadRequest
@@ -30,7 +32,7 @@ class HeartRate {
             // Update the step count when a change event is received
             override fun onChange(dataTypeName: String) {
                 Log.d(TAG, "Observer receives a HR data changed event")
-                readHeartRateData()
+                readHeartRateData(false)
             }
         }
     }
@@ -41,7 +43,7 @@ class HeartRate {
             HealthConstants.HeartRate.HEALTH_DATA_TYPE,
             mHealthDataObserver
         )
-        readHeartRateData()
+        readHeartRateData(true)
     }
 
     fun stop() {
@@ -49,45 +51,61 @@ class HeartRate {
         mStore!!.disconnectService()
     }
 
-    private fun readHeartRateData() {
-        val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault())
-        val startTime = endTime - TimeUnit.HOURS.toMillis(1)
-        val resolver = HealthDataResolver(mStore, null)
+    fun readHeartRateData(isSaved : Boolean) {
+        lateinit var request : ReadRequest
 
-        val request = ReadRequest.Builder()
-            .setDataType(HealthConstants.HeartRate.HEALTH_DATA_TYPE)
-            .setLocalTimeRange(
-                HealthConstants.HeartRate.START_TIME,
-                HealthConstants.HeartRate.TIME_OFFSET,
-                startTime,
-                endTime)
-            .build()
+        if(isSaved){
+            val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault()) + TimeUnit.DAYS.toMillis(1)
+            val startTime = endTime - TimeUnit.DAYS.toMillis(1)
+
+            request = ReadRequest.Builder()
+                .setDataType(HealthConstants.HeartRate.HEALTH_DATA_TYPE)
+                .setLocalTimeRange(
+                    HealthConstants.HeartRate.START_TIME,
+                    HealthConstants.HeartRate.TIME_OFFSET,
+                    startTime,
+                    endTime)
+                .build()
+        }
+        else{
+            val startTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault())
+            val endTime = startTime + TimeUnit.DAYS.toMillis(1)
+
+            request = ReadRequest.Builder()
+                .setDataType(HealthConstants.HeartRate.HEALTH_DATA_TYPE)
+                .setLocalTimeRange(
+                    HealthConstants.HeartRate.START_TIME,
+                    HealthConstants.HeartRate.TIME_OFFSET,
+                    startTime,
+                    endTime)
+                .build()
+        }
+
         try {
-            resolver.read(request)
+            mHealthDataResolver!!.read(request)
                 .setResultListener{ readResult : ReadResult ->
                     readResult.use { result ->
                         val iterator: Iterator<HealthData> = result.iterator()
-                        while(true) {
+                        var file = File(FileType.startCharOf('H'))
+                        while(isSaved) {
                             if (iterator.hasNext()) {
                                 val tmpIterator = iterator.next()
-                                if(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null) {
-                                    mHeartRateObserver!!.onChanged(
-                                        tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA)
-                                    )
+                                if(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null){
+                                    mHeartRateObserver!!.onChanged(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA), file)
                                 }
                             }
-                            else
+                            else {
+                                file.close()
                                 break
+                            }
                         }
+                        if(!isSaved)
+                            mHeartRateObserver!!.onChanged(result.last().getFloat(HealthConstants.HeartRate.HEART_RATE))
                     }
                 }
         } catch (e: Exception) {
             e.printStackTrace()
         }
-    }
-
-    fun read(){
-        readHeartRateData()
     }
 
     private fun getUtcStartOfDay(time: Long, tz: TimeZone): Long {
@@ -97,21 +115,20 @@ class HeartRate {
         val month = cal[Calendar.MONTH]
         val date = cal[Calendar.DATE]
         val hourofday = cal[Calendar.HOUR_OF_DAY]
-        val minute = cal[Calendar.MINUTE]
-        val second = cal[Calendar.SECOND]
         cal.timeZone = TimeZone.getTimeZone("UTC")
         cal[Calendar.YEAR] = year
         cal[Calendar.MONTH] = month
         cal[Calendar.DATE] = date
-        cal[Calendar.HOUR_OF_DAY] = hourofday
-        cal[Calendar.MINUTE] = minute
-        cal[Calendar.SECOND] = second
+        cal[Calendar.HOUR_OF_DAY] = 0
+        cal[Calendar.MINUTE] = 0
+        cal[Calendar.SECOND] = 0
         cal[Calendar.MILLISECOND] = 0
         return cal.timeInMillis
     }
 
 
     interface HeartRateObserver {
-        fun onChanged(count : ByteArray)
+        fun onChanged(count : Float)
+        fun onChanged(count : ByteArray, file : File)
     }
 }
