@@ -1,6 +1,8 @@
 package com.example.patient_app.Activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -19,12 +21,21 @@ class YMRS_2yearActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ymrs2year)
 
+        sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
 
-        two_YMRS_save.setOnClickListener({
+        val editor = sharedPreferences.edit()
+
+
+        two_YMRS_Next_btn.setOnClickListener({
+
+            editor.putBoolean("isToastShown",false)
+            editor.apply()
 
             for (i in 1..5) {
                 val Yes = resources.getIdentifier("YMRS1_$i"+"_yes","id", packageName)
@@ -40,6 +51,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("1-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
         }
 
@@ -57,6 +70,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("2-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -74,12 +89,16 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("3-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
             YMRSanswer.YMRS4[0] = YMRS4_1_num.text.toString()
             if (YMRSanswer.YMRS4[0].length == 0){
                 makeToast("4-1 항목에 응답해 주세요")
+                editor.putBoolean("isToastShown",true)
+                editor.apply()
             }
 
 
@@ -92,6 +111,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
             }
             else {
                 makeToast("4-2 항목에 응답해 주세요.")
+                editor.putBoolean("isToastShown",true)
+                editor.apply()
             }
 
             for (i in 1..4) {
@@ -108,6 +129,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("5-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -125,6 +148,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("6-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -142,6 +167,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("7-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -160,6 +187,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("8-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -180,6 +209,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("9-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -198,6 +229,8 @@ class YMRS_2yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("10-$i 항목에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -210,18 +243,19 @@ class YMRS_2yearActivity : AppCompatActivity() {
             }
             else {
                 makeToast("11번 항목에 응답해 주세요.")
+                editor.putBoolean("isToastShown",true)
+                editor.apply()
             }
 
-            Toast.makeText(this,"저장되었습니다.", Toast.LENGTH_SHORT).show()
-        })
+            if(!sharedPreferences.getBoolean("isToastShown",false)){
+                var intent1 = Intent(this, PHQ9_2and3yearActivity::class.java)
+                startActivity((intent1))
+            }
 
-        two_YMRS_Next_btn.setOnClickListener({
-            var intent1 = Intent(this, PHQ9_2and3yearActivity::class.java)
-            startActivity((intent1))
+
         })
 
     }
-
 
 
     override fun onStop() {

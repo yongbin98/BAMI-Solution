@@ -42,6 +42,8 @@
     <string name="GAD">GAD-7</string>
     <string name="insomnia">Insomnia</string>
     <string name="SSI">SSI</string>
+    <string name="btn_survey">설문지 작성하기</string>
+
 
     <string name="large_text">
         "Material is the metaphor.\n\n"

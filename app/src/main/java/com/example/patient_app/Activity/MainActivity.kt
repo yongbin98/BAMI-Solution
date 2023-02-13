@@ -7,8 +7,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.view.isInvisible
 import com.example.patient_app.R
 import com.example.patient_app.WeatherAPI.APIService
 import com.example.patient_app.bluetooth.BleService
@@ -36,13 +40,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (MainActivity_HR.HR != "")
-            rate.text = MainActivity_HR.HR
-
-        if (MainActivity_HR.Steps != "")
-            step.text = MainActivity_HR.Steps
-
-        requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
+        //취소 눌러서 뒤로 가도 삼성헬스 정보 남아있게
 
 //        var deviceArray : Array<String> = emptyArray()
 //        var deviceAddress : Array<String> = emptyArray()
@@ -96,7 +94,6 @@ class MainActivity : AppCompatActivity() {
 //                }.show()
 //        }
 
-
         btn_SamsungHealth.setOnClickListener {
             myCoroutinescope.launch {
                 HealthService.connect(this@MainActivity) {
@@ -111,6 +108,31 @@ class MainActivity : AppCompatActivity() {
                 step.text = StepCheck.toString()
                 MainActivity_HR.HR = HR.toInt().toString()
                 MainActivity_HR.Steps = StepCheck.toInt().toString()
+                btn_SamsungHealth.visibility = Button.GONE
+                reload_btn.visibility = Button.VISIBLE
+
+            }
+
+            btn_Survey.setOnClickListener {
+                val intent = Intent(this, Survey_1Activity::class.java)
+                startActivity((intent))
+            }
+
+            reload_btn.setOnClickListener {
+                myCoroutinescope.launch {
+                    HealthService.connect(this@MainActivity) {
+                        Log.i(TAG, "Get Permission!!")
+                        true
+                    }
+                    Log.i(TAG, "START")
+                    HealthService.start(this@MainActivity)
+                    val (HR, StepCheck) = HealthService.getHealthData()
+                    Log.i(TAG, "HR : $HR , Stepcount : $StepCheck")
+                    rate.text = HR.toInt().toString()
+                    step.text = StepCheck.toString()
+                    MainActivity_HR.HR = HR.toInt().toString()
+                    MainActivity_HR.Steps = StepCheck.toInt().toString()
+                }
             }
 
 //        fun ShowList(Device:Array<String>, Address:Array<String>): Unit{
@@ -129,101 +151,103 @@ class MainActivity : AppCompatActivity() {
 //        }
         }
 
-            setSupportActionBar(toolbar)
-            supportActionBar?.setDisplayShowTitleEnabled(false)
-            supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-            supportActionBar!!.setHomeAsUpIndicator(R.drawable.menu)
 
-            val utilDate = Date()
-            val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
-            date.text = formatType.format(utilDate)
-            var cutLocation: String
 
-            val sunImg = getDrawable(R.drawable.sun_icon)
-            val rainyImg = getDrawable(R.drawable.rainy_icon)
-            val rainsnowImg = getDrawable(R.drawable.rainsnow_icon)
-            val snowImg = getDrawable(R.drawable.snow_icon)
-            val cloudyImg = getDrawable(R.drawable.cloudy_icon)
-            val lessrainsnowImg = getDrawable(R.drawable.lessrainsnow_icon)
-            val snowstormImg = getDrawable(R.drawable.snowstorm_icon)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.menu)
 
-            APIService.connect(this) {
-                myCoroutinescope.launch {
-                    it.split('\n').let {
-                        it.forEachIndexed { index, text ->
-                            if (index == 0) {
-                                if (text.substring(7) == "0")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        sunImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "1")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        rainyImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "2")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        rainsnowImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "3")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        snowImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "4")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        rainyImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "5")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        cloudyImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "6")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        lessrainsnowImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                                else if (text.substring(7) == "7")
-                                    weather.setCompoundDrawablesWithIntrinsicBounds(
-                                        snowstormImg,
-                                        null,
-                                        null,
-                                        null
-                                    )
-                            }
-                            if (index == 1)
-                                weather.text = " " + text
-                            if (index == 2)
-                                local.text = text.substring(4)
-                            Log.i(TAG, "$text")
+        val utilDate = Date()
+        val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
+        date.text = formatType.format(utilDate)
+        var cutLocation: String
+
+        val sunImg = getDrawable(R.drawable.sun_icon)
+        val rainyImg = getDrawable(R.drawable.rainy_icon)
+        val rainsnowImg = getDrawable(R.drawable.rainsnow_icon)
+        val snowImg = getDrawable(R.drawable.snow_icon)
+        val cloudyImg = getDrawable(R.drawable.cloudy_icon)
+        val lessrainsnowImg = getDrawable(R.drawable.lessrainsnow_icon)
+        val snowstormImg = getDrawable(R.drawable.snowstorm_icon)
+
+        APIService.connect(this) {
+            myCoroutinescope.launch {
+                it.split('\n').let {
+                    it.forEachIndexed { index, text ->
+                        if (index == 0) {
+                            if (text.substring(7) == "0")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    sunImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "1")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    rainyImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "2")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    rainsnowImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "3")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    snowImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "4")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    rainyImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "5")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    cloudyImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "6")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    lessrainsnowImg,
+                                    null,
+                                    null,
+                                    null
+                                )
+                            else if (text.substring(7) == "7")
+                                weather.setCompoundDrawablesWithIntrinsicBounds(
+                                    snowstormImg,
+                                    null,
+                                    null,
+                                    null
+                                )
                         }
+                        if (index == 1)
+                            weather.text = " " + text
+                        if (index == 2)
+                            local.text = text.substring(4)
+                        Log.i(TAG, "$text")
                     }
                 }
-                true
             }
+            true
+        }
 
 
-            // weather.text = callWeather
+        // weather.text = callWeather
 
-            //local.text =
+        //local.text =
 
 
 //        btn1.setOnClickListener {
@@ -234,29 +258,54 @@ class MainActivity : AppCompatActivity() {
 //            Log.i(TAG, "btn2 On clicked")
 //
 //        }
+
+
+
+        if (MainActivity_HR.HR != "") {
+            rate.text = MainActivity_HR.HR
+            btn_SamsungHealth.visibility = Button.GONE
+            reload_btn.visibility = Button.VISIBLE
+
         }
+        if (MainActivity_HR.Steps != "")
+            step.text = MainActivity_HR.Steps
 
-
-        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            menuInflater.inflate(R.menu.menu, menu)
-            return true
-        }
-
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            when (item!!.itemId) {
-                R.id.survey -> {
-                    val intent = Intent(this, Survey_1Activity::class.java)
-                    startActivity((intent))
-                }
-                R.id.App_version -> {
-                    Snackbar.make(toolbar, "버전 정보 : 0.0.0", Snackbar.LENGTH_SHORT).show()
-                }
-            }
-
-            return super.onOptionsItemSelected(item)
-        }
-
+        requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
 
     }
+
+
+
+    private var backPressedTime : Long = 0
+    override fun onBackPressed() {
+        if (System.currentTimeMillis() - backPressedTime < 2000){
+            ActivityCompat.finishAffinity(this)
+            System.exit(0)
+            return
+        }
+
+        Toast.makeText(this,"'뒤로' 버튼을 한 번 더 누르시면 앱이 종료됩니다.",Toast.LENGTH_SHORT).show()
+        backPressedTime = System.currentTimeMillis()
+    }
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item!!.itemId) {
+            R.id.App_version -> {
+                Snackbar.make(toolbar, "버전 정보 : 0.0.0", Snackbar.LENGTH_SHORT).show()
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+}
+
+
 
 

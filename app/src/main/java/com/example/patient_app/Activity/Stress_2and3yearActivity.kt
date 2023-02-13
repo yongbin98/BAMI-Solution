@@ -1,6 +1,8 @@
 package com.example.patient_app.Activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -20,11 +22,21 @@ class Stress_2and3yearActivity : AppCompatActivity() {
         }catch (e: java.lang.Exception){
             e.printStackTrace()
         }}
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stress2and3year)
 
-        stressSave_btn.setOnClickListener({
+        sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
+
+        val editor = sharedPreferences.edit()
+
+        stressNext_btn.setOnClickListener({
+
+            editor.putBoolean("isToastShown",false)
+            editor.apply()
 
             for (i in 1..9) {
                 val one = resources.getIdentifier("stress$i"+"_1","id", packageName)
@@ -56,21 +68,19 @@ class Stress_2and3yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("$i 번에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
+            if(!sharedPreferences.getBoolean("isToastShown",false)){
+                var intent1 = Intent(this, VAS_2and3yearActivity::class.java)
+                startActivity((intent1))
+            }
 
-            Toast.makeText(this,"저장 완료",Toast.LENGTH_SHORT).show()
 
 
 
         })
-
-        stressNext_btn.setOnClickListener({
-            var intent1 = Intent(this, VAS_2and3yearActivity::class.java)
-            startActivity((intent1))
-        })
-
-
 
     }
 }

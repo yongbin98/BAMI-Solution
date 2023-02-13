@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_gad72year.*
 import kotlinx.android.synthetic.main.activity_ssi3year.*
@@ -323,8 +324,15 @@ class SSI_3yearActivity : AppCompatActivity() {
         }
 
         SSINext_btn.setOnClickListener({
-            var intent1 = Intent(this, PHQ9_2and3yearActivity::class.java)
-            startActivity((intent1))
+
+            if ((SSIanswer.SSI1_ans == 0) || (SSIanswer.SSI2_ans ==0) || (SSIanswer.SSI3_ans ==0) || (SSIanswer.SSI4_ans ==0) || (SSIanswer.SSI5_ans ==0) || (SSIanswer.SSI6_ans ==0) || (SSIanswer.SSI7_ans ==0)|| (SSIanswer.SSI8_ans ==0)|| (SSIanswer.SSI9_ans ==0)|| (SSIanswer.SSI10_ans ==0)|| (SSIanswer.SSI11_ans ==0)|| (SSIanswer.SSI12_ans ==0)|| (SSIanswer.SSI13_ans ==0)|| (SSIanswer.SSI14_ans ==0)|| (SSIanswer.SSI15_ans ==0)|| (SSIanswer.SSI16_ans ==0)|| (SSIanswer.SSI17_ans ==0)|| (SSIanswer.SSI18_ans ==0)|| (SSIanswer.SSI19_ans ==0))
+            {
+                Toast.makeText(this, "모든 항목에 응답해주세요.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                var intent1 = Intent(this, PHQ9_2and3yearActivity::class.java)
+                startActivity((intent1))
+            }
         })
 
 

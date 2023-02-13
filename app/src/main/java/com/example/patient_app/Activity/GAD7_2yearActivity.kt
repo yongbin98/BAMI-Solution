@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_gad72year.*
 import kotlinx.android.synthetic.main.activity_ymrs2year.*
@@ -119,8 +120,17 @@ class GAD7_2yearActivity : AppCompatActivity() {
 
 
         GADNext_btn.setOnClickListener({
-            var intent1 = Intent(this, insomnia_2yearActivity::class.java)
-            startActivity((intent1))
+
+            if ((GADanswer.GAD1_ans == 0) || (GADanswer.GAD2_ans ==0) || (GADanswer.GAD3_ans ==0) || (GADanswer.GAD4_ans ==0) || (GADanswer.GAD5_ans ==0) || (GADanswer.GAD6_ans ==0) || (GADanswer.GAD7_ans ==0))
+            {
+                Toast.makeText(this, "모든 항목에 응답해주세요.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                var intent1 = Intent(this, insomnia_2yearActivity::class.java)
+                startActivity((intent1))
+            }
+
+
         })
 
 

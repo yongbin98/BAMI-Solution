@@ -1,6 +1,8 @@
 package com.example.patient_app.Activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -18,13 +20,24 @@ class Whoqol_3yearActivity : AppCompatActivity() {
         }catch (e: java.lang.Exception){
             e.printStackTrace()
         }}
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_whoqol3year)
 
+        sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
+
+        val editor = sharedPreferences.edit()
 
 
-        whoqolSave_btn.setOnClickListener({
+
+        whoqolNext_btn.setOnClickListener({
+
+
+            editor.putBoolean("isToastShown",false)
+            editor.apply()
 
             for (i in 1..26) {
                 val one = resources.getIdentifier("WHOQ$i"+"_1","id", packageName)
@@ -56,21 +69,21 @@ class Whoqol_3yearActivity : AppCompatActivity() {
                 }
                 else{
                     makeToast("$i 번에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
-            Toast.makeText(this,"저장 완료",Toast.LENGTH_SHORT).show()
+            if(!sharedPreferences.getBoolean("isToastShown",false)){
+
+                var intent1 = Intent(this, MARS_3yearActivity::class.java)
+                startActivity((intent1))
+
+            }
 
 
 
         })
-
-        whoqolNext_btn.setOnClickListener({
-            var intent1 = Intent(this, MARS_3yearActivity::class.java)
-            startActivity((intent1))
-        })
-
-
 
     }
 }

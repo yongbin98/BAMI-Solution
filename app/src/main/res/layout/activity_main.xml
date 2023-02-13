@@ -7,27 +7,61 @@
     android:background="@color/main_background"
     tools:context=".Activity.MainActivity">
 
+    <!--날씨 아이콘 추가예정-->
 
-    <Button
-        android:id="@+id/btn_SamsungHealth"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:background="@drawable/btn_bluetooth"
-        android:fontFamily="@font/godo"
-        android:gravity="center"
-        android:text="@string/btn_samsungHealth"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:layout_editor_absoluteX="75dp">
+
+        <Button
+            android:id="@+id/btn_Survey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@drawable/btn_bluetooth"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:text="@string/btn_survey"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            />
+
+        <Button
+            android:id="@+id/btn_SamsungHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@drawable/btn_bluetooth"
+            android:fontFamily="@font/godo"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:text="@string/btn_samsungHealth"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
 
-    <!--날씨 아이콘 추가예정-->
+
+
+
+
+
+
+
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/widget"
@@ -218,6 +252,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/reload_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/투명"
+        android:drawableLeft="@drawable/reload_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/widget"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toTopOf="@+id/widget"
+        app:layout_constraintVertical_bias="0.02" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

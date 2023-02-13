@@ -1,6 +1,8 @@
 package com.example.patient_app.Activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -21,11 +23,22 @@ class insomnia_2yearActivity : AppCompatActivity() {
         }
     }
 
+    private lateinit var sharedPreferences: SharedPreferences
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insomnia2year)
 
-        insomniaSave_btn.setOnClickListener({
+        sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
+
+        val editor = sharedPreferences.edit()
+
+        insomniaNext_btn.setOnClickListener({
+
+            editor.putBoolean("isToastShown",false)
+            editor.apply()
 
             for (i in 1..3) {
                 val one1 = resources.getIdentifier("insomnia1_$i" + "_1", "id", packageName)
@@ -52,6 +65,8 @@ class insomnia_2yearActivity : AppCompatActivity() {
                     Insomnia.insomnia1[i - 1] = "5"
                 } else {
                     makeToast("1-$i 번에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
@@ -80,16 +95,17 @@ class insomnia_2yearActivity : AppCompatActivity() {
                     Insomnia.insomnia2345[i-2] = "5"
                 } else {
                     makeToast("$i 번에 응답해 주세요.")
+                    editor.putBoolean("isToastShown",true)
+                    editor.apply()
                 }
             }
 
-            Toast.makeText(this, "저장 완료", Toast.LENGTH_SHORT).show()
-        })
+            if(!sharedPreferences.getBoolean("isToastShown",false)){
+                var intent5 = Intent(this, Stress_2and3yearActivity::class.java)
+                startActivity((intent5))
 
+            }
 
-        insomniaNext_btn.setOnClickListener({
-            var intent5 = Intent(this, Stress_2and3yearActivity::class.java)
-            startActivity((intent5))
         })
 
     }

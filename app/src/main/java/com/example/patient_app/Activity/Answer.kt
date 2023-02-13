@@ -51,6 +51,9 @@ class BasicInfo {
         var mental = ""
         var mental_num = ""
         var mental_treat = ""
+
+        //치료 기간
+        var length = ""
     }
 }
 
