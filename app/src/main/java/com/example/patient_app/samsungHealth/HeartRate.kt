@@ -21,6 +21,7 @@ class HeartRate {
     private val mHealthDataObserver: HealthDataObserver
     private val mHealthDataResolver: HealthDataResolver
     private val TAG = "HeartRate"
+    private lateinit var file : File
 
     constructor(
         store: HealthDataStore, listener: HeartRateObserver,
@@ -87,8 +88,11 @@ class HeartRate {
                 .setResultListener{ readResult : ReadResult ->
                     readResult.use { result ->
                         val iterator: Iterator<HealthData> = result.iterator()
-                        var file = File(FileType.startCharOf('H'))
-                        file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
+
+                        if(!::file.isInitialized){
+                            file = File(FileType.startCharOf('H'))
+                            file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
+                        }
                         while(isSaved) {
                             if (iterator.hasNext()) {
                                 val tmpIterator = iterator.next()
@@ -101,6 +105,7 @@ class HeartRate {
                                 break
                             }
                         }
+
                         if(!isSaved) {
                             if(iterator.hasNext())
                                 mHeartRateObserver!!.onChanged(

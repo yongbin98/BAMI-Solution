@@ -1,5 +1,6 @@
 package com.example.patient_app.SFTP
 
+import android.util.Log
 import java.io.File
 import java.io.PrintWriter
 import java.text.SimpleDateFormat
@@ -12,6 +13,13 @@ class File(
     companion object {
         private const val FILE_PATH = "/data/data/com.example.patient_app/files"
         var files = mutableListOf<File>()
+
+        fun delete(){
+            files.forEach {
+                Log.i("FILE","${it.name}")
+                it.delete()
+            }
+        }
     }
 
     private val file = File(FILE_PATH, createFileName())

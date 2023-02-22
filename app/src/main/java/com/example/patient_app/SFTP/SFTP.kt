@@ -1,6 +1,7 @@
 package com.example.patient_app.ble
 
 import android.util.Log
+import com.example.patient_app.Activity.MainActivity_HR
 import com.jcraft.jsch.*
 import java.io.File
 import java.io.FileInputStream
@@ -109,9 +110,7 @@ class SFTP {
 
     private fun getName(files : MutableList<java.io.File>): String {
         val dir = "/BAMI Solution"
-        val head_name = files.first().name.substring(0,files.first().name.toString().lastIndexOf('-'))
-        val tail_name = files.last().name.substring(files.last().name.toString().indexOf(' '),files.last().name.toString().lastIndexOf('-'))
-        val full_name = "$head_name - $tail_name"
+        val full_name = "ID_${MainActivity_HR.Patient_ID}"
         return "$dir/$full_name"
     }
 

@@ -35,18 +35,16 @@ class Thankyou : AppCompatActivity() {
             sftp.connect()
             sftp.upload(File.files)
             sftp.disconnect()
-            File.files.forEach {
-                it.delete()
-            }
+            File.delete()
 
         dialog.dismiss()
 
 
-            end_btn.setOnClickListener({
+            end_btn.setOnClickListener {
                 val intent = Intent()
                 setResult(RESULT_OK, intent)
                 finish()
-            })
+            }
         }
 
 

@@ -167,7 +167,7 @@ class MainActivity_HR{
     companion object{
         var HR = ""
         var Steps = ""
-        var Patient_ID = "219802100216"
+        var Patient_ID = ""
         var treatYear = ""
         var timeDiff = 0L
     }

@@ -122,7 +122,6 @@ object HealthService {
                 file.write(tmpNext.heart_rate_max.toInt().toString()+',')
                 file.write(dateFormat.format(tmpNext.start_time).toString()+',')
                 file.write(dateFormat.format(tmpNext.end_time).toString()+"\n")
-                Log.i(TAG,"${dateFormat.format(tmpNext.start_time).toString()}!!")
             }
             isChanged = true
 

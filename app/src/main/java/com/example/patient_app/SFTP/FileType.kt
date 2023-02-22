@@ -5,11 +5,10 @@ import java.lang.RuntimeException
 enum class FileType(val startChar: Char, val fileName: String) {
     HEARTRATE('H', "HEARTRATE"),
     STEPCOUNT('C', "STEPCOUNT"),
-    SURVEY('S', "SURVEY");
+    SURVEY('S', "SURVEY"),
+    ID('I',"id");
 
     companion object {
-        const val FINISH_CHAR = 'F'
-
         fun startCharOf(startChar: Char): FileType =
             values().find { it.startChar == startChar } ?: throw RuntimeException("Not Found File Type")
     }

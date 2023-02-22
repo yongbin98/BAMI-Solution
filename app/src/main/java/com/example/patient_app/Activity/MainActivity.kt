@@ -74,48 +74,43 @@ class MainActivity : AppCompatActivity() {
             }
 
             btn_Survey.setOnClickListener {
-                if (MainActivity_HR.Patient_ID == "") {
-                    val intent = Intent(this, Survey_1Activity::class.java)
+                MainActivity_HR.treatYear = MainActivity_HR.Patient_ID[0].toString()
+                var startday = MainActivity_HR.Patient_ID.substring(8)
+                val cal = Calendar.getInstance()
+                cal.timeZone = TimeZone.getTimeZone(TimeZone.getDefault().id)
+                cal[Calendar.MONTH] = startday.substring(0, 2).toInt() - 1
+                cal[Calendar.DATE] = startday.substring(2, 4).toInt()
+                MainActivity_HR.timeDiff =
+                    (System.currentTimeMillis() - cal.timeInMillis) / (1000 * 60 * 60 * 24)
+                Log.i(TAG, "${MainActivity_HR.timeDiff.rem(7) == 0L}")
+                if (MainActivity_HR.treatYear == "2" || MainActivity_HR.treatYear == "3") {
+                    val intent = Intent(this, VAS_2and3yearActivity::class.java)
                     startActivity((intent))
-                } else {
-                    MainActivity_HR.treatYear = MainActivity_HR.Patient_ID[0].toString()
-                    var startday = MainActivity_HR.Patient_ID.substring(8)
-                    val cal = Calendar.getInstance()
-                    cal.timeZone = TimeZone.getTimeZone(TimeZone.getDefault().id)
-                    cal[Calendar.MONTH] = startday.substring(0, 2).toInt() - 1
-                    cal[Calendar.DATE] = startday.substring(2, 4).toInt()
-                    MainActivity_HR.timeDiff =
-                        (System.currentTimeMillis() - cal.timeInMillis) / (1000 * 60 * 60 * 24)
-                    Log.i(TAG, "${MainActivity_HR.timeDiff.rem(7) == 0L}")
-                    if (MainActivity_HR.treatYear == "2" || MainActivity_HR.treatYear == "3") {
-                        val intent = Intent(this, VAS_2and3yearActivity::class.java)
-                        startActivity((intent))
-                    } else
-                        Toast.makeText(this, "ID 오류가 발생하였습니다.", Toast.LENGTH_SHORT)
-                }
+                } else
+                    Toast.makeText(this, "ID 오류가 발생하였습니다.", Toast.LENGTH_SHORT)
             }
 
 
-                reload_btn.setOnClickListener {
+            reload_btn.setOnClickListener {
 
-                    myCoroutinescope.launch {
-                        rate.text = "-"
-                        step.text = "-"
-                        HealthService.updateHealthData(false)
-                        val (HR, StepCheck) = HealthService.getHealthData()
-                        Log.i(TAG, "HR : $HR , Stepcount : $StepCheck")
-                        APIService.connect(this@MainActivity) {
-                            myCoroutinescope.launch {
-                                weatherScreen(it)
-                                rate.text = HR.toInt().toString()
-                                step.text = StepCheck.toString()
-                                MainActivity_HR.HR = HR.toInt().toString()
-                                MainActivity_HR.Steps = StepCheck.toInt().toString()
-                            }
-                            true
+                myCoroutinescope.launch {
+                    rate.text = "-"
+                    step.text = "-"
+                    HealthService.updateHealthData(false)
+                    val (HR, StepCheck) = HealthService.getHealthData()
+                    Log.i(TAG, "HR : $HR , Stepcount : $StepCheck")
+                    APIService.connect(this@MainActivity) {
+                        myCoroutinescope.launch {
+                            weatherScreen(it)
+                            rate.text = HR.toInt().toString()
+                            step.text = StepCheck.toString()
+                            MainActivity_HR.HR = HR.toInt().toString()
+                            MainActivity_HR.Steps = StepCheck.toInt().toString()
                         }
+                        true
                     }
                 }
+            }
 
 
 

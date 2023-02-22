@@ -38,17 +38,17 @@ class Stress_2and3yearActivity : AppCompatActivity() {
         val editor = sharedPreferences.edit()
         val activitylauncher = openActivityResultLauncher()
 
-        stressNext_btn.setOnClickListener({
+        stressNext_btn.setOnClickListener {
 
-            editor.putBoolean("isToastShown",false)
+            editor.putBoolean("isToastShown", false)
             editor.apply()
 
             for (i in 1..9) {
-                val one = resources.getIdentifier("stress$i"+"_1","id", packageName)
-                val two = resources.getIdentifier("stress$i"+"_2","id", packageName)
-                val three = resources.getIdentifier("stress$i"+"_3","id", packageName)
-                val four = resources.getIdentifier("stress$i"+"_4","id", packageName)
-                val five = resources.getIdentifier("stress$i"+"_5","id", packageName)
+                val one = resources.getIdentifier("stress$i" + "_1", "id", packageName)
+                val two = resources.getIdentifier("stress$i" + "_2", "id", packageName)
+                val three = resources.getIdentifier("stress$i" + "_3", "id", packageName)
+                val four = resources.getIdentifier("stress$i" + "_4", "id", packageName)
+                val five = resources.getIdentifier("stress$i" + "_5", "id", packageName)
 
                 val radioButtonOne = findViewById<RadioButton>(one)
                 val radioButtonTwo = findViewById<RadioButton>(two)
@@ -56,28 +56,23 @@ class Stress_2and3yearActivity : AppCompatActivity() {
                 val radioButtonFour = findViewById<RadioButton>(four)
                 val radioButtonFive = findViewById<RadioButton>(five)
 
-                if (radioButtonOne.isChecked){
-                    Stress.stress[i-1] = "1"
-                }
-                else if (radioButtonTwo.isChecked){
-                    Stress.stress[i-1] = "2"
-                }
-                else if (radioButtonThree.isChecked){
-                    Stress.stress[i-1] = "3"
-                }
-                else if (radioButtonFour.isChecked){
-                    Stress.stress[i-1] = "4"
-                }
-                else if (radioButtonFive.isChecked){
-                    Stress.stress[i-1] = "5"
-                }
-                else{
+                if (radioButtonOne.isChecked) {
+                    Stress.stress[i - 1] = "1"
+                } else if (radioButtonTwo.isChecked) {
+                    Stress.stress[i - 1] = "2"
+                } else if (radioButtonThree.isChecked) {
+                    Stress.stress[i - 1] = "3"
+                } else if (radioButtonFour.isChecked) {
+                    Stress.stress[i - 1] = "4"
+                } else if (radioButtonFive.isChecked) {
+                    Stress.stress[i - 1] = "5"
+                } else {
                     makeToast("$i 번에 응답해 주세요.")
-                    editor.putBoolean("isToastShown",true)
+                    editor.putBoolean("isToastShown", true)
                     editor.apply()
                 }
             }
-            if(!sharedPreferences.getBoolean("isToastShown",false)){
+            if (!sharedPreferences.getBoolean("isToastShown", false)) {
                 if (MainActivity_HR.timeDiff.rem(7) == 0L) {
                     val intent = Intent(this, insomnia_2yearActivity::class.java)
                     activitylauncher.launch(intent)
@@ -86,7 +81,7 @@ class Stress_2and3yearActivity : AppCompatActivity() {
                     activitylauncher.launch(intent)
                 }
             }
-        })
+        }
     }
 
     private fun openActivityResultLauncher(): ActivityResultLauncher<Intent> {
