@@ -1,5 +1,6 @@
 package com.example.patient_app.Activity
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -8,6 +9,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_ymrs2year.*
 
@@ -31,6 +35,7 @@ class YMRS_2yearActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
 
         val editor = sharedPreferences.edit()
+        val activitylauncher = openActivityResultLauncher()
 
 
         two_YMRS_Next_btn.setOnClickListener({
@@ -249,15 +254,23 @@ class YMRS_2yearActivity : AppCompatActivity() {
             }
 
             if(!sharedPreferences.getBoolean("isToastShown",false)){
-                var intent1 = Intent(this, PHQ9_2and3yearActivity::class.java)
-                startActivity((intent1))
+                val intent = Intent(this, Thankyou::class.java)
+                activitylauncher.launch(intent)
             }
-
-
         })
-
     }
 
+    private fun openActivityResultLauncher(): ActivityResultLauncher<Intent> {
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val intent = Intent()
+                setResult(RESULT_OK, intent)
+                finish()
+            }
+        }
+        return resultLauncher
+    }
 
     override fun onStop() {
         super.onStop()

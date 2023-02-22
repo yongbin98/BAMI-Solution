@@ -104,10 +104,15 @@ object HealthService {
     private val mHeartRateObserver = object : HeartRate.HeartRateObserver{
         var heartRate : Float = 0f
         var isChanged : Boolean = false
+
+        override fun onChanged(count: Boolean) {
+            isChanged = true
+        }
+
         override fun onChanged(count: ByteArray, file : File){
             var zip = HealthDataUtil.getStructuredDataList(count, HeartLiveData::class.java)
             var tmpiter = zip.iterator()
-            var dateFormat = SimpleDateFormat("HH:mm:ss")
+            var dateFormat = SimpleDateFormat("yyyy-MM-dd_HH:mm:ss")
             Log.i(TAG, "HR ByteArray Called")
 
             while(tmpiter.hasNext()){

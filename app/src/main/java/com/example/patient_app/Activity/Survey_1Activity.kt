@@ -1,15 +1,23 @@
 package com.example.patient_app.Activity
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
+import android.view.ContextThemeWrapper
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_survey1.*
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class Survey_1Activity : AppCompatActivity() {
     private var toast: Toast? = null
@@ -26,6 +34,7 @@ class Survey_1Activity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_survey1)
@@ -40,15 +49,27 @@ class Survey_1Activity : AppCompatActivity() {
             editor.putBoolean("isToastShown",false)
             editor.apply()
 
-            BasicInfo.day =birth.dayOfMonth
-            BasicInfo.month = birth.month
+            if (birth.dayOfMonth <=9){
+                BasicInfo.day = "0" + (birth.dayOfMonth).toString()
+            }
+            else{
+                BasicInfo.day = (birth.dayOfMonth).toString()
+            }
+
+            if (birth.month <=9){
+                BasicInfo.month = "0" + (birth.month+1).toString()
+            }
+            else{
+                BasicInfo.month = (birth.month+1).toString()
+            }
+
             BasicInfo.year = birth.year
 
             if (gender_male.isChecked){
-                BasicInfo.gender = "남"
+                BasicInfo.gender = "남(1)"
             }
             else if(gender_female.isChecked){
-                BasicInfo.gender = "여"
+                BasicInfo.gender = "여(2)"
             }
             else{
                 makeToast("성별을 선택하세요.")
@@ -338,29 +359,51 @@ class Survey_1Activity : AppCompatActivity() {
 
             if(!sharedPreferences.getBoolean("isToastShown",false)){
                     if (two.isChecked){
-                        var intent1 = Intent(this, YMRS_2yearActivity::class.java)
-                        startActivity((intent1))
+                        val onlyDate: String? = LocalDate.now().format(DateTimeFormatter.ofPattern("MMdd"))
+                        val builder = AlertDialog.Builder(this)
+                        builder.setTitle("아이디 생성")
+                            .setMessage("당신의 아이디는\n" + "2" + BasicInfo.gender[2]+BasicInfo.year.toString()+BasicInfo.month+BasicInfo.day+"$onlyDate\n 입니다.")
+                            .setPositiveButton("확인", DialogInterface.OnClickListener{dialog, which ->
+                                MainActivity_HR.Patient_ID = "2" + BasicInfo.gender[2]+BasicInfo.year.toString()+BasicInfo.month+BasicInfo.day+"$onlyDate"
+                                var intent3 = Intent(this, LoginActivity::class.java)
+                                startActivity((intent3))
+                                finish()
+                            }).show()
                     }
                     else if (three.isChecked){
-                        var intent2 = Intent(this, Whoqol_3yearActivity::class.java)
-                        startActivity((intent2))
+                        val onlyDate: String? = LocalDate.now().format(DateTimeFormatter.ofPattern("MMdd"))
+                        val builder = AlertDialog.Builder(this)
+                        builder.setTitle("아이디 생성")
+                            .setMessage("당신의 아이디는\n" + "3" + BasicInfo.gender[2]+BasicInfo.year.toString()+BasicInfo.month+BasicInfo.day+"$onlyDate\n입니다.")
+                            .setPositiveButton("확인", DialogInterface.OnClickListener{dialog, which ->
+                                MainActivity_HR.Patient_ID = "3" + BasicInfo.gender[2]+BasicInfo.year.toString()+BasicInfo.month+BasicInfo.day+"$onlyDate"
+                                var intent3 = Intent(this, LoginActivity::class.java)
+                                startActivity((intent3))
+                                finish()
+                            })
+                            .show()
                     }
                 }
         })
 
 //        next_btn.setOnClickListener({
 //
-//            if (two.isChecked){
-//                var intent1 = Intent(this, YMRS_2yearActivity::class.java)
-//                startActivity((intent1))
-//            }
-//            else if (three.isChecked){
-//                var intent2 = Intent(this, Whoqol_3yearActivity::class.java)
-//                startActivity((intent2))
-//            }
-//            else{
-//                makeToast("치료 기간을 선택해주세요.")
-//            }
+////            if (two.isChecked){
+////                var intent1 = Intent(this, YMRS_2yearActivity::class.java)
+////                startActivity((intent1))
+////                if(MainActivity_HR.isFinished)
+////                    finish()
+////            }
+////            else if (three.isChecked){
+////                var intent2 = Intent(this, Whoqol_3yearActivity::class.java)
+////                startActivity((intent2))
+////                if(MainActivity_HR.isFinished)
+////                    finish()
+////            }
+////            else{
+////                makeToast("치료 기간을 선택해주세요.")
+////            }
+//
 //
 //        })
 

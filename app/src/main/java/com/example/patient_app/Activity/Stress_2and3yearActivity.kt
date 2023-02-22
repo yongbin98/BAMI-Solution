@@ -1,5 +1,6 @@
 package com.example.patient_app.Activity
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -7,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_stress2and3year.*
 import kotlinx.android.synthetic.main.activity_stress2and3year.*
@@ -32,6 +36,7 @@ class Stress_2and3yearActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
 
         val editor = sharedPreferences.edit()
+        val activitylauncher = openActivityResultLauncher()
 
         stressNext_btn.setOnClickListener({
 
@@ -73,14 +78,27 @@ class Stress_2and3yearActivity : AppCompatActivity() {
                 }
             }
             if(!sharedPreferences.getBoolean("isToastShown",false)){
-                var intent1 = Intent(this, VAS_2and3yearActivity::class.java)
-                startActivity((intent1))
+                if (MainActivity_HR.timeDiff.rem(7) == 0L) {
+                    val intent = Intent(this, insomnia_2yearActivity::class.java)
+                    activitylauncher.launch(intent)
+                } else {
+                    val intent = Intent(this, Thankyou::class.java)
+                    activitylauncher.launch(intent)
+                }
             }
-
-
-
-
         })
-
     }
+
+    private fun openActivityResultLauncher(): ActivityResultLauncher<Intent> {
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val intent = Intent()
+                setResult(RESULT_OK, intent)
+                finish()
+            }
+        }
+        return resultLauncher
+    }
+
 }

@@ -54,7 +54,7 @@ class StepCount {
         lateinit var request : AggregateRequest
         if(isSaved){
             val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault()) + TimeUnit.DAYS.toMillis(1)
-            val startTime = endTime - TimeUnit.DAYS.toMillis(2)
+            val startTime = endTime - TimeUnit.DAYS.toMillis(8)
 
             request = AggregateRequest.Builder()
                 .setDataType(HealthConstants.StepCount.HEALTH_DATA_TYPE)
@@ -128,7 +128,7 @@ class StepCount {
         val month = cal[Calendar.MONTH]
         val date = cal[Calendar.DATE]
         val hourofday = cal[Calendar.HOUR_OF_DAY]
-        cal.timeZone = TimeZone.getTimeZone("UTC")
+        cal.timeZone = TimeZone.getTimeZone("GMT")
         cal[Calendar.YEAR] = year
         cal[Calendar.MONTH] = month
         cal[Calendar.DATE] = date

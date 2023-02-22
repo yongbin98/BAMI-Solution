@@ -23,13 +23,16 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/godo"
             android:gravity="center"
             android:text="@string/insomnia"
             android:textColor="@color/black"
-            android:textSize="35sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="30sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:autoSizeStepGranularity="1sp"
             android:textStyle="bold" />
 
         <View
@@ -40,24 +43,30 @@
         android:layout_marginTop="15dp"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1. 최근 2주동안에 당신의 불면증의\n심한 정도를 아래에 표시하십시오."
-            android:textSize="22sp"
-            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="23sp"
+            android:autoSizeMinTextSize="17sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/godo"
             android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"/>
+            android:text="1. 최근 2주동안에 당신의 불면증의\n심한 정도를 아래에 표시하십시오."
+            android:textColor="@color/black" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:text="1) 초조하거나 불안하거나\n조마조마하게 느낀다."
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
-            android:textSize="18sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="13sp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeStepGranularity="1sp"
             android:layout_gravity="center"
             android:gravity="center"
             />
@@ -124,13 +133,17 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
                 android:text="전혀 없음."
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:paddingStart="50dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
+                android:paddingStart="30sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline22"
@@ -147,14 +160,19 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 심함."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="50sp"
+                android:paddingEnd="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -166,13 +184,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:text="2) 잠을 유지하기 어려움 (자주 깸)"
+            android:paddingStart="50sp"
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
-            android:textSize="18sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="13sp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeStepGranularity="1sp"
             android:layout_gravity="center"
             android:gravity="center"
             />
@@ -239,13 +261,17 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
                 android:text="전혀 없음."
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:paddingStart="50dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
+                android:paddingStart="30sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline21"
@@ -262,14 +288,19 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 심함."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="50sp"
+                android:paddingEnd="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -281,13 +312,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:text="3) 새벽에 너무 일찍 잠에서 깸"
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
-            android:textSize="18sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="13sp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeStepGranularity="1sp"
             android:layout_gravity="center"
             android:gravity="center"
             />
@@ -354,13 +388,17 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
                 android:text="전혀 없음."
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:paddingStart="50dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
+                android:paddingStart="30sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline23"
@@ -377,14 +415,19 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 심함."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="50sp"
+                android:paddingEnd="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -397,10 +440,13 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:text="2. 당신의 현재 수면 패턴에\n얼마나 만족하십니까?"
-            android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="17sp"
+            android:autoSizeMaxTextSize="23sp"
+            android:autoSizeStepGranularity="1sp"
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
             android:gravity="center"
@@ -469,13 +515,17 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
                 android:text="매우 만족함."
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:paddingStart="40dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
+                android:paddingStart="20sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline24"
@@ -492,14 +542,19 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 불만족."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="40sp"
+                android:paddingEnd="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -510,10 +565,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:text="3. 불면증으로 인한 삶의 손상 정도가\n다른 사람들에게 어떻게 보인다고\n생각합니까?"
-            android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="17sp"
+            android:autoSizeMaxTextSize="23sp"
+            android:autoSizeStepGranularity="1sp"
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
             android:gravity="center"
@@ -582,14 +640,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
-                android:gravity="center"
-                android:paddingStart="20dp"
                 android:text="전혀 현저하지 않음."
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline25"
@@ -606,14 +666,18 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 많이 현저함."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -624,10 +688,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:text="4. 현재 불면증에 관하여\n얼마나 걱정하고 있습니까?"
-            android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="17sp"
+            android:autoSizeMaxTextSize="23sp"
+            android:autoSizeStepGranularity="1sp"
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
             android:gravity="center"
@@ -696,14 +763,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
-                android:gravity="center"
-                android:paddingStart="20dp"
                 android:text="전혀 걱정하지 않음."
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline26"
@@ -720,14 +789,18 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 많이 걱정함."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -738,10 +811,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
             android:text="5. 당신의 수면 문제가 일상생활에\n(예: 낮동안 피곤함, 업무 또는\n일상적 가사능력, 집중력, 기억력,\n기분 등)을 어느정도 방해한다고\n생각합니까?"
-            android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="17sp"
+            android:autoSizeMaxTextSize="23sp"
+            android:autoSizeStepGranularity="1sp"
             android:textColor="@color/black"
             android:fontFamily="@font/godo"
             android:gravity="center"
@@ -810,14 +886,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/godo"
-                android:gravity="center"
-                android:paddingStart="20dp"
                 android:text="전혀 방해되지 않음."
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline27"
@@ -834,14 +912,18 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/godo"
+                android:layout_marginEnd="20dp"
                 android:text="매우 많이 방해됨."
+                android:gravity="right"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textStyle="italic"
-                android:paddingEnd="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"

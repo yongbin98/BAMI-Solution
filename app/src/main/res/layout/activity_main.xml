@@ -10,42 +10,51 @@
     <!--날씨 아이콘 추가예정-->
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/widget"
+        app:layout_constraintVertical_weight="0.23"
         tools:layout_editor_absoluteX="75dp">
 
         <Button
             android:id="@+id/btn_Survey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="30dp"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMinTextSize="13sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
             android:background="@drawable/btn_bluetooth"
             android:fontFamily="@font/godo"
             android:gravity="center"
-            android:textAllCaps="false"
             android:text="@string/btn_survey"
-            android:textSize="30sp"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2"
-            />
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
         <Button
             android:id="@+id/btn_SamsungHealth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="30dp"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMinTextSize="13sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
             android:background="@drawable/btn_bluetooth"
             android:fontFamily="@font/godo"
             android:gravity="center"
-            android:textAllCaps="false"
             android:text="@string/btn_samsungHealth"
-            android:textSize="20sp"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -54,26 +63,21 @@
             app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
 
-
-
-
-
-
-
-
     </FrameLayout>
 
     <ImageView
         android:id="@+id/widget"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/widget"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.508" />
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/weather"
@@ -81,7 +85,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/godo"
         android:gravity="center"
-        android:text="기온"
+        android:text="--"
         android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/heart_icon"
@@ -92,15 +96,19 @@
 
     <TextView
         android:id="@+id/local"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
         android:drawableLeft="@drawable/location_icon"
         android:drawableTint="@color/gray"
         android:fontFamily="@font/godo"
         android:gravity="center"
         android:text="주소"
         android:textColor="@color/gray"
-        android:textSize="20sp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeMinTextSize="13sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/widget"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintHorizontal_bias="0.5"
@@ -151,29 +159,34 @@
 
     <TextView
         android:id="@+id/rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:autoSizeMaxTextSize="65sp"
+        android:autoSizeMinTextSize="55sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/godo"
         android:gravity="center"
         android:text="-"
         android:textColor="@color/blue"
-        android:textSize="65sp"
         app:layout_constraintBottom_toTopOf="@+id/bpm"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/widget"
-        app:layout_constraintTop_toBottomOf="@+id/heart_icon"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/heart_icon" />
 
 
     <TextView
         android:id="@+id/step"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:autoSizeMaxTextSize="65sp"
+        android:autoSizeMinTextSize="55sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/godo"
         android:gravity="center"
         android:text="-"
         android:textColor="@color/blue"
-        android:textSize="65sp"
         app:layout_constraintBottom_toTopOf="@+id/steps"
         app:layout_constraintEnd_toEndOf="@+id/widget"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
@@ -208,7 +221,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/step_icon"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintVertical_bias="0.678" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -220,22 +233,28 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/main_background"
         android:contentInsetStart="0dp"
         android:minHeight="?attr/actionBarSize"
-        app:layout_constraintBottom_toTopOf="@id/guideline3"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toTopOf="@+id/widget"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.12"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/godo"
+            android:gravity="center"
             android:text="@string/title"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/black" />
 
     </androidx.appcompat.widget.Toolbar>
 

@@ -15,20 +15,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             >
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="35sp"
-                android:text="MARS 설문지"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeMaxTextSize="40sp"
+                android:autoSizeMinTextSize="30sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/godo"
                 android:gravity="center"
+                android:text="MARS 설문지"
                 android:textColor="@color/black"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
@@ -43,39 +46,47 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="20dp">
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp">
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginEnd="5dp">
 
                     <TextView
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform"
                         android:fontFamily="@font/godo"
                         android:gravity="left"
-                        android:text="1. 약 먹는 것을 깜빡 잊은 적이\n    있습니까?"
-                        android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:text="1. 약 먹는 것을 깜빡 잊은\n    적이 있습니까?"
+                        android:textColor="@color/black" />
+
                     <View
                         android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-
+                        android:layout_height="45dp"
+                        android:layout_weight="1" />
 
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="0dp"
                         android:layout_gravity="right"
+                        android:layout_marginStart="0dp"
                         android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/MARS1_yes"
-                            android:layout_gravity="right"
-                            android:scaleX="0.7"
-                            android:scaleY="0.7"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_gravity="right"
                             android:fontFamily="@font/godo"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
                             android:text="@string/yes"
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -83,12 +94,12 @@
 
                         <RadioButton
                             android:id="@+id/MARS1_no"
-                            android:layout_gravity="right"
-                            android:scaleX="0.7"
-                            android:scaleY="0.7"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_gravity="right"
                             android:fontFamily="@font/godo"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
                             android:text="@string/no"
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -99,6 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginVertical="10dp"
                     >
 
@@ -107,7 +119,13 @@
                         android:gravity="left"
                         android:text="2. 약 먹기가 귀찮은 적이\n    있습니까?"
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -149,6 +167,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp"
+                    android:layout_marginEnd="5dp"
                     >
 
                     <TextView
@@ -156,7 +175,13 @@
                         android:gravity="left"
                         android:text="3. 몸이 많이 좋아진 것 같아서\n    약을 끊은 적이 있습니까?"
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -197,6 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginVertical="10dp"
                     >
 
@@ -205,7 +231,13 @@
                         android:gravity="left"
                         android:text="4. 약을 먹으면 몸이 더 \n    나빠지는 것 같아서\n    약을 끊은 적이 있습니까?"
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="55dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -245,15 +277,22 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp">
 
                     <TextView
                         android:fontFamily="@font/godo"
                         android:gravity="left"
-                        android:text="5. 나는 아플 때만 약을 먹는다."
+                        android:text="5. 나는 아플 때만\n    약을 먹는다."
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -293,6 +332,7 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp">
 
@@ -301,7 +341,13 @@
                         android:gravity="left"
                         android:text="6. 나의 몸과 마음이 약으로\n    조절되는 것은 자연스럽지\n    못하다."
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="55dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -340,6 +386,7 @@
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp">
@@ -349,7 +396,13 @@
                         android:gravity="left"
                         android:text="7. 나는 약을 먹으면 생각이\n    더 명료해진다."
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -390,6 +443,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginVertical="10dp">
 
                     <TextView
@@ -397,7 +451,13 @@
                         android:gravity="left"
                         android:text="8. 나는 약을 계속 먹으면\n    상태가 나빠지지 않을 것이다."
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -438,6 +498,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginVertical="10dp">
 
                     <TextView
@@ -445,7 +506,13 @@
                         android:gravity="left"
                         android:text="9. 나는 약을 먹으면 넋이 나가\n    멍해지는 것 같은 이상한\n    느낌이 든다."
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="55dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -484,6 +551,7 @@
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp">
@@ -491,9 +559,15 @@
                     <TextView
                         android:fontFamily="@font/godo"
                         android:gravity="left"
-                        android:text="10. 나는 약을 먹으면 더\n    피곤하고 쳐진다."
+                        android:text="10. 나는 약을 먹으면 더\n     피곤하고 쳐진다."
                         android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:layout_marginStart="5dp"
+                        android:layout_height="45dp"
+                        android:layout_width="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"

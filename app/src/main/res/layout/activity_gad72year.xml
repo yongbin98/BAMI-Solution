@@ -20,16 +20,21 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="35sp"
-                android:text="@string/GAD"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeMaxTextSize="40sp"
+                android:autoSizeMinTextSize="30sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/godo"
                 android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/GAD"
                 android:textColor="@color/black"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
@@ -48,7 +53,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <Spinner
@@ -72,7 +81,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <Spinner
@@ -96,7 +109,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <Spinner
@@ -120,7 +137,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="1"
                 />
 
             <Spinner
@@ -131,7 +152,11 @@
                 android:id="@+id/GAD4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <TextView
@@ -144,7 +169,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <Spinner
@@ -168,7 +197,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <Spinner
@@ -192,7 +225,11 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
                 />
 
             <Spinner

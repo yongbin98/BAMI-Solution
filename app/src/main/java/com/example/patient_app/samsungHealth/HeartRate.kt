@@ -2,6 +2,7 @@ package com.example.patient_app.samsungHealth
 
 import android.os.Handler
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import com.example.patient_app.SFTP.File
 import com.example.patient_app.SFTP.FileType
@@ -56,7 +57,7 @@ class HeartRate {
 
         if(isSaved){
             val endTime = getUtcStartOfDay(System.currentTimeMillis(), TimeZone.getDefault()) + TimeUnit.DAYS.toMillis(1)
-            val startTime = endTime - TimeUnit.DAYS.toMillis(2)
+            val startTime = endTime - TimeUnit.DAYS.toMillis(8)
 
             request = ReadRequest.Builder()
                 .setDataType(HealthConstants.HeartRate.HEALTH_DATA_TYPE)
@@ -100,8 +101,14 @@ class HeartRate {
                                 break
                             }
                         }
-                        if(!isSaved)
-                            mHeartRateObserver!!.onChanged(result.last().getFloat(HealthConstants.HeartRate.HEART_RATE))
+                        if(!isSaved) {
+                            if(iterator.hasNext())
+                                mHeartRateObserver!!.onChanged(
+                                    result.last().getFloat(HealthConstants.HeartRate.HEART_RATE)
+                                )
+                            else
+                                mHeartRateObserver!!.onChanged(false)
+                        }
                     }
                 }
         } catch (e: Exception) {
@@ -116,7 +123,7 @@ class HeartRate {
         val month = cal[Calendar.MONTH]
         val date = cal[Calendar.DATE]
         val hourofday = cal[Calendar.HOUR_OF_DAY]
-        cal.timeZone = TimeZone.getTimeZone("UTC")
+        cal.timeZone = TimeZone.getTimeZone("GMT")
         cal[Calendar.YEAR] = year
         cal[Calendar.MONTH] = month
         cal[Calendar.DATE] = date
@@ -130,6 +137,7 @@ class HeartRate {
 
     interface HeartRateObserver {
         fun onChanged(count : Float)
+        fun onChanged(count : Boolean)
         fun onChanged(count : ByteArray, file : File)
     }
 }

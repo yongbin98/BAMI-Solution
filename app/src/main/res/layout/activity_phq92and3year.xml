@@ -22,8 +22,11 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="35sp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="40sp"
+                android:autoSizeMinTextSize="30sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 android:text="@string/PHQ"
                 android:fontFamily="@font/godo"
                 android:gravity="center"
@@ -42,13 +45,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="55dp"
                 android:text="1. 기분이 가라앉거나, 우울하거나,\n    희망이 없다고 느낀다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -66,13 +72,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="55dp"
                 android:text="2. 평소 하던 일에 대한 흥미가 없어지거나\n    즐거움을 느끼지 못했다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -90,13 +99,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="55dp"
                 android:text="3. 잠들기가 어렵거나 자주 깼다.\n    혹은 너무 많이 잤다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -114,13 +126,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="55dp"
                 android:text="4. 평소보다 식욕이 줄었다.\n    혹은 평소보다 많이 먹었다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -138,13 +153,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:text="5. 다른 사람들이 눈치 챌 정도로\n    평소보다 말과 행동이 느려졌다.\n    혹은 너무 안절부절 못해서\n    가만히 앉아 있을 수 없었다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -162,13 +180,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="30dp"
                 android:text="6. 피곤하고 기운이 없었다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -186,13 +207,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="75dp"
                 android:text="7. 내가 잘못 했거나, 실패했다는 생각이\n    들었다. 혹은 자신과 가족을\n    실망시켰다고 생각한다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -210,13 +234,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="55dp"
                 android:text="8. 신문을 읽거나 TV를 보는 것과 같은\n    일상적인 일에도 집중할 수가 없었다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner
@@ -234,13 +261,16 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="55dp"
                 android:text="9. 차라리 죽는 것이 더 낫겠다고\n    생각했다. 혹은 자해할 생각을 했다."
                 android:gravity="left"
                 android:layout_gravity="center"
                 android:fontFamily="@font/godo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 />
 
             <Spinner

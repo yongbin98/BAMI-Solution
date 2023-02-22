@@ -3,6 +3,7 @@ package com.example.patient_app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
 import com.example.patient_app.R
 import com.example.patient_app.SFTP.File
 import com.example.patient_app.SFTP.FileType
@@ -12,12 +13,19 @@ import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 class Thankyou : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thankyou)
+
+        val dialog = LoadingDialog(this)
+        dialog.setContentView(R.layout.dialog_loading)
+
         val myCoroutinescope = CoroutineScope(Dispatchers.IO)
+
+        dialog.show()
 
         myCoroutinescope.launch {
             HealthService.updateHealthData(true)
@@ -31,11 +39,18 @@ class Thankyou : AppCompatActivity() {
                 it.delete()
             }
 
+        dialog.dismiss()
+
+
             end_btn.setOnClickListener({
-                var intent1 = Intent(this@Thankyou, MainActivity::class.java)
-                startActivity((intent1))
+                val intent = Intent()
+                setResult(RESULT_OK, intent)
+                finish()
             })
         }
+
+
+
     }
     private fun saveSurvey(){
         var file = File(FileType.startCharOf('S'))
@@ -151,5 +166,7 @@ class Thankyou : AppCompatActivity() {
                 "${SSIanswer.SSI18_ans},${SSIanswer.SSI19_ans}\n")
         file.close()
     }
+
+
 
 }

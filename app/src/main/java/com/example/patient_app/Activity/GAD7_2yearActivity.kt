@@ -1,12 +1,18 @@
 package com.example.patient_app.Activity
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.widget.TextViewCompat
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_gad72year.*
 import kotlinx.android.synthetic.main.activity_ymrs2year.*
@@ -18,6 +24,7 @@ class GAD7_2yearActivity : AppCompatActivity() {
 
         var option2 = resources.getStringArray(R.array.GAD)
         var adapter2 = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,option2)
+        val activitylauncher = openActivityResultLauncher()
 
         GAD1.adapter = adapter2
         GAD2.adapter = adapter2
@@ -126,21 +133,30 @@ class GAD7_2yearActivity : AppCompatActivity() {
                 Toast.makeText(this, "모든 항목에 응답해주세요.", Toast.LENGTH_SHORT).show()
             }
             else{
-                var intent1 = Intent(this, insomnia_2yearActivity::class.java)
-                startActivity((intent1))
+                if (MainActivity_HR.timeDiff.rem(7) == 0L) {
+                    val intent = Intent(this, PHQ9_2and3yearActivity::class.java)
+                    activitylauncher.launch(intent)
+                } else {
+                    val intent = Intent(this, Thankyou::class.java)
+                    activitylauncher.launch(intent)
+                }
             }
+
 
 
         })
 
+    }
 
-
-
-
-
-
-
-
-
+    private fun openActivityResultLauncher(): ActivityResultLauncher<Intent> {
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val intent = Intent()
+                setResult(RESULT_OK, intent)
+                finish()
+            }
+        }
+        return resultLauncher
     }
 }
