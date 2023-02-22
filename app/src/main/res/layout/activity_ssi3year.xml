@@ -58,7 +58,7 @@
         />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -84,7 +84,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -111,7 +111,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -138,7 +138,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -165,7 +165,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -192,7 +192,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -219,7 +219,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -246,7 +246,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -273,7 +273,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -300,7 +300,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -327,7 +327,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -354,7 +354,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -381,7 +381,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -408,7 +408,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -435,7 +435,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -462,7 +462,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -489,7 +489,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -516,7 +516,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"
@@ -543,7 +543,7 @@
             />
 
         <Spinner
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginVertical="5dp"
             android:gravity="center"
             android:background="@drawable/spinner_custom"

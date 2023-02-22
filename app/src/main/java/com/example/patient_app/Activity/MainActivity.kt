@@ -147,22 +147,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item!!.itemId) {
-            R.id.App_version -> {
-                Snackbar.make(toolbar, "버전 정보 : 0.0.0", Snackbar.LENGTH_SHORT).show()
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
     private fun weatherScreen(it : StringBuilder){
         it.split('\n').let {
             it.forEachIndexed { index, text ->

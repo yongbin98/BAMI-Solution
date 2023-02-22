@@ -794,7 +794,7 @@
                         android:autoSizeTextType="uniform" />
                     <View
                         android:layout_width="0dp"
-                        android:layout_height="30dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"/>
 
                     <EditText
@@ -806,7 +806,7 @@
                         android:gravity="center"
                         android:inputType="number"
                         android:textColor="@color/black"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:layout_width="match_parent"
                         android:autoSizeMaxTextSize="17sp"
                         android:autoSizeMinTextSize="12sp"

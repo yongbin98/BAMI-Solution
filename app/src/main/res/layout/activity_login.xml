@@ -7,6 +7,7 @@
     android:background="@color/main_background"
     tools:context=".Activity.LoginActivity">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -17,29 +18,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="185dp"
         android:layout_height="195dp"
         android:background="@mipmap/bami_icon"
-        app:layout_constraintVertical_weight="0.5"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_weight="0.5" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintVertical_weight="1"
-        android:layout_marginBottom="40dp"
         android:autoSizeMaxTextSize="50sp"
         android:autoSizeMinTextSize="30sp"
         android:autoSizeStepGranularity="1sp"
@@ -50,70 +48,42 @@
         android:text="@string/Bami"
         android:textColor="@color/blue"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/ID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/ID"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="100dp"
-        app:layout_constraintVertical_weight="1"
-        android:autoSizeMaxTextSize="20sp"
-        android:autoSizeMinTextSize="30sp"
-        android:autoSizeStepGranularity="1sp"
-        android:autoSizeTextType="uniform"
-        android:hint="아이디"
-        android:inputType="textPersonName"
-        android:maxEms="8"
-        android:minEms="4"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_weight="1" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:background="@color/blue"
         android:fontFamily="@font/godo"
-        app:layout_constraintVertical_weight="1"
         android:text="로그인"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_ifNoID"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/ID"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_weight="1" />
 
     <Button
         android:id="@+id/btn_ifNoID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:background="@color/투명"
         android:fontFamily="@font/godo"
         android:text="@string/NOID"
         android:textColor="@color/circle"
-        app:layout_constraintVertical_weight="1"
         android:textSize="15sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_weight="1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
