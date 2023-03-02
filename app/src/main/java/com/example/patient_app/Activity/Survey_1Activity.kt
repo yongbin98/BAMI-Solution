@@ -43,7 +43,10 @@ class Survey_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_survey1)
 
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
+
         birth.updateDate(1990,1,1)
+
+
 
         val editor = sharedPreferences.edit()
 
@@ -58,7 +61,7 @@ class Survey_1Activity : AppCompatActivity() {
                 BasicInfo.day = (birth.dayOfMonth).toString()
             }
 
-            if (birth.month <= 9) {
+            if (birth.month <= 8) {
                 BasicInfo.month = "0" + (birth.month + 1).toString()
             } else {
                 BasicInfo.month = (birth.month + 1).toString()

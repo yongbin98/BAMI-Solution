@@ -23,7 +23,7 @@ class GAD7_2yearActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gad72year)
 
         var option2 = resources.getStringArray(R.array.GAD)
-        var adapter2 = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,option2)
+        var adapter2 = ArrayAdapter<String>(this, R.layout.spinner_item_layout,option2)
         val activitylauncher = openActivityResultLauncher()
 
         GAD1.adapter = adapter2

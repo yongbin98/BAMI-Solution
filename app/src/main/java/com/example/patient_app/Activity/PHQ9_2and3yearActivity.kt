@@ -23,7 +23,7 @@ class PHQ9_2and3yearActivity : AppCompatActivity() {
 
 
         var option = resources.getStringArray(R.array.PHQ)
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,option)
+        var adapter = ArrayAdapter<String>(this, R.layout.spinner_item_layout,option)
 
         PHQ1.adapter = adapter
         PHQ2.adapter = adapter

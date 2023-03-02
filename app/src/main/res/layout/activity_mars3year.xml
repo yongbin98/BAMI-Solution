@@ -80,6 +80,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS1_yes"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -93,6 +94,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS1_no"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -138,6 +140,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS2_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -150,6 +153,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS2_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -194,6 +198,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS3_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -206,6 +211,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS3_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -250,6 +256,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS4_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -262,6 +269,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS4_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -305,6 +313,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS5_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -317,6 +326,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS5_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -360,6 +370,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS6_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -372,6 +383,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS6_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -415,6 +427,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS7_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -427,6 +440,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS7_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -470,6 +484,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS8_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -482,6 +497,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS8_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -525,6 +541,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS9_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -537,6 +554,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS9_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -580,6 +598,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS10_yes"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
@@ -592,6 +611,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <RadioButton
+                            android:buttonTint="@color/black"
                             android:id="@+id/MARS10_no"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
