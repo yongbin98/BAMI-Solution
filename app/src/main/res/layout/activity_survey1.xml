@@ -101,11 +101,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/birth"
                 android:calendarViewShown="false"
+                android:spinnersShown="true"
                 android:datePickerMode="spinner"
                 android:layout_marginTop="-10dp"
                 android:calendarTextColor="@color/gray"
                 android:background="@color/투명"
                 android:textColor="@color/black"
+                android:theme="@style/CustomDatePickerStyle"
                 />
 
             <LinearLayout
@@ -1616,11 +1618,13 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/godo"
                         android:text="@string/two"
+                        android:textColor="@color/black"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
                         android:buttonTint="@color/black"
                         android:id="@+id/three"
+                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginStart="20dp"
