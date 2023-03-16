@@ -1,9 +1,14 @@
 package com.example.patient_app.Activity
 
+import android.app.AlarmManager
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import com.example.patient_app.R
 import com.example.patient_app.SFTP.File
 import com.example.patient_app.SFTP.FileType
@@ -13,9 +18,14 @@ import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.time.LocalDate
+import java.io.PrintWriter
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class Thankyou : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thankyou)
@@ -36,9 +46,9 @@ class Thankyou : AppCompatActivity() {
             sftp.upload(File.files)
             sftp.disconnect()
             File.delete()
+            rewriteID()
 
         dialog.dismiss()
-
 
             end_btn.setOnClickListener {
                 val intent = Intent()
@@ -46,10 +56,21 @@ class Thankyou : AppCompatActivity() {
                 finish()
             }
         }
-
-
-
     }
+
+
+    private fun rewriteID(){
+        var file = java.io.File("/data/data/com.example.patient_app/files/ID", "id.txt")
+        if(file.exists())
+            file.delete()
+
+        val printWriter = PrintWriter(file)
+        printWriter.println(MainActivity_HR.Patient_ID)
+        printWriter.println(MainActivity_HR.timeDiff + 1)
+        printWriter.close()
+    }
+
+
     private fun saveSurvey(){
         var file = File(FileType.startCharOf('S'))
         file.write("birth,${BasicInfo.year},${BasicInfo.month},${BasicInfo.day}\n")

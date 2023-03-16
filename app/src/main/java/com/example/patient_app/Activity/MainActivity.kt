@@ -1,38 +1,30 @@
 package com.example.patient_app.Activity
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
+import android.app.Activity
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import com.example.patient_app.WeatherAPI.WeatherAPI
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.view.isInvisible
 import com.example.patient_app.R
 import com.example.patient_app.WeatherAPI.APIService
 import com.example.patient_app.samsungHealth.HealthService
-import com.example.patient_app.samsungHealth.HeartRate
 import com.example.patient_app.samsungHealth.PERMISSIONS
 import com.example.patient_app.samsungHealth.REQUEST_ALL_PERMISSION
-import com.google.android.material.snackbar.Snackbar
-import com.samsung.android.sdk.healthdata.HealthConstants.StepCount
-import com.samsung.android.sdk.healthdata.HealthDataStore
-import com.samsung.android.sdk.healthdata.HealthPermissionManager
-import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionKey
-import com.samsung.android.sdk.healthdata.HealthPermissionManager.PermissionType
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
-import java.util.concurrent.TimeUnit
-import kotlin.time.Duration.Companion.days
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 @SuppressLint("MissingPermission")
 class MainActivity : AppCompatActivity() {
@@ -46,8 +38,7 @@ class MainActivity : AppCompatActivity() {
         val utilDate = Date()
         val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
         date.text = formatType.format(utilDate)
-        var cutLocation: String
-
+        val activitylauncher = openActivityResultLauncher()
 
         btn_SamsungHealth.setOnClickListener {
             myCoroutinescope.launch {
@@ -85,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "${MainActivity_HR.timeDiff.rem(7) == 0L}")
                 if (MainActivity_HR.treatYear == "2" || MainActivity_HR.treatYear == "3") {
                     val intent = Intent(this, VAS_2and3yearActivity::class.java)
-                    startActivity((intent))
+                    activitylauncher.launch(intent)
                 } else
                     Toast.makeText(this, "ID 오류가 발생하였습니다.", Toast.LENGTH_SHORT)
             }
@@ -233,6 +224,39 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun openActivityResultLauncher(): ActivityResultLauncher<Intent> {
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                var calender = Calendar.getInstance().apply {
+                    timeInMillis = System.currentTimeMillis()
+                    set(Calendar.HOUR_OF_DAY,12)
+                    set(Calendar.MINUTE,0)
+                    set(Calendar.SECOND,0)
+                }
+
+                var alarmManager = this.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                if(alarmManager != null){
+                    val intent = Intent(this, AlarmReceiver::class.java)
+                    val alarmIntent = PendingIntent.getBroadcast(
+                        this,
+                        1,
+                        intent,
+                        PendingIntent.FLAG_MUTABLE
+                    )
+
+                    alarmManager.setRepeating(
+                        AlarmManager.RTC_WAKEUP, calender.timeInMillis,
+                        AlarmManager.INTERVAL_DAY, alarmIntent
+                    )
+
+                    Toast.makeText(this@MainActivity, "알람이 저장되었습니다.", Toast.LENGTH_LONG).show()
+                }
+
+            }
+        }
+        return resultLauncher
+    }
 }
 
 

@@ -43,10 +43,7 @@ class Survey_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_survey1)
 
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
-
         birth.updateDate(1990,1,1)
-
-
 
         val editor = sharedPreferences.edit()
 
@@ -340,7 +337,8 @@ class Survey_1Activity : AppCompatActivity() {
                     file.delete()
 
                 val printWriter = PrintWriter(file)
-                printWriter.print(id)
+                printWriter.println(id)
+                printWriter.println("0")
                 printWriter.close()
 
                 builder.setTitle("아이디 생성")
@@ -373,10 +371,10 @@ class Survey_1Activity : AppCompatActivity() {
 //
 //        })
 
-        }
+    }
 
     override fun onStop() {
         super.onStop()
         toast?.cancel()
     }
-    }
+}

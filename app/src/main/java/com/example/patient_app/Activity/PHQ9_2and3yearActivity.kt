@@ -163,10 +163,10 @@ class PHQ9_2and3yearActivity : AppCompatActivity() {
                 Toast.makeText(this, "모든 항목에 응답해주세요.",Toast.LENGTH_SHORT).show()
             }
             else{
-                if (MainActivity_HR.timeDiff.rem(7) == 0L && MainActivity_HR.treatYear == "2") {
+                if (MainActivity_HR.timeDiff.rem(14) == 0L && MainActivity_HR.treatYear == "2") {
                     val intent = Intent(this, YMRS_2yearActivity::class.java)
                     activitylauncher.launch(intent)
-                } else if (MainActivity_HR.timeDiff.rem(30) == 0L && MainActivity_HR.treatYear == "3") {
+                } else if (MainActivity_HR.timeDiff.rem(28) == 0L && MainActivity_HR.treatYear == "3") {
                     val intent = Intent(this, SSI_3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 } else {

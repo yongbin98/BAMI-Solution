@@ -133,7 +133,7 @@ class GAD7_2yearActivity : AppCompatActivity() {
                 Toast.makeText(this, "모든 항목에 응답해주세요.", Toast.LENGTH_SHORT).show()
             }
             else{
-                if (MainActivity_HR.timeDiff.rem(7) == 0L) {
+                if (MainActivity_HR.timeDiff.rem(14) == 0L) {
                     val intent = Intent(this, PHQ9_2and3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 } else {

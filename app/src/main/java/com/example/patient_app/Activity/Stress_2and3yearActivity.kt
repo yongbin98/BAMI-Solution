@@ -73,7 +73,7 @@ class Stress_2and3yearActivity : AppCompatActivity() {
                 }
             }
             if (!sharedPreferences.getBoolean("isToastShown", false)) {
-                if (MainActivity_HR.timeDiff.rem(7) == 0L) {
+                if (MainActivity_HR.timeDiff.rem(14) == 0L) {
                     val intent = Intent(this, insomnia_2yearActivity::class.java)
                     activitylauncher.launch(intent)
                 } else {

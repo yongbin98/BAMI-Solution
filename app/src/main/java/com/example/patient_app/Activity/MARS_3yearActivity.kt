@@ -93,7 +93,7 @@ class MARS_3yearActivity : AppCompatActivity() {
             Mars.Score = "$MARSscore 점"
 
             if(!sharedPreferences.getBoolean("isToastShown",false)){
-                if (MainActivity_HR.timeDiff.rem(30) == 0L && MainActivity_HR.treatYear == "3") {
+                if (MainActivity_HR.timeDiff.rem(28) == 0L && MainActivity_HR.treatYear == "3") {
                     val intent = Intent(this, Whoqol_3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 } else {

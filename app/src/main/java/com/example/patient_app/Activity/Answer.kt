@@ -170,6 +170,7 @@ class MainActivity_HR{
         var Patient_ID = ""
         var treatYear = ""
         var timeDiff = 0L
+        var treatFinish = 0
     }
 
 

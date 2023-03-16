@@ -2,7 +2,7 @@ package com.example.patient_app.samsungHealth
 
 import android.Manifest
 
-const val REQUEST_ALL_PERMISSION = 7
+const val REQUEST_ALL_PERMISSION = 9
 
 val PERMISSIONS = arrayOf(
     Manifest.permission.ACCESS_FINE_LOCATION,
@@ -11,5 +11,7 @@ val PERMISSIONS = arrayOf(
     Manifest.permission.READ_EXTERNAL_STORAGE,
     Manifest.permission.INTERNET,
     Manifest.permission.ACCESS_NETWORK_STATE,
-    Manifest.permission.CHANGE_NETWORK_STATE
+    Manifest.permission.CHANGE_NETWORK_STATE,
+    Manifest.permission.POST_NOTIFICATIONS,
+    Manifest.permission.RECEIVE_BOOT_COMPLETED
 )
