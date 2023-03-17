@@ -18,6 +18,29 @@
         app:layout_constraintVertical_weight="0.23"
         tools:layout_editor_absoluteX="75dp">
 
+        <TextView
+            android:id="@+id/survey_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMinTextSize="13sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/btn_bluetooth"
+            android:fontFamily="@font/godo"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="설문 완료"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+
         <Button
             android:id="@+id/btn_Survey"
             android:layout_width="match_parent"
@@ -30,6 +53,7 @@
             android:autoSizeTextType="uniform"
             android:background="@drawable/btn_bluetooth"
             android:fontFamily="@font/godo"
+            android:visibility="invisible"
             android:gravity="center"
             android:text="@string/btn_survey"
             android:textAllCaps="false"
@@ -133,16 +157,35 @@
         app:layout_constraintVertical_bias="0.28" />
 
     <TextView
+        android:id="@+id/survey_progress"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:autoSizeMaxTextSize="45sp"
+        android:autoSizeMinTextSize="35sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/godo"
+        android:gravity="center"
+        android:text="연구 D+"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/widget"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/widget"
+        app:layout_constraintTop_toTopOf="@+id/widget"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
         android:id="@+id/step_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/step_icon"
         app:layout_constraintBottom_toBottomOf="@+id/widget"
         app:layout_constraintEnd_toEndOf="@+id/widget"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toTopOf="@+id/widget"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/heart_icon"
@@ -152,10 +195,10 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/widget"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/widget"
         app:layout_constraintTop_toTopOf="@+id/widget"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/rate"

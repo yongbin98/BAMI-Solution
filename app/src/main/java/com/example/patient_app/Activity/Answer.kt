@@ -169,7 +169,7 @@ class MainActivity_HR{
         var Steps = ""
         var Patient_ID = ""
         var treatYear = ""
-        var timeDiff = 0L
+        var timeDiff = 0L //몇일차 차이인지; 창띄워서 많이 걸라ㅣㄴ다 알ㄹ려라. = 연구N일차
         var treatFinish = 0
     }
 

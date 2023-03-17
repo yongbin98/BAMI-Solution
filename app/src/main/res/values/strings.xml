@@ -45,6 +45,9 @@
     <string name="btn_survey">설문지 작성하기</string>
     <string name="Bami"><u>BAMI SolutioN</u></string>
     <string name="NOID"><u>아이디가 없으신가요?</u></string>
+    <string name="two_week">2주 단위 평가</string>
+    <string name="four_week">4주 단위 평가</string>
+    <string name="everyday">오늘의 평가</string>
 
 
     <string name="large_text">

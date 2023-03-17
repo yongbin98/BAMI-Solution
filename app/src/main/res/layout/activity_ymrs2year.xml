@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Activity.YMRS_2yearActivity">
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,8 +23,21 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/two_week"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/godo"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
                 android:autoSizeMaxTextSize="40sp"
                 android:autoSizeMinTextSize="30sp"
                 android:autoSizeStepGranularity="1sp"

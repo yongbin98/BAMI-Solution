@@ -5,14 +5,17 @@ import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.patient_app.R
@@ -21,7 +24,9 @@ import com.example.patient_app.samsungHealth.HealthService
 import com.example.patient_app.samsungHealth.PERMISSIONS
 import com.example.patient_app.samsungHealth.REQUEST_ALL_PERMISSION
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.*
+import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -39,6 +44,15 @@ class MainActivity : AppCompatActivity() {
         val formatType = SimpleDateFormat("yyyy년 MM월 dd일")
         date.text = formatType.format(utilDate)
         val activitylauncher = openActivityResultLauncher()
+
+
+        survey_progress.text = "연구 D+" +(MainActivity_HR.timeDiff.toInt()+1).toString()
+
+        btn_SamsungHealth.visibility = Button.VISIBLE
+        btn_Survey.visibility = Button.INVISIBLE
+        survey_end.visibility = TextView.INVISIBLE
+
+
 
         btn_SamsungHealth.setOnClickListener {
             myCoroutinescope.launch {
@@ -58,13 +72,53 @@ class MainActivity : AppCompatActivity() {
                         MainActivity_HR.HR = HR.toInt().toString()
                         MainActivity_HR.Steps = StepCheck.toInt().toString()
                         btn_SamsungHealth.visibility = Button.GONE
+                        if(MainActivity_HR.treatFinish - MainActivity_HR.timeDiff >= 1)
+                        {
+                            btn_SamsungHealth.visibility = Button.INVISIBLE
+                            survey_end.visibility = TextView.VISIBLE
+                            btn_Survey.visibility = Button.INVISIBLE
+                        }
+                        else{
+                            btn_SamsungHealth.visibility = Button.INVISIBLE
+                            btn_Survey.visibility = Button.VISIBLE
+                            survey_end.visibility = TextView.INVISIBLE
+                        }
                         reload_btn.visibility = Button.VISIBLE
+
                     }
                     true
                 }
             }
 
+            val builder = AlertDialog.Builder(this)
+            builder
+                .setTitle("안내사항")
+                .setMessage("오늘의 설문은 총 5~10분정도 소요될 예정입니다. 시간적 여유를 가지고 설문에 응답해주세요.")
+                .setPositiveButton("확인", DialogInterface.OnClickListener{dialog, which ->
+                    MainActivity_HR.treatYear = MainActivity_HR.Patient_ID[0].toString()
+                    var startday = MainActivity_HR.Patient_ID.substring(8)
+                    val cal = Calendar.getInstance()
+                    cal.timeZone = TimeZone.getTimeZone(TimeZone.getDefault().id)
+                    cal[Calendar.MONTH] = startday.substring(0, 2).toInt() - 1
+                    cal[Calendar.DATE] = startday.substring(2, 4).toInt()
+                    MainActivity_HR.timeDiff =
+                        (System.currentTimeMillis() - cal.timeInMillis) / (1000 * 60 * 60 * 24)
+                    Log.i(TAG, "${MainActivity_HR.timeDiff.rem(7) == 0L}")
+                    if (MainActivity_HR.treatYear == "2" || MainActivity_HR.treatYear == "3") {
+                        val intent = Intent(this, VAS_2and3yearActivity::class.java)
+                        activitylauncher.launch(intent)
+                    } else
+                        Toast.makeText(this, "ID 오류가 발생하였습니다.", Toast.LENGTH_SHORT)
+                })
+                .setNegativeButton("취소",null)
+
+
             btn_Survey.setOnClickListener {
+                if (MainActivity_HR.timeDiff.rem(14) == 0L){
+                    builder.create()
+                    builder.show()
+                }
+                else{
                 MainActivity_HR.treatYear = MainActivity_HR.Patient_ID[0].toString()
                 var startday = MainActivity_HR.Patient_ID.substring(8)
                 val cal = Calendar.getInstance()
@@ -79,6 +133,7 @@ class MainActivity : AppCompatActivity() {
                     activitylauncher.launch(intent)
                 } else
                     Toast.makeText(this, "ID 오류가 발생하였습니다.", Toast.LENGTH_SHORT)
+            }
             }
 
 

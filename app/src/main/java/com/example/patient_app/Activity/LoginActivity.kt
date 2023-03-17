@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
+
         btn_ifNoID.setOnClickListener {
             var intent = Intent(this, Survey_1Activity::class.java)
             startActivity((intent))
