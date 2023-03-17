@@ -68,6 +68,7 @@ class Thankyou : AppCompatActivity() {
         printWriter.println(MainActivity_HR.Patient_ID)
         printWriter.println(MainActivity_HR.timeDiff + 1)
         printWriter.close()
+        MainActivity_HR.treatFinish = MainActivity_HR.timeDiff.toInt() + 1
     }
 
 

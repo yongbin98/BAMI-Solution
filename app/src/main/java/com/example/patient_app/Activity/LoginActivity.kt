@@ -22,13 +22,9 @@ class LoginActivity : AppCompatActivity() {
             if(file.exists()) {
                 readID(file)
                 calculateSurvey()
-                if(MainActivity_HR.treatFinish - MainActivity_HR.timeDiff < 1) {
-                    Toast.makeText(this, "ID : ${MainActivity_HR.Patient_ID} Login", Toast.LENGTH_SHORT).show()
-                    var intent = Intent(this, MainActivity::class.java)
-                    startActivity((intent))
-                }
-                else
-                    Toast.makeText(this, "Survey done", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "ID : ${MainActivity_HR.Patient_ID} Login", Toast.LENGTH_SHORT).show()
+                var intent = Intent(this, MainActivity::class.java)
+                startActivity((intent))
             }
             else
                 Toast.makeText(this, "Please create an ID", Toast.LENGTH_SHORT).show()
@@ -58,6 +54,6 @@ class LoginActivity : AppCompatActivity() {
         cal[Calendar.DATE] = startday.substring(2, 4).toInt()
         MainActivity_HR.timeDiff =
             (System.currentTimeMillis() - cal.timeInMillis) / (1000 * 60 * 60 * 24)
-        Log.i("Login", "${MainActivity_HR.timeDiff.rem(7) == 0L}")
+        Log.i("Login", "timediff : ${MainActivity_HR.timeDiff}")
     }
 }

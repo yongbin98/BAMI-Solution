@@ -336,7 +336,7 @@ class SSI_3yearActivity : AppCompatActivity() {
                 Toast.makeText(this, "모든 항목에 응답해주세요.", Toast.LENGTH_SHORT).show()
             }
             else{
-                if (MainActivity_HR.timeDiff.rem(28) == 0L && MainActivity_HR.treatYear == "3") {
+                if ((MainActivity_HR.timeDiff.rem(28) == 0L ||  (MainActivity_HR.timeDiff.div(28) > MainActivity_HR.treatFinish.div(28))) && MainActivity_HR.treatYear == "3") {
                     val intent = Intent(this, Hamilton_3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 } else {

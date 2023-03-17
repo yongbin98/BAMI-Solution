@@ -17,7 +17,6 @@ import androidx.core.app.NotificationCompat
 class AlarmReceiver : BroadcastReceiver() {
     private lateinit var context: Context
     private val channelId = "alarm_channel"
-    private val channelId2 = "alarm_channel2"
 
     override fun onReceive(context: Context, intent: Intent?) {
         this.context = context

@@ -82,7 +82,7 @@ class VAS_2and3yearActivity : AppCompatActivity() {
             }
 
             if(!sharedPreferences.getBoolean("isToastShown",false)){
-                if (MainActivity_HR.timeDiff.rem(14) == 0L) {
+                if (MainActivity_HR.timeDiff.rem(14) == 0L|| (MainActivity_HR.timeDiff.div(14) > MainActivity_HR.treatFinish.div(14))) {
                     val intent = Intent(this, Stress_2and3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 } else {
