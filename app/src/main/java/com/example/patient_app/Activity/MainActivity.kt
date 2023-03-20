@@ -79,8 +79,6 @@ class MainActivity : AppCompatActivity() {
                             btn_SamsungHealth.visibility = Button.INVISIBLE
                             survey_end.visibility = TextView.VISIBLE
                             btn_Survey.visibility = Button.INVISIBLE
-                            btn_Survey.visibility = Button.VISIBLE
-                            survey_end.visibility = TextView.INVISIBLE
                         }
                         else{
                             btn_SamsungHealth.visibility = Button.INVISIBLE
