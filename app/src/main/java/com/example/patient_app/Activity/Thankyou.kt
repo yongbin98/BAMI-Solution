@@ -7,7 +7,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import com.example.patient_app.R
 import com.example.patient_app.SFTP.File
@@ -57,6 +59,9 @@ class Thankyou : AppCompatActivity() {
             }
         }
     }
+
+
+
 
 
     private fun rewriteID(){
@@ -186,7 +191,4 @@ class Thankyou : AppCompatActivity() {
                 "${SSIanswer.SSI18_ans},${SSIanswer.SSI19_ans}\n")
         file.close()
     }
-
-
-
 }

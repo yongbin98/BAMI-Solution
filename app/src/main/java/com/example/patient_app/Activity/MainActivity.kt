@@ -164,6 +164,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
     private var backPressedTime : Long = 0
     override fun onBackPressed() {
         if (System.currentTimeMillis() - backPressedTime < 2000){
@@ -289,8 +290,10 @@ class MainActivity : AppCompatActivity() {
                         AlarmManager.INTERVAL_DAY, alarmIntent
                     )
 
-                    Toast.makeText(this@MainActivity, "알람이 저장되었습니다.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "설문 진행도가 저장되었습니다.", Toast.LENGTH_LONG).show()
                 }
+                survey_end.visibility = TextView.VISIBLE
+                btn_Survey.visibility = Button.INVISIBLE
 
             }
         }

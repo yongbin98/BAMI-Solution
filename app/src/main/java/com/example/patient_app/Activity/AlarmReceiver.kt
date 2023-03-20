@@ -30,11 +30,11 @@ class AlarmReceiver : BroadcastReceiver() {
 
         val notificationBuilder: NotificationCompat.Builder =
             NotificationCompat.Builder(context, channelId)
-                .setSmallIcon(com.example.patient_app.R.drawable.cloudy).setDefaults(Notification.DEFAULT_ALL)
+                .setSmallIcon(com.example.patient_app.R.mipmap.bami_icon_round).setDefaults(Notification.DEFAULT_ALL)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setAutoCancel(true)
-                .setContentTitle("알람")
-                .setContentText("울림")
+                .setContentTitle("BAMI Solution")
+                .setContentText("오늘의 설문을 진행해 주세요!")
                 .setContentIntent(busRoutePendingIntent)
 
         val notificationManager =
