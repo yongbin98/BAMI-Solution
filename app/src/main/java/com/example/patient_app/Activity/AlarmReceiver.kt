@@ -26,7 +26,7 @@ class AlarmReceiver : BroadcastReceiver() {
         stackBuilder.addNextIntentWithParentStack(busRouteIntent)
 
         val busRoutePendingIntent: PendingIntent =
-            stackBuilder.getPendingIntent(1, PendingIntent.FLAG_MUTABLE)
+            stackBuilder.getPendingIntent(1, PendingIntent.FLAG_IMMUTABLE)
 
         val notificationBuilder: NotificationCompat.Builder =
             NotificationCompat.Builder(context, channelId)

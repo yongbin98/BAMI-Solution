@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -26,10 +27,11 @@ import com.example.patient_app.samsungHealth.REQUEST_ALL_PERMISSION
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.*
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.system.exitProcess
+
 
 @SuppressLint("MissingPermission")
 class MainActivity : AppCompatActivity() {
@@ -95,12 +97,8 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("안내사항")
                 .setMessage("오늘의 설문은 총 5~10분정도 소요될 예정입니다. 시간적 여유를 가지고 설문에 응답해주세요.")
                 .setPositiveButton("확인", DialogInterface.OnClickListener{dialog, which ->
-                    if(MainActivity_HR.treatFinish - MainActivity_HR.timeDiff < 1) {
-                        val intent = Intent(this, VAS_2and3yearActivity::class.java)
-                        activitylauncher.launch(intent)
-                    }
-                    else
-                        Toast.makeText(this, "Survey done", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, VAS_2and3yearActivity::class.java)
+                    activitylauncher.launch(intent)
                 })
                 .setNegativeButton("취소",null)
 
@@ -111,12 +109,8 @@ class MainActivity : AppCompatActivity() {
                     builder.show()
                 }
                 else{
-                    if(MainActivity_HR.treatFinish - MainActivity_HR.timeDiff < 1) {
-                        val intent = Intent(this, VAS_2and3yearActivity::class.java)
-                        activitylauncher.launch(intent)
-                    }
-                    else
-                        Toast.makeText(this, "Survey done", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, VAS_2and3yearActivity::class.java)
+                    activitylauncher.launch(intent)
                 }
             }
 
@@ -273,6 +267,8 @@ class MainActivity : AppCompatActivity() {
                     set(Calendar.HOUR_OF_DAY,12)
                     set(Calendar.MINUTE,0)
                     set(Calendar.SECOND,0)
+                    if(this.timeInMillis <= System.currentTimeMillis())
+                        add(Calendar.DATE,1)
                 }
 
                 var alarmManager = this.getSystemService(Context.ALARM_SERVICE) as AlarmManager
@@ -282,22 +278,36 @@ class MainActivity : AppCompatActivity() {
                         this,
                         1,
                         intent,
-                        PendingIntent.FLAG_MUTABLE
+                        PendingIntent.FLAG_IMMUTABLE
                     )
 
                     alarmManager.setRepeating(
                         AlarmManager.RTC_WAKEUP, calender.timeInMillis,
-                        AlarmManager.INTERVAL_DAY, alarmIntent
+                        TimeUnit.DAYS.toMillis(1), alarmIntent
                     )
 
+                    Log.i(TAG,"AlarmManager is called")
                     Toast.makeText(this@MainActivity, "설문 진행도가 저장되었습니다.", Toast.LENGTH_LONG).show()
                 }
                 survey_end.visibility = TextView.VISIBLE
                 btn_Survey.visibility = Button.INVISIBLE
 
+                exitProgram()
             }
         }
         return resultLauncher
+    }
+
+    private fun exitProgram() {
+         moveTaskToBack(true);
+        if (Build.VERSION.SDK_INT >= 21) {
+            // 액티비티 종료 + 태스크 리스트에서 지우기
+            finishAndRemoveTask()
+        } else {
+            // 액티비티 종료
+            finish()
+        }
+        exitProcess(0)
     }
 }
 
