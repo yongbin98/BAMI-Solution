@@ -89,24 +89,24 @@ class HeartRate {
                     readResult.use { result ->
                         val iterator: Iterator<HealthData> = result.iterator()
 
-                        if(!::file.isInitialized){
+                        if(!::file.isInitialized && isSaved){
                             file = File(FileType.startCharOf('H'))
                             file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
                         }
-                        while(isSaved) {
-                            if (iterator.hasNext()) {
+                        if(isSaved) {
+                            while(iterator.hasNext()){
                                 val tmpIterator = iterator.next()
-                                if(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null){
-                                    mHeartRateObserver!!.onChanged(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA), file)
+                                if(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null) {
+                                    mHeartRateObserver!!.onChanged(
+                                        tmpIterator.getBlob(
+                                            HealthConstants.HeartRate.BINNING_DATA
+                                        ), file
+                                    )
                                 }
                             }
-                            else {
-                                file.close()
-                                break
-                            }
+                            file.close()
                         }
-
-                        if(!isSaved) {
+                        else{
                             if(iterator.hasNext())
                                 mHeartRateObserver!!.onChanged(
                                     result.last().getFloat(HealthConstants.HeartRate.HEART_RATE)
