@@ -97,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("안내사항")
                 .setMessage("오늘의 설문은 총 5~10분정도 소요될 예정입니다. 시간적 여유를 가지고 설문에 응답해주세요.")
                 .setPositiveButton("확인", DialogInterface.OnClickListener{dialog, which ->
+                    calculateSurvey()
                     val intent = Intent(this, VAS_2and3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 })
@@ -109,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                     builder.show()
                 }
                 else{
+                    calculateSurvey()
                     val intent = Intent(this, VAS_2and3yearActivity::class.java)
                     activitylauncher.launch(intent)
                 }
@@ -116,8 +118,9 @@ class MainActivity : AppCompatActivity() {
 
 
             reload_btn.setOnClickListener {
-
                 myCoroutinescope.launch {
+                    calculateSurvey()
+                    survey_progress.text = "연구 D+" +(MainActivity_HR.timeDiff.toInt()+1).toString()
                     rate.text = "-"
                     step.text = "-"
                     HealthService.updateHealthData(false)
@@ -157,8 +160,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
     private var backPressedTime : Long = 0
     override fun onBackPressed() {
         if (System.currentTimeMillis() - backPressedTime < 2000){
@@ -170,7 +171,6 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this,"'뒤로' 버튼을 한 번 더 누르시면 앱이 종료됩니다.",Toast.LENGTH_SHORT).show()
         backPressedTime = System.currentTimeMillis()
     }
-
 
     private fun weatherScreen(it : StringBuilder){
         it.split('\n').let {
@@ -262,53 +262,26 @@ class MainActivity : AppCompatActivity() {
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK) {
-                var calender = Calendar.getInstance().apply {
-                    timeInMillis = System.currentTimeMillis()
-                    set(Calendar.HOUR_OF_DAY,12)
-                    set(Calendar.MINUTE,0)
-                    set(Calendar.SECOND,0)
-                    if(this.timeInMillis <= System.currentTimeMillis())
-                        add(Calendar.DATE,1)
-                }
-
-                var alarmManager = this.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-                if(alarmManager != null){
-                    val intent = Intent(this, AlarmReceiver::class.java)
-                    val alarmIntent = PendingIntent.getBroadcast(
-                        this,
-                        1,
-                        intent,
-                        PendingIntent.FLAG_IMMUTABLE
-                    )
-
-                    alarmManager.setRepeating(
-                        AlarmManager.RTC_WAKEUP, calender.timeInMillis,
-                        TimeUnit.DAYS.toMillis(1), alarmIntent
-                    )
-
-                    Log.i(TAG,"AlarmManager is called")
-                    Toast.makeText(this@MainActivity, "설문 진행도가 저장되었습니다.", Toast.LENGTH_LONG).show()
-                }
-                survey_end.visibility = TextView.VISIBLE
-                btn_Survey.visibility = Button.INVISIBLE
-
-                exitProgram()
+                val intent = Intent()
+                setResult(RESULT_OK, intent)
+                finish()
             }
         }
         return resultLauncher
     }
 
-    private fun exitProgram() {
-         moveTaskToBack(true);
-        if (Build.VERSION.SDK_INT >= 21) {
-            // 액티비티 종료 + 태스크 리스트에서 지우기
-            finishAndRemoveTask()
-        } else {
-            // 액티비티 종료
-            finish()
-        }
-        exitProcess(0)
+    private fun calculateSurvey(){
+        MainActivity_HR.treatYear = MainActivity_HR.Patient_ID[0].toString()
+        var startday = MainActivity_HR.Patient_ID.substring(8)
+        val cal = Calendar.getInstance()
+        cal.timeZone = TimeZone.getTimeZone(TimeZone.getDefault().id)
+        cal[Calendar.MONTH] = startday.substring(0, 2).toInt() - 1
+        cal[Calendar.DATE] = startday.substring(2, 4).toInt()
+        MainActivity_HR.timeDiff =
+            (System.currentTimeMillis() - cal.timeInMillis) / (1000 * 60 * 60 * 24)
+        Log.i("Login", "timediff : ${MainActivity_HR.timeDiff}")
     }
+
 }
 
 
