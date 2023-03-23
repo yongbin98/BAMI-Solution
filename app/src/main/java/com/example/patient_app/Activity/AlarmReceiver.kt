@@ -20,7 +20,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent?) {
         this.context = context
-        val busRouteIntent = Intent(context, MainActivity::class.java)
+        val busRouteIntent = Intent(context, LoginActivity::class.java)
 
         val stackBuilder: TaskStackBuilder = TaskStackBuilder.create(context)
         stackBuilder.addNextIntentWithParentStack(busRouteIntent)

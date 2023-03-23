@@ -90,7 +90,7 @@ class LoginActivity : AppCompatActivity() {
                     set(Calendar.HOUR_OF_DAY,12)
                     set(Calendar.MINUTE,0)
                     set(Calendar.SECOND,0)
-                    add(Calendar.DATE,1)
+                    add(Calendar.DATE, 1)
                 }
 
                 var alarmManager = this.getSystemService(Context.ALARM_SERVICE) as AlarmManager
@@ -103,9 +103,9 @@ class LoginActivity : AppCompatActivity() {
                         PendingIntent.FLAG_IMMUTABLE
                     )
 
-                    alarmManager.setRepeating(
+                    alarmManager.setExactAndAllowWhileIdle(
                         AlarmManager.RTC_WAKEUP, calender.timeInMillis,
-                        TimeUnit.DAYS.toMillis(1), alarmIntent
+                        alarmIntent
                     )
 
                     Log.i("Login","AlarmManager is called")
