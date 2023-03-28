@@ -67,9 +67,9 @@ class Survey_1Activity : AppCompatActivity() {
             BasicInfo.year = birth.year
 
             if (gender_male.isChecked) {
-                BasicInfo.gender = "남(1)"
+                BasicInfo.gender = "male"
             } else if (gender_female.isChecked) {
-                BasicInfo.gender = "여(2)"
+                BasicInfo.gender = "female"
             } else {
                 makeToast("성별을 선택하세요.")
                 editor.putBoolean("isToastShown", true)
@@ -312,9 +312,9 @@ class Survey_1Activity : AppCompatActivity() {
             }
 
             if (two.isChecked) {
-                BasicInfo.length = "2년차"
+                BasicInfo.length = "2year"
             } else if (three.isChecked) {
-                BasicInfo.length = "3년차"
+                BasicInfo.length = "3year"
             } else {
                 makeToast("치료 기간을 선택해주세요.")
                 editor.putBoolean("isToastShown", true)

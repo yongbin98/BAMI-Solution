@@ -78,11 +78,11 @@ class MARS_3yearActivity : AppCompatActivity() {
 
                 if (radioButtonYes.isChecked){
                     MARSscore++
-                    Mars.Mars[i-1] = "1점"
+                    Mars.Mars[i-1] = "1points"
                 }
                 else if (radioButtonNo.isChecked){
                     MARSscore=MARSscore
-                    Mars.Mars[i-1] = "0점"
+                    Mars.Mars[i-1] = "0points"
                 }
                 else{
                     makeToast("$i 항목에 응답해 주세요.")
@@ -90,7 +90,7 @@ class MARS_3yearActivity : AppCompatActivity() {
                     editor.apply()
                 }
             }
-            Mars.Score = "$MARSscore 점"
+            Mars.Score = "$MARSscore Points"
 
             if(!sharedPreferences.getBoolean("isToastShown",false)){
                 if ((MainActivity_HR.timeDiff.rem(28) == 0L ||  (MainActivity_HR.timeDiff.div(28) > MainActivity_HR.treatFinish.div(28)))
