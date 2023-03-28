@@ -57,11 +57,11 @@ class MARS_3yearActivity : AppCompatActivity() {
 
                 if (radioButtonYes.isChecked){
                     MARSscore=MARSscore
-                    Mars.Mars[i-1] = "0점"
+                    Mars.Mars[i-1] = "0points"
                 }
                 else if (radioButtonNo.isChecked){
                     MARSscore++
-                    Mars.Mars[i-1] = "1점"
+                    Mars.Mars[i-1] = "1points"
                 }
                 else{
                     makeToast("$i 항목에 응답해 주세요.")
