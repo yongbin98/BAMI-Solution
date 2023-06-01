@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         val activitylauncher = openActivityResultLauncher()
 
         btn_login.setOnClickListener {
-            var file = java.io.File("/data/data/com.example.patient_app/files/ID", "id.txt")
+            var file = File("/data/data/com.example.patient_app/files/ID", "id.txt")
             if(file.exists()) {
                 readID(file)
                 calculateSurvey()

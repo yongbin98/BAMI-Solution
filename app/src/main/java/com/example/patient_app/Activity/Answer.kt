@@ -171,6 +171,7 @@ class MainActivity_HR{
         var treatYear = ""
         var timeDiff = 0L //몇일차 차이인지; 창띄워서 많이 걸라ㅣㄴ다 알ㄹ려라. = 연구N일차
         var treatFinish = 0
+        var gpsNow = StringBuilder()
     }
 
 

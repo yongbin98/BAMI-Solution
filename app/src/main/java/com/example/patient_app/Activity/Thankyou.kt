@@ -185,10 +185,32 @@ class Thankyou : AppCompatActivity() {
             tmpString += Hamilton.hamilton[i]+','
         file.write("21Hamilton,${tmpString}\n")
 
-        file.write("SSIanswer,${SSIanswer.SSI1_ans},${SSIanswer.SSI2_ans},${SSIanswer.SSI3_ans},${SSIanswer.SSI4_ans},${SSIanswer.SSI5_ans}," +
-                "${SSIanswer.SSI6_ans},${SSIanswer.SSI7_ans},${SSIanswer.SSI8_ans},${SSIanswer.SSI9_ans},${SSIanswer.SSI10_ans},${SSIanswer.SSI11_ans}," +
-                "${SSIanswer.SSI12_ans},${SSIanswer.SSI13_ans},${SSIanswer.SSI14_ans},${SSIanswer.SSI15_ans},${SSIanswer.SSI16_ans},${SSIanswer.SSI17_ans}," +
-                "${SSIanswer.SSI18_ans},${SSIanswer.SSI19_ans}\n")
+        if(SSIanswer.SSI1_ans != null) {
+            file.write(
+                "SSIanswer,${SSIanswer.SSI1_ans},${SSIanswer.SSI2_ans},${SSIanswer.SSI3_ans},${SSIanswer.SSI4_ans},${SSIanswer.SSI5_ans}," +
+                        "${SSIanswer.SSI6_ans},${SSIanswer.SSI7_ans},${SSIanswer.SSI8_ans},${SSIanswer.SSI9_ans},${SSIanswer.SSI10_ans},${SSIanswer.SSI11_ans}," +
+                        "${SSIanswer.SSI12_ans},${SSIanswer.SSI13_ans},${SSIanswer.SSI14_ans},${SSIanswer.SSI15_ans},${SSIanswer.SSI16_ans},${SSIanswer.SSI17_ans}," +
+                        "${SSIanswer.SSI18_ans},${SSIanswer.SSI19_ans}\n"
+            )
+        }
+        else
+            file.write("SSIanswer,\n")
+
+        MainActivity_HR.gpsNow.split('\n').let {
+            var tmpIter = it.iterator()
+            var Itercount = 0
+            while(tmpIter.hasNext()){
+                var fileNext = tmpIter.next()
+                if(Itercount == 0)
+                    file.write(fileNext+"\n")
+                else if(Itercount == 1)
+                    file.write("기온 : "+fileNext+"\n")
+                else if(Itercount == 2)
+                    file.write("위치 : "+fileNext+"\n")
+                Log.i("Thx" , fileNext)
+                Itercount++
+            }
+        }
         file.close()
     }
 }

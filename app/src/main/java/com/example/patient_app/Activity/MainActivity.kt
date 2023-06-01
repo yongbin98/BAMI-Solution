@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                         rate.text = HR.toInt().toString()
                         step.text = StepCheck.toString()
                         MainActivity_HR.HR = HR.toInt().toString()
-                        MainActivity_HR.Steps = StepCheck.toInt().toString()
+                        MainActivity_HR.Steps = StepCheck.toString()
                         btn_SamsungHealth.visibility = Button.GONE
                         if(MainActivity_HR.treatFinish - MainActivity_HR.timeDiff >= 1)
                         {
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                             rate.text = HR.toInt().toString()
                             step.text = StepCheck.toString()
                             MainActivity_HR.HR = HR.toInt().toString()
-                            MainActivity_HR.Steps = StepCheck.toInt().toString()
+                            MainActivity_HR.Steps = StepCheck.toString()
                         }
                         true
                     }
@@ -173,6 +173,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun weatherScreen(it : StringBuilder){
+        MainActivity_HR.gpsNow = it
         it.split('\n').let {
             it.forEachIndexed { index, text ->
                 if (index == 0) {

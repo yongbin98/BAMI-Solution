@@ -326,7 +326,7 @@ class Survey_1Activity : AppCompatActivity() {
                 val onlyDate: String? =
                     LocalDate.now().format(DateTimeFormatter.ofPattern("MMdd"))
                 val builder = AlertDialog.Builder(this)
-                val id = "" + BasicInfo.length[0] + BasicInfo.gender[2] + BasicInfo.year.toString().substring(2,4) + BasicInfo.month + BasicInfo.day + "$onlyDate"
+                val id = "" + BasicInfo.length[0] + BasicInfo.gender[0] + BasicInfo.year.toString().substring(2,4) + BasicInfo.month + BasicInfo.day + "$onlyDate"
 
                 var file = java.io.File("/data/data/com.example.patient_app/files", "ID")
                 if(!file.exists())
