@@ -76,27 +76,13 @@ class YMRSanswer{
 
 class PHQanswer{
     companion object{
-        var PHQ1_ans = 0
-        var PHQ2_ans = 0
-        var PHQ3_ans = 0
-        var PHQ4_ans = 0
-        var PHQ5_ans = 0
-        var PHQ6_ans = 0
-        var PHQ7_ans = 0
-        var PHQ8_ans = 0
-        var PHQ9_ans = 0
+        var PHQ = arrayOf("","","","","","","")
     }
 }
 
 class GADanswer{
     companion object{
-        var GAD1_ans = 0
-        var GAD2_ans = 0
-        var GAD3_ans = 0
-        var GAD4_ans = 0
-        var GAD5_ans = 0
-        var GAD6_ans = 0
-        var GAD7_ans = 0
+        var GAD = arrayOf("","","","","","","")
     }
 }
 

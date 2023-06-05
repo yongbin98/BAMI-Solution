@@ -48,6 +48,15 @@
     <string name="two_week">2주 단위 평가</string>
     <string name="four_week">4주 단위 평가</string>
     <string name="everyday">오늘의 평가</string>
+    <string name="gad1">1. 전혀 방해 받지 않았다.</string>
+    <string name="gad2">2. 며칠 동안 방해 받았다.</string>
+    <string name="gad3">3. 7일 이상 방해 받았다.</string>
+    <string name="gad4">4. 거의 매일 방해 받았다.</string>
+    <string name="phq1">1. 거의 매일</string>
+    <string name="phq2">2. 7일 이상</string>
+    <string name="phq3">3. 2,3일 이상</string>
+    <string name="phq4">4. 없음</string>
+
 
 
     <string name="large_text">

@@ -70,16 +70,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ1_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ1_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ1_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ1_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -97,43 +148,144 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ2_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ2_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ2_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ2_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:text="3. 잠들기가 어렵거나 자주 깼다.\n    혹은 너무 많이 잤다."
-                android:gravity="left"
                 android:layout_gravity="center"
-                android:fontFamily="@font/godo"
-                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
                 android:autoSizeMaxTextSize="20sp"
                 android:autoSizeMinTextSize="15sp"
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
-                />
+                android:fontFamily="@font/godo"
+                android:gravity="left"
+                android:text="3. 잠들기가 어렵거나 자주 깼다.\n    혹은 너무 많이 잤다."
+                android:textColor="@color/black" />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ3_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ3_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ3_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ3_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -151,16 +303,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ4_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ4_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ4_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ4_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -178,16 +381,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ5_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ5_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ5_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ5_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -205,16 +459,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ6_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ6_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ6_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ6_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -232,16 +537,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ7_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ7_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ7_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ7_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -259,16 +615,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ8_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ8_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ8_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ8_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_marginTop="15dp"
@@ -286,16 +693,67 @@
                 android:autoSizeTextType="uniform"
                 />
 
-            <Spinner
-                android:layout_marginStart="40dp"
-                android:layout_marginVertical="5dp"
-                android:gravity="center"
-                android:background="@drawable/spinner_custom"
-                android:id="@+id/PHQ9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ9_1"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ9_2"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq2"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ9_3"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+                <RadioButton
+                    android:buttonTint="@color/black"
+                    android:id="@+id/PHQ9_4"
+                    android:layout_marginLeft="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/phq4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    />
+
+            </RadioGroup>
 
             <LinearLayout
                 android:layout_width="match_parent"
