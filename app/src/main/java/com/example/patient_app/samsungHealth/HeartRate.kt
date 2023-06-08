@@ -94,7 +94,7 @@ class HeartRate {
                             file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
                         }
                         if(isSaved) {
-                            while(iterator.hasNext()){
+                            do {
                                 val tmpIterator = iterator.next()
                                 if(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null) {
                                     mHeartRateObserver!!.onChanged(
@@ -103,7 +103,10 @@ class HeartRate {
                                         ), file
                                     )
                                 }
-                            }
+                                else {
+                                    mHeartRateObserver!!.onChanged(false)
+                                }
+                            } while(iterator.hasNext())
                             file.close()
                         }
                         else{

@@ -76,7 +76,7 @@ class YMRSanswer{
 
 class PHQanswer{
     companion object{
-        var PHQ = arrayOf("","","","","","","")
+        var PHQ = arrayOf("","","","","","","","","")
     }
 }
 

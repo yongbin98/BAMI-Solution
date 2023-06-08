@@ -95,10 +95,12 @@ object HealthService {
             var file = File(FileType.startCharOf('C'))
             file.write("start_time(1min),step,kilocalories,distance(m),avg_speed(m/s)\n")
             Log.i(TAG, "Step ByteArray Called")
-            file.write(count.toString())
+            if(count.isNotEmpty())
+                file.write(count.toString())
             file.close()
             isChanged = true
         }
+
     }
 
     private val mHeartRateObserver = object : HeartRate.HeartRateObserver{

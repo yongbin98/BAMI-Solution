@@ -105,7 +105,7 @@ class StepCount {
                                                 tmpIterator.getString("total_speed") + '\n')
                                     }
                                 }
-                                else {
+                                else{
                                     mStepCountObserver!!.onChanged(arrayStep)
                                     break
                                 }

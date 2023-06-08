@@ -145,8 +145,15 @@ class Thankyou : AppCompatActivity() {
         tmpString = YMRSanswer.YMRS11
         file.write("YMRSanswer11,${tmpString}\n")
 
-        file.write("PHQanswer,${PHQanswer.PHQ1_ans},${PHQanswer.PHQ2_ans},${PHQanswer.PHQ3_ans},${PHQanswer.PHQ4_ans},${PHQanswer.PHQ5_ans},${PHQanswer.PHQ6_ans},${PHQanswer.PHQ7_ans},${PHQanswer.PHQ8_ans},${PHQanswer.PHQ9_ans}\n")
-        file.write("GADanswer,${GADanswer.GAD1_ans},${GADanswer.GAD2_ans},${GADanswer.GAD3_ans},${GADanswer.GAD4_ans},${GADanswer.GAD5_ans},${GADanswer.GAD6_ans},${GADanswer.GAD7_ans}\n")
+        tmpString = "PHQanswer,"
+        for(i in 0 until PHQanswer.PHQ.size)
+            tmpString += PHQanswer.PHQ[i]+','
+        file.write("${tmpString}\n")
+
+        tmpString = "GADanswer,"
+        for(i in 0 until GADanswer.GAD.size)
+            tmpString += GADanswer.GAD[i]+','
+        file.write("${tmpString}\n")
 
         tmpString = ""
         for(i in 0 until Insomnia.insomnia1.size)

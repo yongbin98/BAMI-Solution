@@ -1,7 +1,10 @@
 package com.example.patient_app.SFTP
 
 import android.util.Log
+import java.io.BufferedOutputStream
 import java.io.File
+import java.io.FileOutputStream
+import java.io.OutputStreamWriter
 import java.io.PrintWriter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -23,7 +26,9 @@ class File(
     }
 
     private val file = File(FILE_PATH, createFileName())
-    private val printWriter = PrintWriter(file)
+    private val outputStream = BufferedOutputStream(FileOutputStream(file))
+    private val writer = OutputStreamWriter(outputStream,"MS949")
+//    private val printWriter = PrintWriter(file)
 
     private fun createFileName(): String {
         val dateFormat = SimpleDateFormat("MM-dd HH:mm:ss")
@@ -37,11 +42,13 @@ class File(
     fun getFileLength(): Long = file.length()
 
     fun write(data: String) {
-        printWriter.print(data) // TODO("buffer...?")
+        writer.write(data)
+//        printWriter.print(data) // TODO("buffer...?")
     }
 
     fun close() {
-        printWriter.close()
+//        printWriter.close()
+        writer.close()
         files.add(file)
     }
 }

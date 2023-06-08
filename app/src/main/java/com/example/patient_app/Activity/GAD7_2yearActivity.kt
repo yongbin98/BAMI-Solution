@@ -17,9 +17,7 @@ import kotlinx.android.synthetic.main.activity_gad72year.*
 import kotlinx.android.synthetic.main.activity_ymrs2year.*
 
 class GAD7_2yearActivity : AppCompatActivity() {
-
     private var toast: Toast? = null
-
     private fun makeToast(message: String){
         try{
             toast?.cancel()
@@ -28,6 +26,7 @@ class GAD7_2yearActivity : AppCompatActivity() {
         }catch (e: java.lang.Exception){
             e.printStackTrace()
         }}
+
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,10 +34,11 @@ class GAD7_2yearActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gad72year)
 
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
+
         val editor = sharedPreferences.edit()
         val activitylauncher = openActivityResultLauncher()
 
-        GADNext_btn.setOnClickListener({
+        GADNext_btn.setOnClickListener{
 
             editor.putBoolean("isToastShown", false)
             editor.apply()
@@ -70,20 +70,20 @@ class GAD7_2yearActivity : AppCompatActivity() {
             }
 
 
-            if (MainActivity_HR.timeDiff.rem(14) == 0L||  (MainActivity_HR.timeDiff.div(14) > MainActivity_HR.treatFinish.div(14))) {
-                val intent = Intent(this, PHQ9_2and3yearActivity::class.java)
-                activitylauncher.launch(intent)
-            } else {
-                val intent = Intent(this, Thankyou::class.java)
-                activitylauncher.launch(intent)
+            if (!sharedPreferences.getBoolean("isToastShown", false)) {
+
+                if (MainActivity_HR.timeDiff.rem(14) == 0L||  (MainActivity_HR.timeDiff.div(14) > MainActivity_HR.treatFinish.div(14))) {
+                    val intent = Intent(this, PHQ9_2and3yearActivity::class.java)
+                    activitylauncher.launch(intent)
+                } else {
+                    val intent = Intent(this, Thankyou::class.java)
+                    activitylauncher.launch(intent)
+                }
+
             }
-
-
-
-
-        })
-
+        }
     }
+
 
     private fun openActivityResultLauncher(): ActivityResultLauncher<Intent> {
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
