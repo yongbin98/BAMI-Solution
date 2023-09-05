@@ -311,7 +311,9 @@ class Survey_1Activity : AppCompatActivity() {
                 editor.apply()
             }
 
-            if (two.isChecked) {
+            if (no.isChecked) {
+                BasicInfo.length = "never"
+            } else if (two.isChecked) {
                 BasicInfo.length = "2year"
             } else if (three.isChecked) {
                 BasicInfo.length = "3year"
@@ -320,6 +322,18 @@ class Survey_1Activity : AppCompatActivity() {
                 editor.putBoolean("isToastShown", true)
                 editor.apply()
 
+            }
+
+            if (Middle.isChecked) {
+                BasicInfo.Education = "중졸"
+            } else if (High.isChecked) {
+                BasicInfo.Education = "고졸"
+            } else if (Bachelor.isChecked) {
+                BasicInfo.Education = "학사졸"
+            } else if (Master.isChecked) {
+                BasicInfo.Education = "석사졸"
+            } else if (PhD.isChecked) {
+                BasicInfo.Education = "박사졸"
             }
 
             if (!sharedPreferences.getBoolean("isToastShown", false)) {

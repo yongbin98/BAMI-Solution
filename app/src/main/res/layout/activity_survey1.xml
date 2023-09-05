@@ -111,9 +111,87 @@
                 />
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="-10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:fontFamily="@font/godo"
+                    android:text="@string/최종학력"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Middle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/black"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/중"
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/High"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/black"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/고"
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/Bachelor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/black"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/학사"
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <RadioButton
+                        android:id="@+id/Master"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/black"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/석사"
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <RadioButton
+                        android:id="@+id/PhD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/black"
+                        android:fontFamily="@font/godo"
+                        android:text="@string/박사"
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -191,6 +269,7 @@
                     android:fontFamily="@font/godo"
                     android:textColor="@color/단위"/>
             </LinearLayout>
+
 
             <TextView
                 android:layout_marginStart="30dp"
@@ -1586,7 +1665,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="0dp">
 
@@ -1607,29 +1686,38 @@
 
                 <RadioGroup
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="30dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
 
                     <RadioButton
+                        android:id="@+id/no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:buttonTint="@color/black"
+                        android:fontFamily="@font/godo"
+                        android:text="없음"
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
                         android:id="@+id/two"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:buttonTint="@color/black"
                         android:fontFamily="@font/godo"
                         android:text="@string/two"
                         android:textColor="@color/black"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
-                        android:buttonTint="@color/black"
                         android:id="@+id/three"
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="20dp"
+                        android:buttonTint="@color/black"
                         android:fontFamily="@font/godo"
                         android:text="@string/three"
+                        android:textColor="@color/black"
                         tools:ignore="TouchTargetSizeCheck" />
                 </RadioGroup>
             </LinearLayout>

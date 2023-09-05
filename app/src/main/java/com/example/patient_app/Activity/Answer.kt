@@ -54,6 +54,9 @@ class BasicInfo {
 
         //치료 기간
         var length = ""
+
+        //학력
+        var Education = ""
     }
 }
 
@@ -76,7 +79,7 @@ class YMRSanswer{
 
 class PHQanswer{
     companion object{
-        var PHQ = arrayOf("","","","","","","")
+        var PHQ = arrayOf("","","","","","","","","")
     }
 }
 

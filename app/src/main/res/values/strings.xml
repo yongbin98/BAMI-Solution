@@ -30,6 +30,13 @@
     <string name="table3">지난 1년간 치료 여부</string>
     <string name="회_주">회/주</string>
     <string name="치료기간">치료 기간</string>
+    <string name="최종학력">최종 학력</string>
+    <string name="중">중졸</string>
+    <string name="고">고졸</string>
+    <string name="학사">학사졸</string>
+    <string name="석사">석사졸</string>
+    <string name="박사">박사졸</string>
+    <string name="없음">없음</string>
     <string name="two">2년</string>
     <string name="three">3년</string>
     <string name="YMRS">YMRS 설문지</string>
