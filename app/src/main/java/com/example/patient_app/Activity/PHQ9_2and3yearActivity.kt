@@ -75,9 +75,6 @@ class PHQ9_2and3yearActivity : AppCompatActivity() {
                 if ((MainActivity_HR.timeDiff.rem(14) == 0L ||  (MainActivity_HR.timeDiff.div(14) > MainActivity_HR.treatFinish.div(14))) && MainActivity_HR.treatYear == "2") {
                     val intent = Intent(this, YMRS_2yearActivity::class.java)
                     activitylauncher.launch(intent)
-                } else if ((MainActivity_HR.timeDiff.rem(28) == 0L ||  (MainActivity_HR.timeDiff.div(28) > MainActivity_HR.treatFinish.div(28)))&& MainActivity_HR.treatYear == "3") {
-                    val intent = Intent(this, SSI_3yearActivity::class.java)
-                    activitylauncher.launch(intent)
                 } else {
                     val intent = Intent(this, Thankyou::class.java)
                     activitylauncher.launch(intent)

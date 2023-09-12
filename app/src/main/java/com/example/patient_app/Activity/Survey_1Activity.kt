@@ -311,22 +311,27 @@ class Survey_1Activity : AppCompatActivity() {
                 editor.apply()
             }
 
-            if (two.isChecked) {
-                BasicInfo.length = "2year"
-            } else if (three.isChecked) {
-                BasicInfo.length = "3year"
+            if (Middle.isChecked) {
+                BasicInfo.Education = "중졸"
+            } else if (High.isChecked) {
+                BasicInfo.Education = "고졸"
+            } else if (Bachelor.isChecked) {
+                BasicInfo.Education = "학사졸"
+            } else if (Master.isChecked) {
+                BasicInfo.Education = "석사졸"
+            } else if (PhD.isChecked) {
+                BasicInfo.Education = "박사졸"
             } else {
-                makeToast("치료 기간을 선택해주세요.")
+                makeToast("최종 학력을 선택해주세요.")
                 editor.putBoolean("isToastShown", true)
                 editor.apply()
-
             }
 
             if (!sharedPreferences.getBoolean("isToastShown", false)) {
                 val onlyDate: String? =
                     LocalDate.now().format(DateTimeFormatter.ofPattern("MMdd"))
                 val builder = AlertDialog.Builder(this)
-                val id = "" + BasicInfo.length[0] + BasicInfo.gender[0] + BasicInfo.year.toString().substring(2,4) + BasicInfo.month + BasicInfo.day + "$onlyDate"
+                val id = "2" + BasicInfo.gender[0] + BasicInfo.year.toString().substring(2,4) + BasicInfo.month + BasicInfo.day + "$onlyDate"
 
                 var file = java.io.File("/data/data/com.example.patient_app/files", "ID")
                 if(!file.exists())
