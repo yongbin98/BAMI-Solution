@@ -94,19 +94,23 @@ class HeartRate {
                             file.write("heart_rate,heart_rate_min,heart_rate_max,start_time,end_time\n")
                         }
                         if(isSaved) {
-                            do {
-                                val tmpIterator = iterator.next()
-                                if(tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null) {
-                                    mHeartRateObserver!!.onChanged(
-                                        tmpIterator.getBlob(
-                                            HealthConstants.HeartRate.BINNING_DATA
-                                        ), file
-                                    )
-                                }
-                                else {
-                                    mHeartRateObserver!!.onChanged(false)
-                                }
-                            } while(iterator.hasNext())
+                            if(result.firstOrNull() == null) {
+                                mHeartRateObserver!!.onChanged(true)
+                            }
+                            else {
+                                do {
+                                    val tmpIterator = iterator.next()
+                                    if (tmpIterator.getBlob(HealthConstants.HeartRate.BINNING_DATA) != null) {
+                                        mHeartRateObserver!!.onChanged(
+                                            tmpIterator.getBlob(
+                                                HealthConstants.HeartRate.BINNING_DATA
+                                            ), file
+                                        )
+                                    } else {
+                                        mHeartRateObserver!!.onChanged(true)
+                                    }
+                                } while (iterator.hasNext())
+                            }
                             file.close()
                         }
                         else{
@@ -115,7 +119,7 @@ class HeartRate {
                                     result.last().getFloat(HealthConstants.HeartRate.HEART_RATE)
                                 )
                             else
-                                mHeartRateObserver!!.onChanged(false)
+                                mHeartRateObserver!!.onChanged(true)
                         }
                     }
                 }

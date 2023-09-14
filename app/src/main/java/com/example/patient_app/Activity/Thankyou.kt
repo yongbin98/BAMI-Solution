@@ -49,9 +49,7 @@ class Thankyou : AppCompatActivity() {
             sftp.disconnect()
             File.delete()
             rewriteID()
-
-        dialog.dismiss()
-
+            dialog.dismiss()
             end_btn.setOnClickListener {
                 val intent = Intent()
                 setResult(RESULT_OK, intent)
