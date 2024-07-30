@@ -153,13 +153,28 @@ class MainActivity_HR{
     companion object{
         var HR = ""
         var Steps = ""
+        var HR1day = ""
+        var Steps1day = ""
+
+        var weatherNow = ""
+        var avgSpeed = 1.3334f
+        var LFHF = 1.8341f
         var Patient_ID = ""
         var treatYear = ""
-        var timeDiff = 0L //몇일차 차이인지; 창띄워서 많이 걸라ㅣㄴ다 알ㄹ려라. = 연구N일차
+        var timeDiff = 0L //몇일차 차이인지
         var treatFinish = 0
         var gpsNow = StringBuilder()
+        var vasSleep = 0
+        var vasAnxDep = 0
+        var vasStress = 0
+        var outputStress = 0
+
+        var age = 0f
+        var sex = 0f
+        var bmi = 0f
+        var edu = 0f
+        var drink = 0f
+
     }
-
-
 }
 

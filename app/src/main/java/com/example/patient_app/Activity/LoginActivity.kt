@@ -56,6 +56,11 @@ class LoginActivity : AppCompatActivity() {
         var fileiter = FileReader(file).readLines().iterator()
         MainActivity_HR.Patient_ID = fileiter.next()
         MainActivity_HR.treatFinish = fileiter.next().toInt()
+        MainActivity_HR.age = fileiter.next().toFloat()
+        MainActivity_HR.sex = fileiter.next().toFloat()
+        MainActivity_HR.bmi = fileiter.next().toFloat()
+        MainActivity_HR.edu = fileiter.next().toFloat()
+        MainActivity_HR.drink = fileiter.next().toFloat()
         Log.i("Login","id : ${MainActivity_HR.Patient_ID}")
     }
     private fun calculateSurvey(){

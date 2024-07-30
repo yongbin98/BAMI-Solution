@@ -2,12 +2,8 @@ package com.example.patient_app.Activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -27,10 +23,9 @@ import com.example.patient_app.samsungHealth.REQUEST_ALL_PERMISSION
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.*
+import java.io.FileReader
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.TimeUnit
-import kotlin.system.exitProcess
 
 
 @SuppressLint("MissingPermission")
@@ -84,6 +79,17 @@ class MainActivity : AppCompatActivity() {
                             btn_SamsungHealth.visibility = Button.INVISIBLE
                             btn_Survey.visibility = Button.VISIBLE
                             survey_end.visibility = TextView.INVISIBLE
+                        }
+
+                        var file = java.io.File("/data/data/com.example.patient_app/files/ID", "stressOutput.txt")
+                        if(file.exists()) {
+                            MainActivity_HR.outputStress = FileReader(file).readLines().iterator().next().toInt()
+                        }
+                        if(MainActivity_HR.outputStress == 0){
+                            titleStress.text = "스트레스 지수 (1 ~ 5) : NaN"
+                        }
+                        else{
+                            titleStress.text = "스트레스 지수 (1 ~ 5) : ${MainActivity_HR.outputStress}"
                         }
                         reload_btn.visibility = Button.VISIBLE
 
@@ -177,6 +183,7 @@ class MainActivity : AppCompatActivity() {
         it.split('\n').let {
             it.forEachIndexed { index, text ->
                 if (index == 0) {
+                    MainActivity_HR.weatherNow = text.substring(7)
                     if (text.substring(7) == "0") {
                         val sunImg = getDrawable(R.drawable.sun_icon)
                         weather.setCompoundDrawablesWithIntrinsicBounds(

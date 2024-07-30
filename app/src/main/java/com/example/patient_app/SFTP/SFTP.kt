@@ -1,9 +1,8 @@
-package com.example.patient_app.ble
+package com.example.patient_app.SFTP
 
 import android.util.Log
 import com.example.patient_app.Activity.MainActivity_HR
 import com.jcraft.jsch.*
-import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException

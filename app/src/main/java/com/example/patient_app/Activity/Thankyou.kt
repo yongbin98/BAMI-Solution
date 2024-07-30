@@ -1,41 +1,67 @@
 package com.example.patient_app.Activity
 
-import android.app.AlarmManager
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationCompat
+import com.example.patient_app.DNN.TFlite
 import com.example.patient_app.R
 import com.example.patient_app.SFTP.File
 import com.example.patient_app.SFTP.FileType
-import com.example.patient_app.ble.SFTP
+import com.example.patient_app.SFTP.WebDAV
 import com.example.patient_app.samsungHealth.HealthService
 import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.FileReader
 import java.io.PrintWriter
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class Thankyou : AppCompatActivity() {
-
+    private val TAG = "Thankyou"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thankyou)
 
+        MainActivity_HR.treatFinish = MainActivity_HR.timeDiff.toInt() + 1
         val dialog = LoadingDialog(this)
         dialog.setContentView(R.layout.dialog_loading)
 
         val myCoroutinescope = CoroutineScope(Dispatchers.IO)
+
+        val webDAV = WebDAV()
+
+        // Example input data, adjust based on your model's input requirements
+
+        var twodaybefore = java.io.File("/data/data/com.example.patient_app/files/ID", (MainActivity_HR.treatFinish-1).toString()+".txt")
+        if(!twodaybefore.exists()){
+            twodaybefore = java.io.File("/data/data/com.example.patient_app/files/ID", (MainActivity_HR.treatFinish-0).toString()+".txt")
+        }
+        val onedaybefore = java.io.File("/data/data/com.example.patient_app/files/ID", (MainActivity_HR.treatFinish).toString()+".txt")
+
+        if(twodaybefore.exists() and onedaybefore.exists()) {
+            val inputA_1 = readdaybefore(twodaybefore)
+            Log.i(TAG, "inputA_1: ${inputA_1.joinToString(", ")}")
+            val inputA_2 = readdaybefore(onedaybefore)
+            Log.i(TAG, "inputA_2: ${inputA_1.joinToString(", ")}")
+
+            val inputA = arrayOf(arrayOf(inputA_1, inputA_2))
+            val inputB = arrayOf(
+                floatArrayOf(
+                    normalize(20f, 58f, MainActivity_HR.age),
+                    normalize(0f, 1f, MainActivity_HR.sex),
+                    normalize(17.1468f, 32.9660f, MainActivity_HR.bmi),
+                    normalize(2f, 5f, MainActivity_HR.edu),
+                    normalize(0f, 3f, MainActivity_HR.drink)
+                )
+            )
+
+            val tfliteModel = TFlite(this)
+            val output = tfliteModel.runInference(inputA, inputB)
+            storeOutput(output)
+            Log.i(TAG, "Output : ${output[0]}")
+        }
 
         dialog.show()
 
@@ -43,12 +69,11 @@ class Thankyou : AppCompatActivity() {
             HealthService.updateHealthData(true)
             HealthService.getHealthData()
             saveSurvey()
-            var sftp = SFTP()
-            sftp.connect()
-            sftp.upload(File.files)
-            sftp.disconnect()
+
+            webDAV.upload(File.files)
             File.delete()
             rewriteID()
+            storeData()
             dialog.dismiss()
             end_btn.setOnClickListener {
                 val intent = Intent()
@@ -60,6 +85,9 @@ class Thankyou : AppCompatActivity() {
 
 
 
+    private fun normalize(min:Float,max:Float,data:Float): Float {
+        return (data - min) / (max - min)
+    }
 
 
     private fun rewriteID(){
@@ -69,11 +97,54 @@ class Thankyou : AppCompatActivity() {
 
         val printWriter = PrintWriter(file)
         printWriter.println(MainActivity_HR.Patient_ID)
-        printWriter.println(MainActivity_HR.timeDiff + 1)
+        printWriter.println(MainActivity_HR.timeDiff+1)
+        printWriter.println(MainActivity_HR.age)
+        printWriter.println(MainActivity_HR.sex)
+        printWriter.println(MainActivity_HR.bmi)
+        printWriter.println(MainActivity_HR.edu)
+        printWriter.println(MainActivity_HR.drink)
         printWriter.close()
-        MainActivity_HR.treatFinish = MainActivity_HR.timeDiff.toInt() + 1
     }
 
+    private fun storeData(){
+        var file = java.io.File("/data/data/com.example.patient_app/files/ID", MainActivity_HR.treatFinish.toString() + ".txt")
+        if(file.exists())
+            file.delete()
+
+        val printWriter = PrintWriter(file)
+        printWriter.println(MainActivity_HR.Steps)
+        printWriter.println(MainActivity_HR.HR)
+        printWriter.println(MainActivity_HR.weatherNow)
+        printWriter.println(MainActivity_HR.vasSleep)
+        printWriter.println(MainActivity_HR.vasAnxDep)
+        printWriter.println(MainActivity_HR.vasStress)
+        printWriter.close()
+    }
+
+    private fun storeOutput(output: FloatArray) {
+        var file = java.io.File("/data/data/com.example.patient_app/files/ID", "stressOutput.txt")
+        if(file.exists())
+            file.delete()
+
+        val printWriter = PrintWriter(file)
+        printWriter.println(output[0].toInt())
+        printWriter.close()
+    }
+
+    private fun readdaybefore(file : java.io.File) : FloatArray {
+        var fileiter = FileReader(file).readLines().iterator()
+        var Steps = fileiter.next().toFloat()
+        var HR = fileiter.next().toFloat()
+        var weatherNow = fileiter.next().toFloat()
+        var vasSleep = fileiter.next().toFloat()
+        var vasAnxDep = fileiter.next().toFloat()
+        var vasStress = fileiter.next().toFloat()
+
+        if(HR == 0f)
+            HR = 80f
+
+        return floatArrayOf(Steps,MainActivity_HR.avgSpeed,MainActivity_HR.LFHF,HR,weatherNow,vasSleep,vasAnxDep,vasStress)
+    }
 
     private fun saveSurvey(){
         var file = File(FileType.startCharOf('S'))
@@ -84,6 +155,7 @@ class Thankyou : AppCompatActivity() {
         file.write("education,${BasicInfo.Education}\n")
         file.write("alcohol,${BasicInfo.alcohol},${BasicInfo.alcohol_num},${BasicInfo.alcohol_treat}\n")
         file.write("smoking,${BasicInfo.smoking},${BasicInfo.smoking_num},${BasicInfo.smoking_treat}\n")
+        file.write("exercise,${BasicInfo.exercise},${BasicInfo.exercise_num},${BasicInfo.exercise_treat}\n")
         file.write("depressed,${BasicInfo.depressed},${BasicInfo.depressed_num},${BasicInfo.depressed_treat}\n")
         file.write("unrest,${BasicInfo.unrest},${BasicInfo.unrest_num},${BasicInfo.unrest_treat}\n")
         file.write("hypertension,${BasicInfo.hypertension},${BasicInfo.hypertension_num},${BasicInfo.hypertension_treat}\n")

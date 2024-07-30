@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import com.example.patient_app.Activity.MainActivity_HR
 import com.example.patient_app.SFTP.File
 import com.example.patient_app.SFTP.FileType
 import com.samsung.android.sdk.healthdata.*

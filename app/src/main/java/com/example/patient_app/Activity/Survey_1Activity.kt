@@ -344,6 +344,29 @@ class Survey_1Activity : AppCompatActivity() {
                 val printWriter = PrintWriter(file)
                 printWriter.println(id)
                 printWriter.println("0")
+                printWriter.println(LocalDate.now().year - BasicInfo.year + 1)
+                if (gender_male.isChecked) {
+                    printWriter.println(0)
+                } else if (gender_female.isChecked) {
+                    printWriter.println(1)
+                }
+                val bmi = (BasicInfo.weight.toDouble() / (BasicInfo.height.toDouble() * BasicInfo.height.toDouble())) * 10000
+                printWriter.println(bmi)
+                if (Middle.isChecked) {
+                    printWriter.println(1)
+                } else if (High.isChecked) {
+                    printWriter.println(2)
+                } else if (Bachelor.isChecked) {
+                    printWriter.println(3)
+                } else if (Master.isChecked) {
+                    printWriter.println(4)
+                } else if (PhD.isChecked) {
+                    printWriter.println(5)
+                }
+                if(BasicInfo.alcohol_num == "")
+                    printWriter.println(0)
+                else
+                    printWriter.println(BasicInfo.alcohol_num)
                 printWriter.close()
 
                 builder.setTitle("아이디 생성")

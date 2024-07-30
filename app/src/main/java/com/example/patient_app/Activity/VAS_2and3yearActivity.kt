@@ -6,11 +6,13 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.patient_app.DNN.TFlite
 import com.example.patient_app.R
 import kotlinx.android.synthetic.main.activity_stress2and3year.*
 import kotlinx.android.synthetic.main.activity_vas2and3year.*
@@ -82,6 +84,10 @@ class VAS_2and3yearActivity : AppCompatActivity() {
             }
 
             if(!sharedPreferences.getBoolean("isToastShown",false)){
+                MainActivity_HR.vasAnxDep = VAS.vas[0].toInt() + VAS.vas[1].toInt()
+                MainActivity_HR.vasSleep = VAS.vas[2].toInt()
+                MainActivity_HR.vasStress = VAS.vas[3].toInt()
+
                 if (MainActivity_HR.timeDiff.rem(14) == 0L|| (MainActivity_HR.timeDiff.div(14) > MainActivity_HR.treatFinish.div(14))) {
                     val intent = Intent(this, Stress_2and3yearActivity::class.java)
                     activitylauncher.launch(intent)
