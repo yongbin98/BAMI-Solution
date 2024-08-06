@@ -1,6 +1,7 @@
 package com.example.patient_app.SFTP
 
 import android.util.Log
+import com.example.patient_app.Activity.MainActivity_HR
 import java.io.BufferedOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -34,7 +35,7 @@ class File(
         val dateFormat = SimpleDateFormat("MM-dd HH:mm:ss")
         val date = dateFormat.format(Date(System.currentTimeMillis()))
 
-        return "${date}-${fileType.fileName}.csv"
+        return "${MainActivity_HR.Patient_ID}-${date}-${fileType.fileName}.csv"
     }
 
     fun getFileName(): String = file.name

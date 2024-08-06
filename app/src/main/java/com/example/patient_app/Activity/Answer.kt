@@ -168,6 +168,7 @@ class MainActivity_HR{
         var vasAnxDep = 0
         var vasStress = 0
         var outputStress = 0
+        var outputStressThankyou = 0
 
         var age = 0f
         var sex = 0f

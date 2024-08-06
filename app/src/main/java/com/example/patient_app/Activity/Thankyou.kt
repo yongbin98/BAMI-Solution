@@ -16,6 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.FileReader
 import java.io.PrintWriter
+import kotlin.math.roundToInt
 
 
 class Thankyou : AppCompatActivity() {
@@ -58,9 +59,10 @@ class Thankyou : AppCompatActivity() {
             )
 
             val tfliteModel = TFlite(this)
-            val output = tfliteModel.runInference(inputA, inputB)
-            storeOutput(output)
-            Log.i(TAG, "Output : ${output[0]}")
+            val outputStress = tfliteModel.runInference(inputA, inputB)
+            storeOutput(outputStress)
+            MainActivity_HR.outputStressThankyou = outputStress[0].roundToInt()
+            Log.i(TAG, "Output : ${outputStress[0]}")
         }
 
         dialog.show()
@@ -127,7 +129,7 @@ class Thankyou : AppCompatActivity() {
             file.delete()
 
         val printWriter = PrintWriter(file)
-        printWriter.println(output[0].toInt())
+        printWriter.println(output[0].roundToInt())
         printWriter.close()
     }
 
@@ -161,6 +163,7 @@ class Thankyou : AppCompatActivity() {
         file.write("hypertension,${BasicInfo.hypertension},${BasicInfo.hypertension_num},${BasicInfo.hypertension_treat}\n")
         file.write("diabetes,${BasicInfo.diabetes},${BasicInfo.diabetes_num},${BasicInfo.diabetes_treat}\n")
         file.write("mental,${BasicInfo.mental},${BasicInfo.mental_num},${BasicInfo.mental_treat}\n")
+        file.write("outputStress,${MainActivity_HR.outputStressThankyou}\n")
 
         var tmpString = ""
         for(i in 0 until YMRSanswer.YMRS1.size)
