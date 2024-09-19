@@ -5,8 +5,11 @@ import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputFilter
+import android.text.InputType
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
@@ -23,7 +26,11 @@ import com.example.patient_app.samsungHealth.REQUEST_ALL_PERMISSION
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_thankyou.*
 import kotlinx.coroutines.*
+import java.io.BufferedReader
+import java.io.File
 import java.io.FileReader
+import java.io.FileWriter
+import java.io.PrintWriter
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -42,12 +49,50 @@ class MainActivity : AppCompatActivity() {
         date.text = formatType.format(utilDate)
         val activitylauncher = openActivityResultLauncher()
 
-
-        survey_progress.text = "연구 D+" +(MainActivity_HR.timeDiff.toInt()+1).toString()
-
         btn_SamsungHealth.visibility = Button.VISIBLE
         btn_Survey.visibility = Button.INVISIBLE
         survey_end.visibility = TextView.INVISIBLE
+
+        val surveyProgress: TextView = findViewById(R.id.survey_progress)
+
+        calculateSurvey()
+        surveyProgress.text = "연구 D+" + (MainActivity_HR.timeDiff.toInt() +1).toString()
+
+        surveyProgress.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val input = EditText(this)
+            input.inputType = InputType.TYPE_CLASS_NUMBER
+            builder.setTitle("설문 일수 수정")
+            builder.setMessage("설문을 시작한 날짜를 입력하세요. (예: 0912)")
+            builder.setView(input)
+
+            builder.setPositiveButton("확인") {dialog, which ->
+                val inputDate = input.text.toString()
+
+                if (inputDate.length == 4 && inputDate.matches(Regex("\\d{4}"))) {
+                    val month = inputDate.substring(0,2).toIntOrNull()
+                    val day = inputDate.substring(2,4).toIntOrNull()
+
+                    if (month !=null && month in 1..12 && day != null && day in 1..31) {
+                        MainActivity_HR.Patient_ID = MainActivity_HR.Patient_ID.substring(0,8) + inputDate
+                        calculateSurvey()
+                        surveyProgress.text = "연구 D+" + (MainActivity_HR.timeDiff.toInt() +1).toString()
+
+                        updatePatientID()
+                    } else{
+                        Toast.makeText(this, "유효한 날짜를 입력하세요. (예: 0605)", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, "4자리 숫자를 입력하세요. (예: 0824)", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            builder.setNegativeButton("취소") { dialog, which ->
+                dialog.dismiss()
+            }
+
+            builder.show()
+        }
 
 
 
@@ -165,6 +210,38 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun updatePatientID(){
+        val file = File("/data/data/com.example.patient_app/files/ID", "id.txt")
+        if (file.exists()){
+            val bufferedReader = BufferedReader(FileReader(file))
+            val lines = mutableListOf<String>()
+
+            bufferedReader.useLines { lineSequence ->
+                lineSequence.forEach { line ->
+                    lines.add(line)
+                }
+            }
+
+            bufferedReader.close()
+
+            if (lines.isNotEmpty()){
+                lines[0] = MainActivity_HR.Patient_ID
+            }
+
+            val printWriter = PrintWriter(FileWriter(file, false))
+            lines.forEach{line ->
+                printWriter.println(line)
+            }
+            printWriter.close()
+        } else {
+            Toast.makeText(this, "파일이 존재하지 않습니다. 관리자에게 문의해주세요.", Toast.LENGTH_SHORT).show()
+
+        }
+
+    }
+
+
 
     private var backPressedTime : Long = 0
     override fun onBackPressed() {

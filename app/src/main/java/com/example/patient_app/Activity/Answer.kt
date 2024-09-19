@@ -6,8 +6,8 @@ import com.example.patient_app.SFTP.FileType
 class BasicInfo {
     companion object {
         var year = 1999
-        var month = "1"
-        var day = "28"
+        var month = ""
+        var day = ""
         var gender = ""
         var height = ""
         var weight = ""

@@ -31,17 +31,21 @@ class LoginActivity : AppCompatActivity() {
         val activitylauncher = openActivityResultLauncher()
 
         btn_login.setOnClickListener {
-            var file = File("/data/data/com.example.patient_app/files/ID", "id.txt")
-            if(file.exists()) {
-                readID(file)
-                calculateSurvey()
-                Toast.makeText(this, "ID : ${MainActivity_HR.Patient_ID} Login", Toast.LENGTH_SHORT).show()
-                var intent = Intent(this, MainActivity::class.java)
-                activitylauncher.launch(intent)
+            try{
+                var file = File("/data/data/com.example.patient_app/files/ID", "id.txt")
+                if (file.exists()) {
+                    readID(file)
+                    calculateSurvey()
+                    Toast.makeText(this, "ID : ${MainActivity_HR.Patient_ID} Login", Toast.LENGTH_SHORT)
+                        .show()
+                    var intent = Intent(this, MainActivity::class.java)
+                    activitylauncher.launch(intent)
+                } else
+                    Toast.makeText(this, "아이디를 만들어 주세요.", Toast.LENGTH_SHORT).show()
             }
-            else
-                Toast.makeText(this, "Please create an ID", Toast.LENGTH_SHORT).show()
-
+            catch (e: Exception) {
+                Toast.makeText(this, "아이디를 만들어 주세요.", Toast.LENGTH_LONG).show()
+            }
         }
 
 

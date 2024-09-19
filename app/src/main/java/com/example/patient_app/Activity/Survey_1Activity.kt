@@ -20,6 +20,7 @@ import com.example.patient_app.SFTP.FileType
 import kotlinx.android.synthetic.main.activity_survey1.*
 import java.io.PrintWriter
 import java.time.LocalDate
+import java.time.chrono.MinguoChronology
 import java.time.format.DateTimeFormatter
 
 class Survey_1Activity : AppCompatActivity() {
@@ -43,7 +44,7 @@ class Survey_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_survey1)
 
         sharedPreferences = getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
-        birth.updateDate(1990,1,1)
+
 
         val editor = sharedPreferences.edit()
 
